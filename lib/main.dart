@@ -1,3 +1,5 @@
+import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
+import 'package:flashcard_app/src/presentation/authentication/register_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,11 +11,23 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+    return SafeArea(
+      child: MaterialApp(
+        theme: ThemeData(
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          textTheme: const TextTheme(
+            headlineMedium: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.indigo),
         ),
+        initialRoute: LoginPage.route,
+        routes: <String, WidgetBuilder>{
+          LoginPage.route: (BuildContext context) => const LoginPage(),
+          RegisterPage.route: (BuildContext context) => const RegisterPage(),
+        },
       ),
     );
   }
