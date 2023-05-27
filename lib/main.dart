@@ -1,5 +1,6 @@
 import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
 import 'package:flashcard_app/src/presentation/authentication/register_page.dart';
+import 'package:flashcard_app/src/presentation/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,6 +28,7 @@ class MainApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
           LoginPage.route: (BuildContext context) => const LoginPage(),
           RegisterPage.route: (BuildContext context) => const RegisterPage(),
+          HomePage.route: (BuildContext context) => const HomePage(),
         },
       ),
     );

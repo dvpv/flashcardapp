@@ -1,6 +1,8 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flashcard_app/src/design/app_colors.dart';
 import 'package:flashcard_app/src/presentation/authentication/register_page.dart';
 import 'package:flashcard_app/src/presentation/components/text_divider.dart';
+import 'package:flashcard_app/src/presentation/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -16,13 +18,25 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final FocusNode _passwordFocusNode = FocusNode();
+  final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
+
+  void _onLogin(BuildContext context) {
+    if (!_loginFormKey.currentState!.validate()) {
+      return;
+    }
+    // TODO(dvpv): implement login middleware
+    print('Login pressed');
+    Navigator.of(context).popAndPushNamed(HomePage.route);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Flexible(
+      body: Form(
+        key: _loginFormKey,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: ListView(
             physics: const BouncingScrollPhysics(),
             children: <Widget>[
@@ -44,28 +58,51 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 24),
-              TextField(
+              TextFormField(
                 controller: _emailController,
+                keyboardType: TextInputType.emailAddress,
+                textInputAction: TextInputAction.next,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                   ),
                   labelText: 'Email',
                 ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your email';
+                  } else if (!EmailValidator.validate(value)) {
+                    return 'Please enter a valid email';
+                  }
+                  return null;
+                },
+                onFieldSubmitted: (_) {
+                  FocusScope.of(context).requestFocus(_passwordFocusNode);
+                },
               ),
               const SizedBox(height: 24),
-              TextField(
+              TextFormField(
                 controller: _passwordController,
+                focusNode: _passwordFocusNode,
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                   ),
                   labelText: 'Password',
                 ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your password';
+                  }
+                  return null;
+                },
+                onFieldSubmitted: (_) => _onLogin(context),
               ),
               const SizedBox(height: 24),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => _onLogin(context),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 49),
                   foregroundColor: Theme.of(context).colorScheme.secondary,
