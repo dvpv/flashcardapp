@@ -1,0 +1,21 @@
+name: pipeline
+on: [ push ]
+jobs:
+  check-flutter-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v2
+      - name: Install flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - name: Update packages
+        run: flutter pub get
+      - name: Create mock .env
+        run: |
+          touch .env
+      - name: Flutter format
+        run: flutter format lib -l 120 --set-exit-if-changed
+      - name: Flutter analyze
+        run: flutter analyze
