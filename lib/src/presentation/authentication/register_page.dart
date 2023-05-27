@@ -22,9 +22,11 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
+  final FocusNode _emailFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
   final FocusNode _confirmPasswordFocusNode = FocusNode();
 
@@ -32,7 +34,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   void _onRegister(BuildContext context) {
     // TODO(dvpv): Implement register
-    print("Register with: ${_emailController.text} ${_passwordController.text}");
+    print("Register with: ${_usernameController.text} ${_emailController.text} ${_passwordController.text}");
     Navigator.of(context).pushReplacementNamed(HomePage.route);
     if (!_registerFormKey.currentState!.validate()) {
       return;
@@ -61,7 +63,24 @@ class _RegisterPageState extends State<RegisterPage> {
                 const Center(child: TitleText('Register')),
                 const SizedBox(height: 24),
                 TextFormField(
+                  controller: _usernameController,
+                  keyboardType: TextInputType.name,
+                  textInputAction: TextInputAction.next,
+                  decoration: Styles.inputDecoration(labelText: 'Username'),
+                  validator: (String? value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your username';
+                    }
+                    return null;
+                  },
+                  onFieldSubmitted: (_) {
+                    FocusScope.of(context).requestFocus(_emailFocusNode);
+                  },
+                ),
+                const SizedBox(height: 24),
+                TextFormField(
                   controller: _emailController,
+                  focusNode: _emailFocusNode,
                   keyboardType: TextInputType.emailAddress,
                   textInputAction: TextInputAction.next,
                   decoration: Styles.inputDecoration(labelText: 'Email'),
@@ -80,6 +99,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(height: 24),
                 TextFormField(
                   controller: _passwordController,
+                  focusNode: _passwordFocusNode,
                   keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.next,
                   obscureText: true,
@@ -97,10 +117,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(height: 24),
                 TextFormField(
                   controller: _confirmPasswordController,
+                  focusNode: _confirmPasswordFocusNode,
                   keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.done,
                   obscureText: true,
-                  focusNode: _confirmPasswordFocusNode,
                   decoration: Styles.inputDecoration(labelText: 'Confirm Password'),
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
