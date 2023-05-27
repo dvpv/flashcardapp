@@ -1,7 +1,12 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flashcard_app/src/design/app_colors.dart';
+import 'package:flashcard_app/src/design/styles.dart';
 import 'package:flashcard_app/src/presentation/authentication/register_page.dart';
+import 'package:flashcard_app/src/presentation/components/app_form_button.dart';
+import 'package:flashcard_app/src/presentation/components/app_list_view.dart';
+import 'package:flashcard_app/src/presentation/components/singup_with_google_button.dart';
 import 'package:flashcard_app/src/presentation/components/text_divider.dart';
+import 'package:flashcard_app/src/presentation/components/title_text.dart';
 import 'package:flashcard_app/src/presentation/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,12 +27,12 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
 
   void _onLogin(BuildContext context) {
+    // TODO(dvpv): implement login middleware
+    Navigator.of(context).popAndPushNamed(HomePage.route);
     if (!_loginFormKey.currentState!.validate()) {
       return;
     }
-    // TODO(dvpv): implement login middleware
-    print('Login pressed');
-    Navigator.of(context).popAndPushNamed(HomePage.route);
+    print('Login pressed data: ${_emailController.text} ${_passwordController.text}');
   }
 
   @override
@@ -37,8 +42,7 @@ class _LoginPageState extends State<LoginPage> {
         key: _loginFormKey,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: ListView(
-            physics: const BouncingScrollPhysics(),
+          child: AppListView(
             children: <Widget>[
               const SizedBox(height: 24),
               Padding(
@@ -49,12 +53,9 @@ class _LoginPageState extends State<LoginPage> {
                   height: MediaQuery.of(context).size.height * 0.2,
                 ),
               ),
-              Center(
-                child: Text(
+              const Center(
+                child: TitleText(
                   'Login',
-                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
                 ),
               ),
               const SizedBox(height: 24),
@@ -62,12 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(16)),
-                  ),
-                  labelText: 'Email',
-                ),
+                decoration: Styles.inputDecoration(labelText: 'Email'),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email';
@@ -86,12 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                 focusNode: _passwordFocusNode,
                 keyboardType: TextInputType.visiblePassword,
                 obscureText: true,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(16)),
-                  ),
-                  labelText: 'Password',
-                ),
+                decoration: Styles.inputDecoration(labelText: 'Password'),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your password';
@@ -101,51 +92,11 @@ class _LoginPageState extends State<LoginPage> {
                 onFieldSubmitted: (_) => _onLogin(context),
               ),
               const SizedBox(height: 24),
-              ElevatedButton(
-                onPressed: () => _onLogin(context),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 49),
-                  foregroundColor: Theme.of(context).colorScheme.secondary,
-                  backgroundColor: AppColors.blue300,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                ),
-                child: const Text(
-                  'Login',
-                  style: TextStyle(fontSize: 18),
-                ),
-              ),
+              AppFormButton(text: 'Login', onPressed: () => _onLogin(context)),
               const SizedBox(height: 12),
               const TextDivider(text: 'or'),
               const SizedBox(height: 12),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 49),
-                  foregroundColor: Theme.of(context).colorScheme.secondary,
-                  backgroundColor: AppColors.blue600,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/icons/google_icon.png',
-                      height: 24,
-                    ),
-                    const SizedBox(
-                      width: 24,
-                    ),
-                    const Text(
-                      'Sign up with Google',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ],
-                ),
-              ),
+              const SignupWithGoogleButton(),
               const SizedBox(height: 24),
               GestureDetector(
                 onTap: () {

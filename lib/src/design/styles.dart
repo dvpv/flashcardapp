@@ -10,4 +10,10 @@ class Styles {
       borderRadius: BorderRadius.circular(16),
     ),
   );
+  static InputDecoration inputDecoration({required String labelText}) => InputDecoration(
+        border: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(16)),
+        ),
+        labelText: labelText,
+      );
 }
