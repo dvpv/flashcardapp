@@ -15,7 +15,7 @@ jobs:
       - name: Create mock .env
         run: |
           touch .env
-      - name: Flutter format
-        run: flutter format lib -l 120 --set-exit-if-changed
+      - name: Dart format
+        run: dart format lib -l 120 --set-exit-if-changed
       - name: Flutter analyze
         run: flutter analyze
