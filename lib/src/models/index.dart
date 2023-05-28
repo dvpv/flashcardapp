@@ -4,3 +4,4 @@ part 'index.freezed.dart';
 part 'index.g.dart';
 part 'app_state.dart';
 part 'app_user.dart';
+part 'deck.dart';

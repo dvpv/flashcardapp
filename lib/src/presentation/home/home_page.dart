@@ -2,7 +2,6 @@ import 'package:flashcard_app/src/actions/authentication/index.dart';
 import 'package:flashcard_app/src/containers/pending_container.dart';
 import 'package:flashcard_app/src/containers/user_container.dart';
 import 'package:flashcard_app/src/models/index.dart';
-import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
 import 'package:flashcard_app/src/presentation/components/app_bar_menu_button.dart';
 import 'package:flashcard_app/src/presentation/components/deck_list_tile.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +21,7 @@ class HomePage extends StatelessWidget {
               return Container();
             }
             return Text(
-              'Welcome, ${user!.username}',
+              'Welcome, ${user.username}',
               style: TextStyle(color: Theme.of(context).colorScheme.primary),
             );
           },

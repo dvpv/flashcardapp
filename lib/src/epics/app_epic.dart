@@ -1,3 +1,4 @@
+import 'package:flashcard_app/src/epics/deck_epic.dart';
 import 'package:flashcard_app/src/epics/firebase_epic.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/services/firebase_service.dart';
@@ -13,6 +14,7 @@ class AppEpic {
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
       FirebaseEpic(firebaseService).epics,
+      DeckEpic().epics,
     ]);
   }
 }

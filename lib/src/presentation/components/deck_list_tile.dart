@@ -18,6 +18,8 @@ class _DeckListTileState extends State<DeckListTile> {
     return Theme(
       data: Theme.of(context).copyWith(
         dividerColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
@@ -53,7 +55,7 @@ class _DeckListTileState extends State<DeckListTile> {
             children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
+                children: <Widget>[
                   TextButton(
                     child: const Text('Edit'),
                     onPressed: () {},
