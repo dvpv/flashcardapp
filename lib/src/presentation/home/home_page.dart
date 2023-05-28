@@ -13,50 +13,39 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: UserContainer(
+    return PendingContainer(
+      builder: (BuildContext context, Set<String> pending) {
+        return UserContainer(
           builder: (BuildContext context, AppUser? user) {
-            if (user == null) {
-              return Container();
+            if (user == null || pending.contains(GetCurrentUser.pendingKey)) {
+              return const CircularProgressIndicator();
             }
-            return Text(
-              'Welcome, ${user.username}',
-              style: TextStyle(color: Theme.of(context).colorScheme.primary),
-            );
-          },
-        ),
-        centerTitle: true,
-        actions: const <Widget>[
-          AppBarMenuButton(),
-        ],
-        backgroundColor: const Color(0x00000000),
-        elevation: 0,
-      ),
-      body: PendingContainer(
-        builder: (BuildContext context, Set<String> pending) {
-          return UserContainer(
-            builder: (BuildContext context, AppUser? user) {
-              if (user == null || pending.contains(Logout.pendingKey)) {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-              return Center(
+            return Scaffold(
+              appBar: AppBar(
+                title: Text(
+                  'Welcome, ${user.username}',
+                  style: TextStyle(color: Theme.of(context).colorScheme.primary),
+                ),
+                centerTitle: true,
+                actions: const <Widget>[
+                  AppBarMenuButton(),
+                ],
+                backgroundColor: const Color(0x00000000),
+                elevation: 0,
+              ),
+              body: Center(
                 child: ListView.builder(
                   itemCount: 15,
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (BuildContext context, int index) {
-                    return const DeckListTile(
-                      deck: 'Some deck name',
-                    );
+                    return const DeckListTile(deck: 'Some deck name');
                   },
                 ),
-              );
-            },
-          );
-        },
-      ),
+              ),
+            );
+          },
+        );
+      },
     );
   }
 }
