@@ -1,7 +1,10 @@
 import 'package:email_validator/email_validator.dart';
-import 'package:flashcard_app/src/containers/user_container.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flashcard_app/src/actions/app_action.dart';
+import 'package:flashcard_app/src/actions/authentication/index.dart';
 import 'package:flashcard_app/src/design/app_colors.dart';
 import 'package:flashcard_app/src/design/styles.dart';
+import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/authentication/register_page.dart';
 import 'package:flashcard_app/src/presentation/components/app_form_button.dart';
 import 'package:flashcard_app/src/presentation/components/app_list_view.dart';
@@ -9,8 +12,8 @@ import 'package:flashcard_app/src/presentation/components/signup_with_google_but
 import 'package:flashcard_app/src/presentation/components/text_divider.dart';
 import 'package:flashcard_app/src/presentation/components/title_text.dart';
 import 'package:flashcard_app/src/presentation/home/home_page.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginPage extends StatefulWidget {
@@ -29,14 +32,28 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
 
   void _onLogin(BuildContext context) {
-    // TODO(dvpv): implement login middleware
-    Navigator.of(context).popAndPushNamed(HomePage.route);
     if (!_loginFormKey.currentState!.validate()) {
       return;
     }
-    if (kDebugMode) {
-      print('Login pressed data: ${_emailController.text} ${_passwordController.text}');
-    }
+    StoreProvider.of<AppState>(context).dispatch(
+      LoginStart(
+        email: _emailController.text,
+        password: _passwordController.text,
+        onResult: (AppAction action) {
+          if (action is ErrorAction) {
+            final Object error = action.error;
+            if (error is FirebaseAuthException) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(error.message ?? '')));
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$error')));
+            }
+          } else if (action is LoginSuccessful) {
+            Navigator.of(context).popAndPushNamed(HomePage.route);
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Successfully logged in')));
+          }
+        },
+      ),
+    );
   }
 
   @override
