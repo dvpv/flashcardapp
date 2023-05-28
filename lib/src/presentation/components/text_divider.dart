@@ -8,28 +8,30 @@ class TextDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: <Widget>[
-      Expanded(
-        child: Container(
-          margin: const EdgeInsets.only(left: 10, right: 20),
-          child: const Divider(
-            thickness: 1.3,
-            color: AppColors.grey,
-            height: 36,
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: Container(
+            margin: const EdgeInsets.only(left: 10, right: 20),
+            child: const Divider(
+              thickness: 1.3,
+              color: AppColors.grey,
+              height: 36,
+            ),
           ),
         ),
-      ),
-      Text(text, style: const TextStyle(color: AppColors.grey)),
-      Expanded(
-        child: Container(
-          margin: const EdgeInsets.only(left: 20, right: 10),
-          child: const Divider(
-            thickness: 1.3,
-            color: AppColors.grey,
-            height: 36,
+        Text(text, style: const TextStyle(color: AppColors.grey)),
+        Expanded(
+          child: Container(
+            margin: const EdgeInsets.only(left: 20, right: 10),
+            child: const Divider(
+              thickness: 1.3,
+              color: AppColors.grey,
+              height: 36,
+            ),
           ),
         ),
-      ),
-    ]);
+      ],
+    );
   }
 }

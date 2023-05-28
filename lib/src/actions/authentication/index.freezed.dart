@@ -22,7 +22,7 @@ mixin _$Login {
     required TResult Function(String email, String password,
             ActionResult onResult, String pendingId)
         start,
-    required TResult Function(User user, String pendingId) successful,
+    required TResult Function(AppUser user, String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
@@ -33,7 +33,7 @@ mixin _$Login {
     TResult? Function(String email, String password, ActionResult onResult,
             String pendingId)?
         start,
-    TResult? Function(User user, String pendingId)? successful,
+    TResult? Function(AppUser user, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) =>
@@ -43,7 +43,7 @@ mixin _$Login {
     TResult Function(String email, String password, ActionResult onResult,
             String pendingId)?
         start,
-    TResult Function(User user, String pendingId)? successful,
+    TResult Function(AppUser user, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),
@@ -210,7 +210,7 @@ class _$LoginStart implements LoginStart {
     required TResult Function(String email, String password,
             ActionResult onResult, String pendingId)
         start,
-    required TResult Function(User user, String pendingId) successful,
+    required TResult Function(AppUser user, String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
@@ -224,7 +224,7 @@ class _$LoginStart implements LoginStart {
     TResult? Function(String email, String password, ActionResult onResult,
             String pendingId)?
         start,
-    TResult? Function(User user, String pendingId)? successful,
+    TResult? Function(AppUser user, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) {
@@ -237,7 +237,7 @@ class _$LoginStart implements LoginStart {
     TResult Function(String email, String password, ActionResult onResult,
             String pendingId)?
         start,
-    TResult Function(User user, String pendingId)? successful,
+    TResult Function(AppUser user, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),
@@ -309,9 +309,9 @@ abstract class _$$LoginSuccessfulCopyWith<$Res>
       __$$LoginSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({User user, String pendingId});
+  $Res call({AppUser user, String pendingId});
 
-  $UserCopyWith<$Res> get user;
+  $AppUserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -332,7 +332,7 @@ class __$$LoginSuccessfulCopyWithImpl<$Res>
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as AppUser,
       pendingId: null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -342,8 +342,8 @@ class __$$LoginSuccessfulCopyWithImpl<$Res>
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $AppUserCopyWith<$Res> get user {
+    return $AppUserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
   }
@@ -356,7 +356,7 @@ class _$LoginSuccessful implements LoginSuccessful {
       {required this.user, this.pendingId = _kLoginPendingId});
 
   @override
-  final User user;
+  final AppUser user;
   @override
   @JsonKey()
   final String pendingId;
@@ -391,7 +391,7 @@ class _$LoginSuccessful implements LoginSuccessful {
     required TResult Function(String email, String password,
             ActionResult onResult, String pendingId)
         start,
-    required TResult Function(User user, String pendingId) successful,
+    required TResult Function(AppUser user, String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
@@ -405,7 +405,7 @@ class _$LoginSuccessful implements LoginSuccessful {
     TResult? Function(String email, String password, ActionResult onResult,
             String pendingId)?
         start,
-    TResult? Function(User user, String pendingId)? successful,
+    TResult? Function(AppUser user, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) {
@@ -418,7 +418,7 @@ class _$LoginSuccessful implements LoginSuccessful {
     TResult Function(String email, String password, ActionResult onResult,
             String pendingId)?
         start,
-    TResult Function(User user, String pendingId)? successful,
+    TResult Function(AppUser user, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),
@@ -466,9 +466,10 @@ class _$LoginSuccessful implements LoginSuccessful {
 
 abstract class LoginSuccessful implements Login, ActionDone {
   const factory LoginSuccessful(
-      {required final User user, final String pendingId}) = _$LoginSuccessful;
+      {required final AppUser user,
+      final String pendingId}) = _$LoginSuccessful;
 
-  User get user;
+  AppUser get user;
   @override
   String get pendingId;
   @override
@@ -563,7 +564,7 @@ class _$LoginError implements LoginError {
     required TResult Function(String email, String password,
             ActionResult onResult, String pendingId)
         start,
-    required TResult Function(User user, String pendingId) successful,
+    required TResult Function(AppUser user, String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
@@ -577,7 +578,7 @@ class _$LoginError implements LoginError {
     TResult? Function(String email, String password, ActionResult onResult,
             String pendingId)?
         start,
-    TResult? Function(User user, String pendingId)? successful,
+    TResult? Function(AppUser user, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) {
@@ -590,7 +591,7 @@ class _$LoginError implements LoginError {
     TResult Function(String email, String password, ActionResult onResult,
             String pendingId)?
         start,
-    TResult Function(User user, String pendingId)? successful,
+    TResult Function(AppUser user, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),

@@ -4,10 +4,11 @@ import 'package:flashcard_app/src/design/styles.dart';
 import 'package:flashcard_app/src/presentation/authentication/register_page.dart';
 import 'package:flashcard_app/src/presentation/components/app_form_button.dart';
 import 'package:flashcard_app/src/presentation/components/app_list_view.dart';
-import 'package:flashcard_app/src/presentation/components/singup_with_google_button.dart';
+import 'package:flashcard_app/src/presentation/components/signup_with_google_button.dart';
 import 'package:flashcard_app/src/presentation/components/text_divider.dart';
 import 'package:flashcard_app/src/presentation/components/title_text.dart';
 import 'package:flashcard_app/src/presentation/home/home_page.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -32,7 +33,9 @@ class _LoginPageState extends State<LoginPage> {
     if (!_loginFormKey.currentState!.validate()) {
       return;
     }
-    print('Login pressed data: ${_emailController.text} ${_passwordController.text}');
+    if (kDebugMode) {
+      print('Login pressed data: ${_emailController.text} ${_passwordController.text}');
+    }
   }
 
   @override

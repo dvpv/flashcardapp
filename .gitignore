@@ -43,6 +43,13 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-
 # VS Code
 .vscode
+
+# Secrets
+lib/firebase_options.dart
+macos/Runner/GoogleService-Info.plist
+macos/firebase_app_id_file.json
+ios/firebase_app_id_file.json
+ios/Runner/GoogleService-Info.plist
+android/app/google-services.json

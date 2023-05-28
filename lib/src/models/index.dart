@@ -3,4 +3,4 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'index.freezed.dart';
 part 'index.g.dart';
 part 'app_state.dart';
-part 'user.dart';
+part 'app_user.dart';

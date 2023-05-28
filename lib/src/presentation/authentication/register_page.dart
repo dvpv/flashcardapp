@@ -1,16 +1,16 @@
 import 'package:email_validator/email_validator.dart';
+import 'package:flashcard_app/src/design/app_colors.dart';
 import 'package:flashcard_app/src/design/styles.dart';
 import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
 import 'package:flashcard_app/src/presentation/components/app_form_button.dart';
 import 'package:flashcard_app/src/presentation/components/app_list_view.dart';
-import 'package:flashcard_app/src/presentation/components/singup_with_google_button.dart';
+import 'package:flashcard_app/src/presentation/components/signup_with_google_button.dart';
 import 'package:flashcard_app/src/presentation/components/text_divider.dart';
 import 'package:flashcard_app/src/presentation/components/title_text.dart';
 import 'package:flashcard_app/src/presentation/home/home_page.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../../design/app_colors.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -34,7 +34,9 @@ class _RegisterPageState extends State<RegisterPage> {
 
   void _onRegister(BuildContext context) {
     // TODO(dvpv): Implement register
-    print("Register with: ${_usernameController.text} ${_emailController.text} ${_passwordController.text}");
+    if (kDebugMode) {
+      print('Register with: ${_usernameController.text} ${_emailController.text} ${_passwordController.text}');
+    }
     Navigator.of(context).pushReplacementNamed(HomePage.route);
     if (!_registerFormKey.currentState!.validate()) {
       return;

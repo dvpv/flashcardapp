@@ -20,8 +20,8 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppState {
-  int get counter => throw _privateConstructorUsedError;
-  User? get user => throw _privateConstructorUsedError;
+  Set<String> get pending => throw _privateConstructorUsedError;
+  AppUser? get user => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,9 +34,9 @@ abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({int counter, User? user});
+  $Res call({Set<String> pending, AppUser? user});
 
-  $UserCopyWith<$Res>? get user;
+  $AppUserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -52,29 +52,29 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? counter = null,
+    Object? pending = null,
     Object? user = freezed,
   }) {
     return _then(_value.copyWith(
-      counter: null == counter
-          ? _value.counter
-          : counter // ignore: cast_nullable_to_non_nullable
-              as int,
+      pending: null == pending
+          ? _value.pending
+          : pending // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as AppUser?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get user {
+  $AppUserCopyWith<$Res>? get user {
     if (_value.user == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_value.user!, (value) {
+    return $AppUserCopyWith<$Res>(_value.user!, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -87,10 +87,10 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
       __$$_AppStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter, User? user});
+  $Res call({Set<String> pending, AppUser? user});
 
   @override
-  $UserCopyWith<$Res>? get user;
+  $AppUserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -104,18 +104,18 @@ class __$$_AppStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? counter = null,
+    Object? pending = null,
     Object? user = freezed,
   }) {
     return _then(_$_AppState(
-      counter: null == counter
-          ? _value.counter
-          : counter // ignore: cast_nullable_to_non_nullable
-              as int,
+      pending: null == pending
+          ? _value._pending
+          : pending // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as AppUser?,
     ));
   }
 }
@@ -123,20 +123,27 @@ class __$$_AppStateCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AppState implements _AppState {
-  _$_AppState({this.counter = 0, this.user});
+  _$_AppState({final Set<String> pending = const <String>{}, this.user})
+      : _pending = pending;
 
   factory _$_AppState.fromJson(Map<String, dynamic> json) =>
       _$$_AppStateFromJson(json);
 
+  final Set<String> _pending;
   @override
   @JsonKey()
-  final int counter;
+  Set<String> get pending {
+    if (_pending is EqualUnmodifiableSetView) return _pending;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableSetView(_pending);
+  }
+
   @override
-  final User? user;
+  final AppUser? user;
 
   @override
   String toString() {
-    return 'AppState(counter: $counter, user: $user)';
+    return 'AppState(pending: $pending, user: $user)';
   }
 
   @override
@@ -144,13 +151,14 @@ class _$_AppState implements _AppState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AppState &&
-            (identical(other.counter, counter) || other.counter == counter) &&
+            const DeepCollectionEquality().equals(other._pending, _pending) &&
             (identical(other.user, user) || other.user == user));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, counter, user);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_pending), user);
 
   @JsonKey(ignore: true)
   @override
@@ -167,47 +175,48 @@ class _$_AppState implements _AppState {
 }
 
 abstract class _AppState implements AppState {
-  factory _AppState({final int counter, final User? user}) = _$_AppState;
+  factory _AppState({final Set<String> pending, final AppUser? user}) =
+      _$_AppState;
 
   factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
 
   @override
-  int get counter;
+  Set<String> get pending;
   @override
-  User? get user;
+  AppUser? get user;
   @override
   @JsonKey(ignore: true)
   _$$_AppStateCopyWith<_$_AppState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-User _$UserFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
+AppUser _$AppUserFromJson(Map<String, dynamic> json) {
+  return _AppUser.fromJson(json);
 }
 
 /// @nodoc
-mixin _$User {
+mixin _$AppUser {
   String get uid => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String get displayName => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+  $AppUserCopyWith<AppUser> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res, User>;
+abstract class $AppUserCopyWith<$Res> {
+  factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) =
+      _$AppUserCopyWithImpl<$Res, AppUser>;
   @useResult
-  $Res call({String uid, String email, String displayName});
+  $Res call({String uid, String email, String username});
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res, $Val extends User>
-    implements $UserCopyWith<$Res> {
-  _$UserCopyWithImpl(this._value, this._then);
+class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
+    implements $AppUserCopyWith<$Res> {
+  _$AppUserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -219,7 +228,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? uid = null,
     Object? email = null,
-    Object? displayName = null,
+    Object? username = null,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -230,27 +239,29 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      displayName: null == displayName
-          ? _value.displayName
-          : displayName // ignore: cast_nullable_to_non_nullable
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
-      __$$_UserCopyWithImpl<$Res>;
+abstract class _$$_AppUserCopyWith<$Res> implements $AppUserCopyWith<$Res> {
+  factory _$$_AppUserCopyWith(
+          _$_AppUser value, $Res Function(_$_AppUser) then) =
+      __$$_AppUserCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String uid, String email, String displayName});
+  $Res call({String uid, String email, String username});
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
-    implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
+class __$$_AppUserCopyWithImpl<$Res>
+    extends _$AppUserCopyWithImpl<$Res, _$_AppUser>
+    implements _$$_AppUserCopyWith<$Res> {
+  __$$_AppUserCopyWithImpl(_$_AppUser _value, $Res Function(_$_AppUser) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -258,9 +269,9 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
   $Res call({
     Object? uid = null,
     Object? email = null,
-    Object? displayName = null,
+    Object? username = null,
   }) {
-    return _then(_$_User(
+    return _then(_$_AppUser(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -269,9 +280,9 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      displayName: null == displayName
-          ? _value.displayName
-          : displayName // ignore: cast_nullable_to_non_nullable
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -279,67 +290,69 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
 
 /// @nodoc
 @JsonSerializable()
-class _$_User implements _User {
-  _$_User({required this.uid, required this.email, required this.displayName});
+class _$_AppUser implements _AppUser {
+  _$_AppUser({required this.uid, required this.email, required this.username});
 
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+  factory _$_AppUser.fromJson(Map<String, dynamic> json) =>
+      _$$_AppUserFromJson(json);
 
   @override
   final String uid;
   @override
   final String email;
   @override
-  final String displayName;
+  final String username;
 
   @override
   String toString() {
-    return 'User(uid: $uid, email: $email, displayName: $displayName)';
+    return 'AppUser(uid: $uid, email: $email, username: $username)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_User &&
+            other is _$_AppUser &&
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.displayName, displayName) ||
-                other.displayName == displayName));
+            (identical(other.username, username) ||
+                other.username == username));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, email, displayName);
+  int get hashCode => Object.hash(runtimeType, uid, email, username);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserCopyWith<_$_User> get copyWith =>
-      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$_AppUserCopyWith<_$_AppUser> get copyWith =>
+      __$$_AppUserCopyWithImpl<_$_AppUser>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserToJson(
+    return _$$_AppUserToJson(
       this,
     );
   }
 }
 
-abstract class _User implements User {
-  factory _User(
+abstract class _AppUser implements AppUser {
+  factory _AppUser(
       {required final String uid,
       required final String email,
-      required final String displayName}) = _$_User;
+      required final String username}) = _$_AppUser;
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
+  factory _AppUser.fromJson(Map<String, dynamic> json) = _$_AppUser.fromJson;
 
   @override
   String get uid;
   @override
   String get email;
   @override
-  String get displayName;
+  String get username;
   @override
   @JsonKey(ignore: true)
-  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+  _$$_AppUserCopyWith<_$_AppUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }
