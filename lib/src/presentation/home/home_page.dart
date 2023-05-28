@@ -4,6 +4,7 @@ import 'package:flashcard_app/src/containers/user_container.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
 import 'package:flashcard_app/src/presentation/components/app_bar_menu_button.dart';
+import 'package:flashcard_app/src/presentation/components/deck_list_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -43,14 +44,14 @@ class HomePage extends StatelessWidget {
                 );
               }
               return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    ElevatedButton(
-                      child: const Text('Go to Login Page'),
-                      onPressed: () => Navigator.of(context).popAndPushNamed(LoginPage.route),
-                    ),
-                  ],
+                child: ListView.builder(
+                  itemCount: 15,
+                  physics: const BouncingScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return const DeckListTile(
+                      deck: 'Some deck name',
+                    );
+                  },
                 ),
               );
             },
