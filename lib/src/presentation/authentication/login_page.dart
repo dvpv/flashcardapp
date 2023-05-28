@@ -2,6 +2,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flashcard_app/src/actions/app_action.dart';
 import 'package:flashcard_app/src/actions/authentication/index.dart';
+import 'package:flashcard_app/src/containers/pending_container.dart';
 import 'package:flashcard_app/src/design/app_colors.dart';
 import 'package:flashcard_app/src/design/styles.dart';
 import 'package:flashcard_app/src/models/index.dart';
@@ -59,95 +60,102 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Form(
-        key: _loginFormKey,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: AppListView(
-            children: <Widget>[
-              const SizedBox(height: 24),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 24),
-                child: SvgPicture.asset(
-                  'assets/images/logo_no_title.svg',
-                  semanticsLabel: 'logo',
-                  height: MediaQuery.of(context).size.height * 0.2,
-                ),
-              ),
-              const Center(
-                child: TitleText(
-                  'Login',
-                ),
-              ),
-              const SizedBox(height: 24),
-              TextFormField(
-                controller: _emailController,
-                keyboardType: TextInputType.emailAddress,
-                textInputAction: TextInputAction.next,
-                decoration: Styles.inputDecoration(labelText: 'Email'),
-                validator: (String? value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your email';
-                  } else if (!EmailValidator.validate(value)) {
-                    return 'Please enter a valid email';
-                  }
-                  return null;
-                },
-                onFieldSubmitted: (_) {
-                  FocusScope.of(context).requestFocus(_passwordFocusNode);
-                },
-              ),
-              const SizedBox(height: 24),
-              TextFormField(
-                controller: _passwordController,
-                focusNode: _passwordFocusNode,
-                keyboardType: TextInputType.visiblePassword,
-                obscureText: true,
-                decoration: Styles.inputDecoration(labelText: 'Password'),
-                validator: (String? value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your password';
-                  }
-                  return null;
-                },
-                onFieldSubmitted: (_) => _onLogin(context),
-              ),
-              const SizedBox(height: 24),
-              AppFormButton(text: 'Login', onPressed: () => _onLogin(context)),
-              const SizedBox(height: 12),
-              const TextDivider(text: 'or'),
-              const SizedBox(height: 12),
-              const SignupWithGoogleButton(),
-              const SizedBox(height: 24),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).popAndPushNamed(RegisterPage.route);
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    const Text(
-                      "Don't have an account?  ",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: AppColors.grey,
-                        fontSize: 16,
-                      ),
+      body: PendingContainer(
+        builder: (BuildContext context, Set<String> pending) {
+          if (pending.contains(Login.pendingKey)) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          return Form(
+            key: _loginFormKey,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: AppListView(
+                children: <Widget>[
+                  const SizedBox(height: 24),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 24),
+                    child: SvgPicture.asset(
+                      'assets/images/logo_no_title.svg',
+                      semanticsLabel: 'logo',
+                      height: MediaQuery.of(context).size.height * 0.2,
                     ),
-                    Text(
-                      'Register now!',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
-                        fontSize: 16,
-                      ),
+                  ),
+                  const Center(
+                    child: TitleText(
+                      'Login',
                     ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
+                  ),
+                  const SizedBox(height: 24),
+                  TextFormField(
+                    controller: _emailController,
+                    keyboardType: TextInputType.emailAddress,
+                    textInputAction: TextInputAction.next,
+                    decoration: Styles.inputDecoration(labelText: 'Email'),
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your email';
+                      } else if (!EmailValidator.validate(value)) {
+                        return 'Please enter a valid email';
+                      }
+                      return null;
+                    },
+                    onFieldSubmitted: (_) {
+                      FocusScope.of(context).requestFocus(_passwordFocusNode);
+                    },
+                  ),
+                  const SizedBox(height: 24),
+                  TextFormField(
+                    controller: _passwordController,
+                    focusNode: _passwordFocusNode,
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
+                    decoration: Styles.inputDecoration(labelText: 'Password'),
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your password';
+                      }
+                      return null;
+                    },
+                    onFieldSubmitted: (_) => _onLogin(context),
+                  ),
+                  const SizedBox(height: 24),
+                  AppFormButton(text: 'Login', onPressed: () => _onLogin(context)),
+                  const SizedBox(height: 12),
+                  const TextDivider(text: 'or'),
+                  const SizedBox(height: 12),
+                  const SignupWithGoogleButton(),
+                  const SizedBox(height: 24),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).popAndPushNamed(RegisterPage.route);
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        const Text(
+                          "Don't have an account?  ",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: AppColors.grey,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          'Register now!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
