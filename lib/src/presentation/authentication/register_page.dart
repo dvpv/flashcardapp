@@ -1,6 +1,10 @@
 import 'package:email_validator/email_validator.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flashcard_app/src/actions/app_action.dart';
+import 'package:flashcard_app/src/actions/authentication/index.dart';
 import 'package:flashcard_app/src/design/app_colors.dart';
 import 'package:flashcard_app/src/design/styles.dart';
+import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
 import 'package:flashcard_app/src/presentation/components/app_form_button.dart';
 import 'package:flashcard_app/src/presentation/components/app_list_view.dart';
@@ -8,8 +12,8 @@ import 'package:flashcard_app/src/presentation/components/signup_with_google_but
 import 'package:flashcard_app/src/presentation/components/text_divider.dart';
 import 'package:flashcard_app/src/presentation/components/title_text.dart';
 import 'package:flashcard_app/src/presentation/home/home_page.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_svg/svg.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -33,14 +37,30 @@ class _RegisterPageState extends State<RegisterPage> {
   final GlobalKey<FormState> _registerFormKey = GlobalKey<FormState>();
 
   void _onRegister(BuildContext context) {
-    // TODO(dvpv): Implement register
-    if (kDebugMode) {
-      print('Register with: ${_usernameController.text} ${_emailController.text} ${_passwordController.text}');
-    }
-    Navigator.of(context).pushReplacementNamed(HomePage.route);
     if (!_registerFormKey.currentState!.validate()) {
       return;
     }
+    StoreProvider.of<AppState>(context).dispatch(
+      RegisterStart(
+        username: _usernameController.text,
+        email: _emailController.text,
+        password: _passwordController.text,
+        onResult: (AppAction action) {
+          if (action is ErrorAction) {
+            final Object error = action.error;
+            if (error is FirebaseAuthException) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(error.message ?? '')));
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$error')));
+            }
+          } else if (action is RegisterSuccessful) {
+            Navigator.of(context).popAndPushNamed(HomePage.route);
+            ScaffoldMessenger.of(context)
+                .showSnackBar(const SnackBar(content: Text('Successfully created a new account')));
+          }
+        },
+      ),
+    );
   }
 
   @override

@@ -8,6 +8,9 @@ AppState reducer(AppState state, dynamic action) {
   if (action is! AppAction) {
     throw ArgumentError('action needs to implement AppAction');
   }
+  if (kDebugMode) {
+    print('Event: ${action.runtimeType}');
+  }
   if (action is ErrorAction) {
     if (kDebugMode) {
       print(action.error);

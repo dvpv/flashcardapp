@@ -1,4 +1,5 @@
 import 'package:email_validator/email_validator.dart';
+import 'package:flashcard_app/src/containers/user_container.dart';
 import 'package:flashcard_app/src/design/app_colors.dart';
 import 'package:flashcard_app/src/design/styles.dart';
 import 'package:flashcard_app/src/presentation/authentication/register_page.dart';
