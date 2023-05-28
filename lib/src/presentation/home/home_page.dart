@@ -1,4 +1,5 @@
-import 'package:flashcard_app/main.dart';
+import 'package:flashcard_app/src/actions/authentication/index.dart';
+import 'package:flashcard_app/src/containers/pending_container.dart';
 import 'package:flashcard_app/src/containers/user_container.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
@@ -16,6 +17,9 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: UserContainer(
           builder: (BuildContext context, AppUser? user) {
+            if (user == null) {
+              return Container();
+            }
             return Text(
               'Welcome, ${user!.username}',
               style: TextStyle(color: Theme.of(context).colorScheme.primary),
@@ -29,16 +33,29 @@ class HomePage extends StatelessWidget {
         backgroundColor: const Color(0x00000000),
         elevation: 0,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              child: const Text('Go to Login Page'),
-              onPressed: () => Navigator.of(context).popAndPushNamed(LoginPage.route),
-            ),
-          ],
-        ),
+      body: PendingContainer(
+        builder: (BuildContext context, Set<String> pending) {
+          return UserContainer(
+            builder: (BuildContext context, AppUser? user) {
+              if (user == null || pending.contains(Logout.pendingKey)) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    ElevatedButton(
+                      child: const Text('Go to Login Page'),
+                      onPressed: () => Navigator.of(context).popAndPushNamed(LoginPage.route),
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+        },
       ),
     );
   }

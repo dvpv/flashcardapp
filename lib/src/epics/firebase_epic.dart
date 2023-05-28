@@ -13,6 +13,7 @@ class FirebaseEpic {
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, LoginStart>(_loginStart).call,
+      TypedEpic<AppState, LogoutStart>(_logoutStart).call,
       TypedEpic<AppState, RegisterStart>(_registerStart).call,
       TypedEpic<AppState, GetCurrentUserStart>(_getCurrentUserStart).call,
     ]);
@@ -25,6 +26,18 @@ class FirebaseEpic {
           .map<Login>((AppUser user) => LoginSuccessful(user: user, pendingId: action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => LoginError(error, stackTrace, action.pendingId),
+          )
+          .doOnData(action.onResult);
+    });
+  }
+
+  Stream<AppAction> _logoutStart(Stream<LogoutStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((LogoutStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => _firebaseService.logout())
+          .map<Logout>((_) => LogoutSuccessful(pendingId: action.pendingId))
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => LogoutError(error, stackTrace, action.pendingId),
           )
           .doOnData(action.onResult);
     });

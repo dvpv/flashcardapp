@@ -4,12 +4,17 @@ import 'package:redux/redux.dart';
 
 Reducer<AppState> firebaseReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, LoginSuccessful>(_loginSuccessful).call,
+  TypedReducer<AppState, LogoutSuccessful>(_logoutSuccessful).call,
   TypedReducer<AppState, RegisterSuccessful>(_registerSuccessful).call,
   TypedReducer<AppState, GetCurrentUserSuccessful>(_getCurrentUserSuccessful).call,
 ]);
 
 AppState _loginSuccessful(AppState state, LoginSuccessful action) {
   return state.copyWith(user: action.user);
+}
+
+AppState _logoutSuccessful(AppState state, LogoutSuccessful action) {
+  return state.copyWith(user: null);
 }
 
 AppState _registerSuccessful(AppState state, RegisterSuccessful action) {

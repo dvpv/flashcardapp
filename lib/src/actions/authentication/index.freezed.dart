@@ -652,6 +652,571 @@ abstract class LoginError implements Login, ActionDone, ErrorAction {
 }
 
 /// @nodoc
+mixin _$Logout {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogoutStart value) start,
+    required TResult Function(LogoutSuccessful value) successful,
+    required TResult Function(LogoutError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogoutStart value)? start,
+    TResult? Function(LogoutSuccessful value)? successful,
+    TResult? Function(LogoutError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogoutStart value)? start,
+    TResult Function(LogoutSuccessful value)? successful,
+    TResult Function(LogoutError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $LogoutCopyWith<Logout> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LogoutCopyWith<$Res> {
+  factory $LogoutCopyWith(Logout value, $Res Function(Logout) then) =
+      _$LogoutCopyWithImpl<$Res, Logout>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$LogoutCopyWithImpl<$Res, $Val extends Logout>
+    implements $LogoutCopyWith<$Res> {
+  _$LogoutCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LogoutStartCopyWith<$Res> implements $LogoutCopyWith<$Res> {
+  factory _$$LogoutStartCopyWith(
+          _$LogoutStart value, $Res Function(_$LogoutStart) then) =
+      __$$LogoutStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ActionResult onResult, String pendingId});
+}
+
+/// @nodoc
+class __$$LogoutStartCopyWithImpl<$Res>
+    extends _$LogoutCopyWithImpl<$Res, _$LogoutStart>
+    implements _$$LogoutStartCopyWith<$Res> {
+  __$$LogoutStartCopyWithImpl(
+      _$LogoutStart _value, $Res Function(_$LogoutStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? onResult = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$LogoutStart(
+      onResult: null == onResult
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LogoutStart implements LogoutStart {
+  const _$LogoutStart(
+      {required this.onResult, this.pendingId = _kLogoutPendingId});
+
+  @override
+  final ActionResult onResult;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'Logout.start(onResult: $onResult, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogoutStart &&
+            (identical(other.onResult, onResult) ||
+                other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, onResult, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogoutStartCopyWith<_$LogoutStart> get copyWith =>
+      __$$LogoutStartCopyWithImpl<_$LogoutStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(onResult, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogoutStart value) start,
+    required TResult Function(LogoutSuccessful value) successful,
+    required TResult Function(LogoutError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogoutStart value)? start,
+    TResult? Function(LogoutSuccessful value)? successful,
+    TResult? Function(LogoutError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogoutStart value)? start,
+    TResult Function(LogoutSuccessful value)? successful,
+    TResult Function(LogoutError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutStart implements Logout, ActionStart {
+  const factory LogoutStart(
+      {required final ActionResult onResult,
+      final String pendingId}) = _$LogoutStart;
+
+  ActionResult get onResult;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$LogoutStartCopyWith<_$LogoutStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LogoutSuccessfulCopyWith<$Res>
+    implements $LogoutCopyWith<$Res> {
+  factory _$$LogoutSuccessfulCopyWith(
+          _$LogoutSuccessful value, $Res Function(_$LogoutSuccessful) then) =
+      __$$LogoutSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$LogoutSuccessfulCopyWithImpl<$Res>
+    extends _$LogoutCopyWithImpl<$Res, _$LogoutSuccessful>
+    implements _$$LogoutSuccessfulCopyWith<$Res> {
+  __$$LogoutSuccessfulCopyWithImpl(
+      _$LogoutSuccessful _value, $Res Function(_$LogoutSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$LogoutSuccessful(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LogoutSuccessful implements LogoutSuccessful {
+  const _$LogoutSuccessful({this.pendingId = _kLogoutPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'Logout.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogoutSuccessful &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogoutSuccessfulCopyWith<_$LogoutSuccessful> get copyWith =>
+      __$$LogoutSuccessfulCopyWithImpl<_$LogoutSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogoutStart value) start,
+    required TResult Function(LogoutSuccessful value) successful,
+    required TResult Function(LogoutError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogoutStart value)? start,
+    TResult? Function(LogoutSuccessful value)? successful,
+    TResult? Function(LogoutError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogoutStart value)? start,
+    TResult Function(LogoutSuccessful value)? successful,
+    TResult Function(LogoutError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutSuccessful implements Logout, ActionDone {
+  const factory LogoutSuccessful({final String pendingId}) = _$LogoutSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$LogoutSuccessfulCopyWith<_$LogoutSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LogoutErrorCopyWith<$Res> implements $LogoutCopyWith<$Res> {
+  factory _$$LogoutErrorCopyWith(
+          _$LogoutError value, $Res Function(_$LogoutError) then) =
+      __$$LogoutErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$LogoutErrorCopyWithImpl<$Res>
+    extends _$LogoutCopyWithImpl<$Res, _$LogoutError>
+    implements _$$LogoutErrorCopyWith<$Res> {
+  __$$LogoutErrorCopyWithImpl(
+      _$LogoutError _value, $Res Function(_$LogoutError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$LogoutError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LogoutError implements LogoutError {
+  const _$LogoutError(this.error, this.stackTrace,
+      [this.pendingId = _kLogoutPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'Logout.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogoutError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogoutErrorCopyWith<_$LogoutError> get copyWith =>
+      __$$LogoutErrorCopyWithImpl<_$LogoutError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LogoutStart value) start,
+    required TResult Function(LogoutSuccessful value) successful,
+    required TResult Function(LogoutError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LogoutStart value)? start,
+    TResult? Function(LogoutSuccessful value)? successful,
+    TResult? Function(LogoutError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LogoutStart value)? start,
+    TResult Function(LogoutSuccessful value)? successful,
+    TResult Function(LogoutError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutError implements Logout, ActionDone, ErrorAction {
+  const factory LogoutError(final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$LogoutError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$LogoutErrorCopyWith<_$LogoutError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$Register {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
