@@ -5,3 +5,4 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'index.freezed.dart';
 
 part 'create_deck.dart';
+part 'update_deck.dart';

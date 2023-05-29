@@ -30,27 +30,28 @@ class _EditDeckPageState extends State<EditDeckPage> {
 
   void _newFlashcard() {
     setState(() {
-      deck.cards.add(
-        Flashcard(
-          id: const Uuid().v1(),
-          front: 'Card ${deck.cards.length + 1}',
-          back: '',
-        ),
+      deck = deck.copyWith(
+        cards: <Flashcard>[
+          ...deck.cards,
+          Flashcard(
+            id: const Uuid().v1(),
+            front: 'Card ${deck.cards.length + 1}',
+            back: '',
+          )
+        ],
       );
     });
   }
 
   void _onNewDeck(BuildContext context) {
     StoreProvider.of<AppState>(context).dispatch(
-      CreateDeckStart(
-        deck: Deck(
-          id: const Uuid().v1(),
+      UpdateDeckStart(
+        deck: deck.copyWith(
           title: _titleController.text,
-          createdAt: DateTime.now(),
           updatedAt: DateTime.now(),
         ),
         onResult: (AppAction action) {
-          if (action is CreateDeckSuccessful) {
+          if (action is UpdateDeckSuccessful) {
             Navigator.of(context).pop();
           } else {
             if (action is ErrorAction) {
@@ -152,12 +153,22 @@ class _EditDeckPageState extends State<EditDeckPage> {
                   back: deck.cards[index].back,
                   onBackChanged: (String change) {
                     setState(() {
-                      deck.cards[index] = deck.cards[index].copyWith(back: change);
+                      final Flashcard card = deck.cards[index].copyWith(back: change);
+                      deck = deck.copyWith(
+                        cards: <Flashcard>[...deck.cards]
+                          ..removeAt(index)
+                          ..insert(index, card),
+                      );
                     });
                   },
                   onFrontChanged: (String change) {
                     setState(() {
-                      deck.cards[index] = deck.cards[index].copyWith(front: change);
+                      final Flashcard card = deck.cards[index].copyWith(back: change);
+                      deck = deck.copyWith(
+                        cards: <Flashcard>[...deck.cards]
+                          ..removeAt(index)
+                          ..insert(index, card),
+                      );
                     });
                   },
                   onDelete: () {
