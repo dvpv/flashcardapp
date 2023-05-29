@@ -42,6 +42,15 @@ class _DeckListTileState extends State<DeckListTile> {
     );
   }
 
+  String _computeCompletion() {
+    final int completed = widget.deck.cards.where((Flashcard card) => card.completed).length;
+    final int total = widget.deck.cards.length;
+    if (completed == total) {
+      return 'Completed';
+    }
+    return '${completed * 100 / total}%';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -61,9 +70,9 @@ class _DeckListTileState extends State<DeckListTile> {
                 ? Row(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      const Text(
-                        '88',
-                        style: TextStyle(color: Colors.black),
+                      Text(
+                        widget.deck.cards.length.toString(),
+                        style: const TextStyle(color: Colors.black),
                       ),
                       SvgPicture.asset(
                         'assets/icons/cards_icon.svg',
@@ -78,7 +87,7 @@ class _DeckListTileState extends State<DeckListTile> {
               alignment: Alignment.centerLeft,
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
-                child: !_isExpanded ? const Text('completed') : null,
+                child: !_isExpanded ? Text(_computeCompletion()) : null,
               ),
             ),
             children: <Widget>[
