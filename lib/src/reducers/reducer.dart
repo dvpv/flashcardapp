@@ -1,5 +1,6 @@
 import 'package:flashcard_app/src/actions/app_action.dart';
 import 'package:flashcard_app/src/models/index.dart';
+import 'package:flashcard_app/src/reducers/deck_reducer.dart';
 import 'package:flashcard_app/src/reducers/firebase_reducer.dart';
 import 'package:flutter/foundation.dart';
 import 'package:redux/redux.dart';
@@ -23,6 +24,7 @@ Reducer<AppState> _reducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, ActionStart>(_actionStart).call,
   TypedReducer<AppState, ActionDone>(_actionDone).call,
   firebaseReducer,
+  deckReducer,
 ]);
 
 AppState _actionStart(AppState state, ActionStart action) {

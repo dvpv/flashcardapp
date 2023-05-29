@@ -14,12 +14,13 @@ class DeckEpic {
   }
 
   Stream<AppAction> _createDeckStart(Stream<CreateDeckStart> actions, EpicStore<AppState> store) {
+    // TODO(dvpv): maybe replace this with a better epic
     return actions.flatMap((CreateDeckStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => _)
           .expand<AppAction>(
             (_) => <AppAction>[
-              CreateDeckSuccessful(pendingId: action.pendingId),
+              CreateDeckSuccessful(deck: action.deck, pendingId: action.pendingId),
               // TODO(dvpv): SaveDecks
             ],
           )

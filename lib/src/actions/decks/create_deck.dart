@@ -13,6 +13,7 @@ class CreateDeck with _$CreateDeck implements AppAction {
 
   @Implements<ActionDone>()
   const factory CreateDeck.successful({
+    required Deck deck,
     @Default(_kCreateDeckPendingId) String pendingId,
   }) = CreateDeckSuccessful;
 

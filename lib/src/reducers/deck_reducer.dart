@@ -7,5 +7,5 @@ Reducer<AppState> deckReducer = combineReducers<AppState>(<Reducer<AppState>>[
 ]);
 
 AppState _createDeckSuccessful(AppState state, CreateDeckSuccessful action) {
-  return state.copyWith();
+  return state.copyWith(decks: <Deck>[...state.decks, action.deck]);
 }

@@ -1,11 +1,12 @@
 import 'package:flashcard_app/src/design/app_colors.dart';
+import 'package:flashcard_app/src/models/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DeckListTile extends StatefulWidget {
   const DeckListTile({required this.deck, super.key});
 
-  final String deck;
+  final Deck deck;
 
   @override
   State<DeckListTile> createState() => _DeckListTileState();
@@ -44,7 +45,7 @@ class _DeckListTileState extends State<DeckListTile> {
                     ],
                   )
                 : const SizedBox(),
-            title: Text(widget.deck),
+            title: Text(widget.deck.title),
             subtitle: Align(
               alignment: Alignment.centerLeft,
               child: AnimatedSwitcher(

@@ -1,4 +1,5 @@
 import 'package:flashcard_app/src/actions/authentication/index.dart';
+import 'package:flashcard_app/src/containers/decks_container.dart';
 import 'package:flashcard_app/src/containers/pending_container.dart';
 import 'package:flashcard_app/src/containers/user_container.dart';
 import 'package:flashcard_app/src/models/index.dart';
@@ -41,11 +42,17 @@ class HomePage extends StatelessWidget {
                 child: const Icon(Icons.add),
               ),
               body: Center(
-                child: ListView.builder(
-                  itemCount: 15,
-                  physics: const BouncingScrollPhysics(),
-                  itemBuilder: (BuildContext context, int index) {
-                    return const DeckListTile(deck: 'Some deck name');
+                child: DecksContainer(
+                  builder: (BuildContext context, List<Deck> decks) {
+                    print('showing ${decks.length} decks');
+                    return ListView.builder(
+                      itemCount: decks.length,
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder: (BuildContext context, int index) {
+                        final Deck deck = decks[index];
+                        return DeckListTile(deck: deck);
+                      },
+                    );
                   },
                 ),
               ),

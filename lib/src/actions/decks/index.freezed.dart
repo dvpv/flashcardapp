@@ -22,7 +22,7 @@ mixin _$CreateDeck {
     required TResult Function(
             Deck deck, ActionResult onResult, String pendingId)
         start,
-    required TResult Function(String pendingId) successful,
+    required TResult Function(Deck deck, String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
@@ -32,7 +32,7 @@ mixin _$CreateDeck {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
         start,
-    TResult? Function(String pendingId)? successful,
+    TResult? Function(Deck deck, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) =>
@@ -40,7 +40,7 @@ mixin _$CreateDeck {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
+    TResult Function(Deck deck, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),
@@ -208,7 +208,7 @@ class _$CreateDeckStart implements CreateDeckStart {
     required TResult Function(
             Deck deck, ActionResult onResult, String pendingId)
         start,
-    required TResult Function(String pendingId) successful,
+    required TResult Function(Deck deck, String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
@@ -221,7 +221,7 @@ class _$CreateDeckStart implements CreateDeckStart {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
         start,
-    TResult? Function(String pendingId)? successful,
+    TResult? Function(Deck deck, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) {
@@ -232,7 +232,7 @@ class _$CreateDeckStart implements CreateDeckStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
+    TResult Function(Deck deck, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),
@@ -302,7 +302,9 @@ abstract class _$$CreateDeckSuccessfulCopyWith<$Res>
       __$$CreateDeckSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String pendingId});
+  $Res call({Deck deck, String pendingId});
+
+  $DeckCopyWith<$Res> get deck;
 }
 
 /// @nodoc
@@ -316,29 +318,45 @@ class __$$CreateDeckSuccessfulCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? deck = null,
     Object? pendingId = null,
   }) {
     return _then(_$CreateDeckSuccessful(
+      deck: null == deck
+          ? _value.deck
+          : deck // ignore: cast_nullable_to_non_nullable
+              as Deck,
       pendingId: null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DeckCopyWith<$Res> get deck {
+    return $DeckCopyWith<$Res>(_value.deck, (value) {
+      return _then(_value.copyWith(deck: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$CreateDeckSuccessful implements CreateDeckSuccessful {
-  const _$CreateDeckSuccessful({this.pendingId = _kCreateDeckPendingId});
+  const _$CreateDeckSuccessful(
+      {required this.deck, this.pendingId = _kCreateDeckPendingId});
 
+  @override
+  final Deck deck;
   @override
   @JsonKey()
   final String pendingId;
 
   @override
   String toString() {
-    return 'CreateDeck.successful(pendingId: $pendingId)';
+    return 'CreateDeck.successful(deck: $deck, pendingId: $pendingId)';
   }
 
   @override
@@ -346,12 +364,13 @@ class _$CreateDeckSuccessful implements CreateDeckSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CreateDeckSuccessful &&
+            (identical(other.deck, deck) || other.deck == deck) &&
             (identical(other.pendingId, pendingId) ||
                 other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pendingId);
+  int get hashCode => Object.hash(runtimeType, deck, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -366,12 +385,12 @@ class _$CreateDeckSuccessful implements CreateDeckSuccessful {
     required TResult Function(
             Deck deck, ActionResult onResult, String pendingId)
         start,
-    required TResult Function(String pendingId) successful,
+    required TResult Function(Deck deck, String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
   }) {
-    return successful(pendingId);
+    return successful(deck, pendingId);
   }
 
   @override
@@ -379,24 +398,24 @@ class _$CreateDeckSuccessful implements CreateDeckSuccessful {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
         start,
-    TResult? Function(String pendingId)? successful,
+    TResult? Function(Deck deck, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) {
-    return successful?.call(pendingId);
+    return successful?.call(deck, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
+    TResult Function(Deck deck, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),
   }) {
     if (successful != null) {
-      return successful(pendingId);
+      return successful(deck, pendingId);
     }
     return orElse();
   }
@@ -437,9 +456,11 @@ class _$CreateDeckSuccessful implements CreateDeckSuccessful {
 }
 
 abstract class CreateDeckSuccessful implements CreateDeck, ActionDone {
-  const factory CreateDeckSuccessful({final String pendingId}) =
-      _$CreateDeckSuccessful;
+  const factory CreateDeckSuccessful(
+      {required final Deck deck,
+      final String pendingId}) = _$CreateDeckSuccessful;
 
+  Deck get deck;
   @override
   String get pendingId;
   @override
@@ -535,7 +556,7 @@ class _$CreateDeckError implements CreateDeckError {
     required TResult Function(
             Deck deck, ActionResult onResult, String pendingId)
         start,
-    required TResult Function(String pendingId) successful,
+    required TResult Function(Deck deck, String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
@@ -548,7 +569,7 @@ class _$CreateDeckError implements CreateDeckError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
         start,
-    TResult? Function(String pendingId)? successful,
+    TResult? Function(Deck deck, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) {
@@ -559,7 +580,7 @@ class _$CreateDeckError implements CreateDeckError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
+    TResult Function(Deck deck, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),
