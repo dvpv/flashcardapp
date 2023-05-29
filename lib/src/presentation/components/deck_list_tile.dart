@@ -3,6 +3,8 @@ import 'package:flashcard_app/src/actions/decks/index.dart';
 import 'package:flashcard_app/src/design/app_colors.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/components/app_snack_bar.dart';
+import 'package:flashcard_app/src/presentation/deck/edit_deck_page.dart';
+import 'package:flashcard_app/src/presentation/quiz/quiz_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_svg/svg.dart';
@@ -101,12 +103,14 @@ class _DeckListTileState extends State<DeckListTile> {
                   TextButton(
                     child: const Text('Edit'),
                     onPressed: () {
-                      Navigator.of(context).pushNamed('/edit_deck', arguments: widget.deck);
+                      Navigator.of(context).pushNamed(EditDeckPage.route, arguments: widget.deck);
                     },
                   ),
                   TextButton(
                     child: const Text('Start Quiz'),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(QuizPage.route, arguments: widget.deck);
+                    },
                   ),
                 ],
               ),
