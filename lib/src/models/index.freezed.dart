@@ -776,6 +776,7 @@ mixin _$Deck {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
   List<Flashcard> get cards => throw _privateConstructorUsedError;
   Duration get completionTime => throw _privateConstructorUsedError;
 
@@ -793,6 +794,7 @@ abstract class $DeckCopyWith<$Res> {
       {String id,
       String title,
       DateTime createdAt,
+      DateTime updatedAt,
       List<Flashcard> cards,
       Duration completionTime});
 }
@@ -813,6 +815,7 @@ class _$DeckCopyWithImpl<$Res, $Val extends Deck>
     Object? id = null,
     Object? title = null,
     Object? createdAt = null,
+    Object? updatedAt = null,
     Object? cards = null,
     Object? completionTime = null,
   }) {
@@ -828,6 +831,10 @@ class _$DeckCopyWithImpl<$Res, $Val extends Deck>
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       cards: null == cards
           ? _value.cards
@@ -851,6 +858,7 @@ abstract class _$$_DeckCopyWith<$Res> implements $DeckCopyWith<$Res> {
       {String id,
       String title,
       DateTime createdAt,
+      DateTime updatedAt,
       List<Flashcard> cards,
       Duration completionTime});
 }
@@ -867,6 +875,7 @@ class __$$_DeckCopyWithImpl<$Res> extends _$DeckCopyWithImpl<$Res, _$_Deck>
     Object? id = null,
     Object? title = null,
     Object? createdAt = null,
+    Object? updatedAt = null,
     Object? cards = null,
     Object? completionTime = null,
   }) {
@@ -882,6 +891,10 @@ class __$$_DeckCopyWithImpl<$Res> extends _$DeckCopyWithImpl<$Res, _$_Deck>
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       cards: null == cards
           ? _value._cards
@@ -902,6 +915,7 @@ class _$_Deck implements _Deck {
       {required this.id,
       required this.title,
       required this.createdAt,
+      required this.updatedAt,
       final List<Flashcard> cards = const <Flashcard>[],
       this.completionTime = Duration.zero})
       : _cards = cards;
@@ -914,6 +928,8 @@ class _$_Deck implements _Deck {
   final String title;
   @override
   final DateTime createdAt;
+  @override
+  final DateTime updatedAt;
   final List<Flashcard> _cards;
   @override
   @JsonKey()
@@ -929,7 +945,7 @@ class _$_Deck implements _Deck {
 
   @override
   String toString() {
-    return 'Deck(id: $id, title: $title, createdAt: $createdAt, cards: $cards, completionTime: $completionTime)';
+    return 'Deck(id: $id, title: $title, createdAt: $createdAt, updatedAt: $updatedAt, cards: $cards, completionTime: $completionTime)';
   }
 
   @override
@@ -941,6 +957,8 @@ class _$_Deck implements _Deck {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
             const DeepCollectionEquality().equals(other._cards, _cards) &&
             (identical(other.completionTime, completionTime) ||
                 other.completionTime == completionTime));
@@ -948,7 +966,7 @@ class _$_Deck implements _Deck {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, createdAt,
+  int get hashCode => Object.hash(runtimeType, id, title, createdAt, updatedAt,
       const DeepCollectionEquality().hash(_cards), completionTime);
 
   @JsonKey(ignore: true)
@@ -970,6 +988,7 @@ abstract class _Deck implements Deck {
       {required final String id,
       required final String title,
       required final DateTime createdAt,
+      required final DateTime updatedAt,
       final List<Flashcard> cards,
       final Duration completionTime}) = _$_Deck;
 
@@ -981,6 +1000,8 @@ abstract class _Deck implements Deck {
   String get title;
   @override
   DateTime get createdAt;
+  @override
+  DateTime get updatedAt;
   @override
   List<Flashcard> get cards;
   @override

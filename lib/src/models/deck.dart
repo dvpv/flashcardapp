@@ -18,6 +18,7 @@ class Deck with _$Deck {
     required String id,
     required String title,
     required DateTime createdAt,
+    required DateTime updatedAt,
     @Default(<Flashcard>[]) List<Flashcard> cards,
     @Default(Duration.zero) Duration completionTime,
   }) = _Deck;

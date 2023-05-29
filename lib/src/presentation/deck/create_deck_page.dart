@@ -44,6 +44,7 @@ class _CreateDeckPageState extends State<CreateDeckPage> {
           id: const Uuid().v1(),
           title: _titleController.text,
           createdAt: DateTime.now(),
+          updatedAt: DateTime.now(),
         ),
         onResult: (AppAction action) {
           if (action is CreateDeckSuccessful) {
