@@ -6,31 +6,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:uuid/uuid.dart';
 
-class CreateDeckPage extends StatefulWidget {
-  const CreateDeckPage({super.key});
+// TODO(dvpv): remove some of the code duplication between this and create_deck_page.dart
 
-  static const String route = '/create_deck';
+class EditDeckPage extends StatefulWidget {
+  const EditDeckPage({super.key});
+
+  static const String route = '/edit_deck';
 
   @override
-  State<CreateDeckPage> createState() => _CreateDeckPageState();
+  State<EditDeckPage> createState() => _EditDeckPageState();
 }
 
-class _CreateDeckPageState extends State<CreateDeckPage> {
-  final List<Flashcard> _cards = <Flashcard>[];
+class _EditDeckPageState extends State<EditDeckPage> {
   final TextEditingController _titleController = TextEditingController();
+  late Deck deck;
 
   @override
-  void initState() {
-    _titleController.text = 'New Deck';
-    super.initState();
+  void didChangeDependencies() {
+    deck = ModalRoute.of(context)!.settings.arguments! as Deck;
+    _titleController.text = deck.title;
+    super.didChangeDependencies();
   }
 
   void _newFlashcard() {
     setState(() {
-      _cards.add(
+      deck.cards.add(
         Flashcard(
           id: const Uuid().v1(),
-          front: 'Card ${_cards.length + 1}',
+          front: 'Card ${deck.cards.length + 1}',
           back: '',
         ),
       );
@@ -45,7 +48,6 @@ class _CreateDeckPageState extends State<CreateDeckPage> {
           title: _titleController.text,
           createdAt: DateTime.now(),
           updatedAt: DateTime.now(),
-          cards: _cards,
         ),
         onResult: (AppAction action) {
           if (action is CreateDeckSuccessful) {
@@ -86,7 +88,7 @@ class _CreateDeckPageState extends State<CreateDeckPage> {
           TextButton(
             onPressed: () {
               setState(() {
-                _cards.removeWhere((Flashcard x) => x == card);
+                deck.cards.removeWhere((Flashcard x) => x == card);
               });
               Navigator.of(context).pop();
             },
@@ -139,27 +141,27 @@ class _CreateDeckPageState extends State<CreateDeckPage> {
       body: Center(
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
-          itemCount: _cards.length,
+          itemCount: deck.cards.length,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
               child: Center(
                 child: CardListTile(
-                  key: ValueKey<String>(_cards[index].id),
-                  front: _cards[index].front,
-                  back: _cards[index].back,
+                  key: ValueKey<String>(deck.cards[index].id),
+                  front: deck.cards[index].front,
+                  back: deck.cards[index].back,
                   onBackChanged: (String change) {
                     setState(() {
-                      _cards[index] = _cards[index].copyWith(back: change);
+                      deck.cards[index] = deck.cards[index].copyWith(back: change);
                     });
                   },
                   onFrontChanged: (String change) {
                     setState(() {
-                      _cards[index] = _cards[index].copyWith(front: change);
+                      deck.cards[index] = deck.cards[index].copyWith(front: change);
                     });
                   },
                   onDelete: () {
-                    _deleteFlashcard(context, _cards[index]);
+                    _deleteFlashcard(context, deck.cards[index]);
                   },
                 ),
               ),

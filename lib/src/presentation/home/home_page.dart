@@ -44,7 +44,6 @@ class HomePage extends StatelessWidget {
               body: Center(
                 child: DecksContainer(
                   builder: (BuildContext context, List<Deck> decks) {
-                    print('showing ${decks.length} decks');
                     return ListView.builder(
                       itemCount: decks.length,
                       physics: const BouncingScrollPhysics(),

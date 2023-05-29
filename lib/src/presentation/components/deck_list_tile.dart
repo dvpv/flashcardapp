@@ -59,7 +59,9 @@ class _DeckListTileState extends State<DeckListTile> {
                 children: <Widget>[
                   TextButton(
                     child: const Text('Edit'),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/edit_deck', arguments: widget.deck);
+                    },
                   ),
                   TextButton(
                     child: const Text('Start Quiz'),

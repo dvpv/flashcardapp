@@ -2,12 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flashcard_app/firebase_options.dart';
-import 'package:flashcard_app/src/actions/decks/index.dart';
 import 'package:flashcard_app/src/epics/app_epic.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
 import 'package:flashcard_app/src/presentation/authentication/register_page.dart';
 import 'package:flashcard_app/src/presentation/deck/create_deck_page.dart';
+import 'package:flashcard_app/src/presentation/deck/edit_deck_page.dart';
 import 'package:flashcard_app/src/presentation/home/home_page.dart';
 import 'package:flashcard_app/src/presentation/start_page.dart';
 import 'package:flashcard_app/src/reducers/reducer.dart';
@@ -72,6 +72,7 @@ class App extends StatelessWidget {
             RegisterPage.route: (BuildContext context) => const RegisterPage(),
             HomePage.route: (BuildContext context) => const HomePage(),
             CreateDeckPage.route: (BuildContext context) => const CreateDeckPage(),
+            EditDeckPage.route: (BuildContext context) => const EditDeckPage(),
           },
         ),
       ),
