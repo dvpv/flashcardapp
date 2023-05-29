@@ -33,5 +33,5 @@ AppState _getDecksLocallySuccessful(AppState state, GetDecksLocallySuccessful ac
 }
 
 AppState _getDecksCloudSuccessful(AppState state, GetDecksCloudSuccessful action) {
-  return state.copyWith(decks: <Deck>[...state.decks, ...action.decks]);
+  return state.copyWith(decks: <Deck>{...state.decks, ...action.decks}.toList());
 }

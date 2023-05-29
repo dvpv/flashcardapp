@@ -24,7 +24,6 @@ class FirebaseService {
   Future<AppUser> register({required String email, required String password, required String username}) async {
     await auth.createUserWithEmailAndPassword(email: email, password: password);
     await auth.currentUser!.updateDisplayName(username);
-    // await firestore.doc('vaults/${auth.currentUser!.uid}').set(<String, dynamic>{});
     return AppUser(
       uid: auth.currentUser!.uid,
       username: username,
