@@ -36,12 +36,6 @@ class _DeckListTileState extends State<DeckListTile> {
                 content: Text(action.error.toString()),
               ),
             );
-          } else {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const AppSnackBar(
-                content: Text('Something went wrong'),
-              ),
-            );
           }
         },
       ),

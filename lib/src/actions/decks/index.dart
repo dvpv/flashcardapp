@@ -7,3 +7,5 @@ part 'index.freezed.dart';
 part 'create_deck.dart';
 part 'update_deck.dart';
 part 'delete_deck.dart';
+part 'save_decks_locally.dart';
+part 'get_decks_locally.dart';

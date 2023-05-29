@@ -12,21 +12,28 @@ import 'package:flashcard_app/src/presentation/home/home_page.dart';
 import 'package:flashcard_app/src/presentation/start_page.dart';
 import 'package:flashcard_app/src/reducers/reducer.dart';
 import 'package:flashcard_app/src/services/firebase_service.dart';
+import 'package:flashcard_app/src/services/local_storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   final FirebaseApp app = await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   final FirebaseAuth auth = FirebaseAuth.instanceFor(app: app);
   final FirebaseFirestore firestore = FirebaseFirestore.instanceFor(app: app);
-
   final FirebaseService firebaseService = FirebaseService(auth: auth, firestore: firestore);
+
+  final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  final LocalStorageService localStorageService = LocalStorageService(sharedPreferences: sharedPreferences);
+
   final AppEpic epic = AppEpic(
     firebaseService: firebaseService,
+    localStorageService: localStorageService,
   );
 
   final Store<AppState> store = Store<AppState>(

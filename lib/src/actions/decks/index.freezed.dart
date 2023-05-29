@@ -1891,3 +1891,1219 @@ abstract class DeleteDeckError implements DeleteDeck, ActionDone, ErrorAction {
   _$$DeleteDeckErrorCopyWith<_$DeleteDeckError> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$SaveDecksLocally {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveDecksLocallyStart value) start,
+    required TResult Function(SaveDecksLocallySuccessful value) successful,
+    required TResult Function(SaveDecksLocallyError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveDecksLocallyStart value)? start,
+    TResult? Function(SaveDecksLocallySuccessful value)? successful,
+    TResult? Function(SaveDecksLocallyError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveDecksLocallyStart value)? start,
+    TResult Function(SaveDecksLocallySuccessful value)? successful,
+    TResult Function(SaveDecksLocallyError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SaveDecksLocallyCopyWith<SaveDecksLocally> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SaveDecksLocallyCopyWith<$Res> {
+  factory $SaveDecksLocallyCopyWith(
+          SaveDecksLocally value, $Res Function(SaveDecksLocally) then) =
+      _$SaveDecksLocallyCopyWithImpl<$Res, SaveDecksLocally>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SaveDecksLocallyCopyWithImpl<$Res, $Val extends SaveDecksLocally>
+    implements $SaveDecksLocallyCopyWith<$Res> {
+  _$SaveDecksLocallyCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SaveDecksLocallyStartCopyWith<$Res>
+    implements $SaveDecksLocallyCopyWith<$Res> {
+  factory _$$SaveDecksLocallyStartCopyWith(_$SaveDecksLocallyStart value,
+          $Res Function(_$SaveDecksLocallyStart) then) =
+      __$$SaveDecksLocallyStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Deck> decks, ActionResult onResult, String pendingId});
+}
+
+/// @nodoc
+class __$$SaveDecksLocallyStartCopyWithImpl<$Res>
+    extends _$SaveDecksLocallyCopyWithImpl<$Res, _$SaveDecksLocallyStart>
+    implements _$$SaveDecksLocallyStartCopyWith<$Res> {
+  __$$SaveDecksLocallyStartCopyWithImpl(_$SaveDecksLocallyStart _value,
+      $Res Function(_$SaveDecksLocallyStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? decks = null,
+    Object? onResult = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$SaveDecksLocallyStart(
+      decks: null == decks
+          ? _value._decks
+          : decks // ignore: cast_nullable_to_non_nullable
+              as List<Deck>,
+      onResult: null == onResult
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SaveDecksLocallyStart implements SaveDecksLocallyStart {
+  const _$SaveDecksLocallyStart(
+      {required final List<Deck> decks,
+      required this.onResult,
+      this.pendingId = _kSaveDecksLocallyPendingId})
+      : _decks = decks;
+
+  final List<Deck> _decks;
+  @override
+  List<Deck> get decks {
+    if (_decks is EqualUnmodifiableListView) return _decks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_decks);
+  }
+
+  @override
+  final ActionResult onResult;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SaveDecksLocally.start(decks: $decks, onResult: $onResult, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveDecksLocallyStart &&
+            const DeepCollectionEquality().equals(other._decks, _decks) &&
+            (identical(other.onResult, onResult) ||
+                other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_decks), onResult, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveDecksLocallyStartCopyWith<_$SaveDecksLocallyStart> get copyWith =>
+      __$$SaveDecksLocallyStartCopyWithImpl<_$SaveDecksLocallyStart>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(decks, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(decks, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(decks, onResult, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveDecksLocallyStart value) start,
+    required TResult Function(SaveDecksLocallySuccessful value) successful,
+    required TResult Function(SaveDecksLocallyError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveDecksLocallyStart value)? start,
+    TResult? Function(SaveDecksLocallySuccessful value)? successful,
+    TResult? Function(SaveDecksLocallyError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveDecksLocallyStart value)? start,
+    TResult Function(SaveDecksLocallySuccessful value)? successful,
+    TResult Function(SaveDecksLocallyError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveDecksLocallyStart implements SaveDecksLocally, ActionStart {
+  const factory SaveDecksLocallyStart(
+      {required final List<Deck> decks,
+      required final ActionResult onResult,
+      final String pendingId}) = _$SaveDecksLocallyStart;
+
+  List<Deck> get decks;
+  ActionResult get onResult;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SaveDecksLocallyStartCopyWith<_$SaveDecksLocallyStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveDecksLocallySuccessfulCopyWith<$Res>
+    implements $SaveDecksLocallyCopyWith<$Res> {
+  factory _$$SaveDecksLocallySuccessfulCopyWith(
+          _$SaveDecksLocallySuccessful value,
+          $Res Function(_$SaveDecksLocallySuccessful) then) =
+      __$$SaveDecksLocallySuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$SaveDecksLocallySuccessfulCopyWithImpl<$Res>
+    extends _$SaveDecksLocallyCopyWithImpl<$Res, _$SaveDecksLocallySuccessful>
+    implements _$$SaveDecksLocallySuccessfulCopyWith<$Res> {
+  __$$SaveDecksLocallySuccessfulCopyWithImpl(
+      _$SaveDecksLocallySuccessful _value,
+      $Res Function(_$SaveDecksLocallySuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$SaveDecksLocallySuccessful(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SaveDecksLocallySuccessful implements SaveDecksLocallySuccessful {
+  const _$SaveDecksLocallySuccessful(
+      {this.pendingId = _kSaveDecksLocallyPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SaveDecksLocally.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveDecksLocallySuccessful &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveDecksLocallySuccessfulCopyWith<_$SaveDecksLocallySuccessful>
+      get copyWith => __$$SaveDecksLocallySuccessfulCopyWithImpl<
+          _$SaveDecksLocallySuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveDecksLocallyStart value) start,
+    required TResult Function(SaveDecksLocallySuccessful value) successful,
+    required TResult Function(SaveDecksLocallyError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveDecksLocallyStart value)? start,
+    TResult? Function(SaveDecksLocallySuccessful value)? successful,
+    TResult? Function(SaveDecksLocallyError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveDecksLocallyStart value)? start,
+    TResult Function(SaveDecksLocallySuccessful value)? successful,
+    TResult Function(SaveDecksLocallyError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveDecksLocallySuccessful
+    implements SaveDecksLocally, ActionDone {
+  const factory SaveDecksLocallySuccessful({final String pendingId}) =
+      _$SaveDecksLocallySuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SaveDecksLocallySuccessfulCopyWith<_$SaveDecksLocallySuccessful>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveDecksLocallyErrorCopyWith<$Res>
+    implements $SaveDecksLocallyCopyWith<$Res> {
+  factory _$$SaveDecksLocallyErrorCopyWith(_$SaveDecksLocallyError value,
+          $Res Function(_$SaveDecksLocallyError) then) =
+      __$$SaveDecksLocallyErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$SaveDecksLocallyErrorCopyWithImpl<$Res>
+    extends _$SaveDecksLocallyCopyWithImpl<$Res, _$SaveDecksLocallyError>
+    implements _$$SaveDecksLocallyErrorCopyWith<$Res> {
+  __$$SaveDecksLocallyErrorCopyWithImpl(_$SaveDecksLocallyError _value,
+      $Res Function(_$SaveDecksLocallyError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$SaveDecksLocallyError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SaveDecksLocallyError implements SaveDecksLocallyError {
+  const _$SaveDecksLocallyError(this.error, this.stackTrace,
+      [this.pendingId = _kSaveDecksLocallyPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SaveDecksLocally.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveDecksLocallyError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveDecksLocallyErrorCopyWith<_$SaveDecksLocallyError> get copyWith =>
+      __$$SaveDecksLocallyErrorCopyWithImpl<_$SaveDecksLocallyError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveDecksLocallyStart value) start,
+    required TResult Function(SaveDecksLocallySuccessful value) successful,
+    required TResult Function(SaveDecksLocallyError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveDecksLocallyStart value)? start,
+    TResult? Function(SaveDecksLocallySuccessful value)? successful,
+    TResult? Function(SaveDecksLocallyError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveDecksLocallyStart value)? start,
+    TResult Function(SaveDecksLocallySuccessful value)? successful,
+    TResult Function(SaveDecksLocallyError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveDecksLocallyError
+    implements SaveDecksLocally, ActionDone, ErrorAction {
+  const factory SaveDecksLocallyError(
+      final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$SaveDecksLocallyError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SaveDecksLocallyErrorCopyWith<_$SaveDecksLocallyError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$GetDecksLocally {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(List<Deck> decks, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(List<Deck> decks, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(List<Deck> decks, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDecksLocallyStart value) start,
+    required TResult Function(GetDecksLocallySuccessful value) successful,
+    required TResult Function(GetDecksLocallyError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDecksLocallyStart value)? start,
+    TResult? Function(GetDecksLocallySuccessful value)? successful,
+    TResult? Function(GetDecksLocallyError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDecksLocallyStart value)? start,
+    TResult Function(GetDecksLocallySuccessful value)? successful,
+    TResult Function(GetDecksLocallyError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GetDecksLocallyCopyWith<GetDecksLocally> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetDecksLocallyCopyWith<$Res> {
+  factory $GetDecksLocallyCopyWith(
+          GetDecksLocally value, $Res Function(GetDecksLocally) then) =
+      _$GetDecksLocallyCopyWithImpl<$Res, GetDecksLocally>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$GetDecksLocallyCopyWithImpl<$Res, $Val extends GetDecksLocally>
+    implements $GetDecksLocallyCopyWith<$Res> {
+  _$GetDecksLocallyCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GetDecksLocallyStartCopyWith<$Res>
+    implements $GetDecksLocallyCopyWith<$Res> {
+  factory _$$GetDecksLocallyStartCopyWith(_$GetDecksLocallyStart value,
+          $Res Function(_$GetDecksLocallyStart) then) =
+      __$$GetDecksLocallyStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ActionResult onResult, String pendingId});
+}
+
+/// @nodoc
+class __$$GetDecksLocallyStartCopyWithImpl<$Res>
+    extends _$GetDecksLocallyCopyWithImpl<$Res, _$GetDecksLocallyStart>
+    implements _$$GetDecksLocallyStartCopyWith<$Res> {
+  __$$GetDecksLocallyStartCopyWithImpl(_$GetDecksLocallyStart _value,
+      $Res Function(_$GetDecksLocallyStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? onResult = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetDecksLocallyStart(
+      onResult: null == onResult
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetDecksLocallyStart implements GetDecksLocallyStart {
+  const _$GetDecksLocallyStart(
+      {required this.onResult, this.pendingId = _kGetDecksLocallyPendingId});
+
+  @override
+  final ActionResult onResult;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetDecksLocally.start(onResult: $onResult, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetDecksLocallyStart &&
+            (identical(other.onResult, onResult) ||
+                other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, onResult, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetDecksLocallyStartCopyWith<_$GetDecksLocallyStart> get copyWith =>
+      __$$GetDecksLocallyStartCopyWithImpl<_$GetDecksLocallyStart>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(List<Deck> decks, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(List<Deck> decks, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(List<Deck> decks, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(onResult, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDecksLocallyStart value) start,
+    required TResult Function(GetDecksLocallySuccessful value) successful,
+    required TResult Function(GetDecksLocallyError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDecksLocallyStart value)? start,
+    TResult? Function(GetDecksLocallySuccessful value)? successful,
+    TResult? Function(GetDecksLocallyError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDecksLocallyStart value)? start,
+    TResult Function(GetDecksLocallySuccessful value)? successful,
+    TResult Function(GetDecksLocallyError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDecksLocallyStart implements GetDecksLocally, ActionStart {
+  const factory GetDecksLocallyStart(
+      {required final ActionResult onResult,
+      final String pendingId}) = _$GetDecksLocallyStart;
+
+  ActionResult get onResult;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetDecksLocallyStartCopyWith<_$GetDecksLocallyStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetDecksLocallySuccessfulCopyWith<$Res>
+    implements $GetDecksLocallyCopyWith<$Res> {
+  factory _$$GetDecksLocallySuccessfulCopyWith(
+          _$GetDecksLocallySuccessful value,
+          $Res Function(_$GetDecksLocallySuccessful) then) =
+      __$$GetDecksLocallySuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Deck> decks, String pendingId});
+}
+
+/// @nodoc
+class __$$GetDecksLocallySuccessfulCopyWithImpl<$Res>
+    extends _$GetDecksLocallyCopyWithImpl<$Res, _$GetDecksLocallySuccessful>
+    implements _$$GetDecksLocallySuccessfulCopyWith<$Res> {
+  __$$GetDecksLocallySuccessfulCopyWithImpl(_$GetDecksLocallySuccessful _value,
+      $Res Function(_$GetDecksLocallySuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? decks = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetDecksLocallySuccessful(
+      decks: null == decks
+          ? _value._decks
+          : decks // ignore: cast_nullable_to_non_nullable
+              as List<Deck>,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetDecksLocallySuccessful implements GetDecksLocallySuccessful {
+  const _$GetDecksLocallySuccessful(
+      {required final List<Deck> decks,
+      this.pendingId = _kGetDecksLocallyPendingId})
+      : _decks = decks;
+
+  final List<Deck> _decks;
+  @override
+  List<Deck> get decks {
+    if (_decks is EqualUnmodifiableListView) return _decks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_decks);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetDecksLocally.successful(decks: $decks, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetDecksLocallySuccessful &&
+            const DeepCollectionEquality().equals(other._decks, _decks) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_decks), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetDecksLocallySuccessfulCopyWith<_$GetDecksLocallySuccessful>
+      get copyWith => __$$GetDecksLocallySuccessfulCopyWithImpl<
+          _$GetDecksLocallySuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(List<Deck> decks, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(decks, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(List<Deck> decks, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(decks, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(List<Deck> decks, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(decks, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDecksLocallyStart value) start,
+    required TResult Function(GetDecksLocallySuccessful value) successful,
+    required TResult Function(GetDecksLocallyError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDecksLocallyStart value)? start,
+    TResult? Function(GetDecksLocallySuccessful value)? successful,
+    TResult? Function(GetDecksLocallyError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDecksLocallyStart value)? start,
+    TResult Function(GetDecksLocallySuccessful value)? successful,
+    TResult Function(GetDecksLocallyError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDecksLocallySuccessful
+    implements GetDecksLocally, ActionDone {
+  const factory GetDecksLocallySuccessful(
+      {required final List<Deck> decks,
+      final String pendingId}) = _$GetDecksLocallySuccessful;
+
+  List<Deck> get decks;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetDecksLocallySuccessfulCopyWith<_$GetDecksLocallySuccessful>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetDecksLocallyErrorCopyWith<$Res>
+    implements $GetDecksLocallyCopyWith<$Res> {
+  factory _$$GetDecksLocallyErrorCopyWith(_$GetDecksLocallyError value,
+          $Res Function(_$GetDecksLocallyError) then) =
+      __$$GetDecksLocallyErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$GetDecksLocallyErrorCopyWithImpl<$Res>
+    extends _$GetDecksLocallyCopyWithImpl<$Res, _$GetDecksLocallyError>
+    implements _$$GetDecksLocallyErrorCopyWith<$Res> {
+  __$$GetDecksLocallyErrorCopyWithImpl(_$GetDecksLocallyError _value,
+      $Res Function(_$GetDecksLocallyError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetDecksLocallyError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetDecksLocallyError implements GetDecksLocallyError {
+  const _$GetDecksLocallyError(this.error, this.stackTrace,
+      [this.pendingId = _kGetDecksLocallyPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetDecksLocally.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetDecksLocallyError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetDecksLocallyErrorCopyWith<_$GetDecksLocallyError> get copyWith =>
+      __$$GetDecksLocallyErrorCopyWithImpl<_$GetDecksLocallyError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(List<Deck> decks, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(List<Deck> decks, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(List<Deck> decks, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDecksLocallyStart value) start,
+    required TResult Function(GetDecksLocallySuccessful value) successful,
+    required TResult Function(GetDecksLocallyError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDecksLocallyStart value)? start,
+    TResult? Function(GetDecksLocallySuccessful value)? successful,
+    TResult? Function(GetDecksLocallyError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDecksLocallyStart value)? start,
+    TResult Function(GetDecksLocallySuccessful value)? successful,
+    TResult Function(GetDecksLocallyError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDecksLocallyError
+    implements GetDecksLocally, ActionDone, ErrorAction {
+  const factory GetDecksLocallyError(
+      final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$GetDecksLocallyError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetDecksLocallyErrorCopyWith<_$GetDecksLocallyError> get copyWith =>
+      throw _privateConstructorUsedError;
+}

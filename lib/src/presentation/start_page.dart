@@ -1,8 +1,10 @@
 import 'package:flashcard_app/src/actions/app_action.dart';
 import 'package:flashcard_app/src/actions/authentication/index.dart';
+import 'package:flashcard_app/src/actions/decks/index.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
 import 'package:flashcard_app/src/presentation/home/home_page.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
@@ -24,7 +26,18 @@ class _StartPageState extends State<StartPage> {
           if (action is GetCurrentUserSuccessful) {
             if (action.user != null) {
               // User logged in
-              Navigator.of(context).popAndPushNamed(HomePage.route);
+              StoreProvider.of<AppState>(context).dispatch(
+                GetDecksLocallyStart(
+                  onResult: (AppAction action) {
+                    if (kDebugMode) {
+                      if (action is GetCurrentUserError) {
+                        print(action.stackTrace);
+                      }
+                    }
+                    Navigator.of(context).popAndPushNamed(HomePage.route);
+                  },
+                ),
+              );
             } else {
               // User not logged in
               Navigator.of(context).popAndPushNamed(LoginPage.route);

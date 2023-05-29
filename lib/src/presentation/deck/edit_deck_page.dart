@@ -61,12 +61,6 @@ class _EditDeckPageState extends State<EditDeckPage> {
                   content: Text(action.error.toString()),
                 ),
               );
-            } else {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const AppSnackBar(
-                  content: Text('An error occurred.'),
-                ),
-              );
             }
           }
         },
