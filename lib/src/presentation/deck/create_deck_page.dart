@@ -1,6 +1,9 @@
+import 'package:flashcard_app/src/actions/app_action.dart';
+import 'package:flashcard_app/src/actions/decks/index.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/components/card_list_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:uuid/uuid.dart';
 
 class CreateDeckPage extends StatefulWidget {
@@ -14,6 +17,13 @@ class CreateDeckPage extends StatefulWidget {
 
 class _CreateDeckPageState extends State<CreateDeckPage> {
   final List<Flashcard> _cards = <Flashcard>[];
+  final TextEditingController _titleController = TextEditingController();
+
+  @override
+  void initState() {
+    _titleController.text = 'New Deck';
+    super.initState();
+  }
 
   void _newFlashcard() {
     setState(() {
@@ -25,6 +35,37 @@ class _CreateDeckPageState extends State<CreateDeckPage> {
         ),
       );
     });
+  }
+
+  void _onNewDeck(BuildContext context) {
+    StoreProvider.of<AppState>(context).dispatch(
+      CreateDeckStart(
+        deck: Deck(
+          id: const Uuid().v1(),
+          title: _titleController.text,
+          createdAt: DateTime.now(),
+        ),
+        onResult: (AppAction action) {
+          if (action is CreateDeckSuccessful) {
+            Navigator.of(context).pop();
+          } else {
+            if (action is ErrorAction) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(action.error.toString()),
+                ),
+              );
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('An error occurred.'),
+                ),
+              );
+            }
+          }
+        },
+      ),
+    );
   }
 
   Future<void> _deleteFlashcard(BuildContext context, Flashcard card) async {
@@ -58,9 +99,14 @@ class _CreateDeckPageState extends State<CreateDeckPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'New Deck',
-          style: TextStyle(color: Theme.of(context).colorScheme.primary),
+        title: TextField(
+          style: TextStyle(color: Theme.of(context).colorScheme.primary, fontSize: 24),
+          controller: _titleController,
+          textAlign: TextAlign.center,
+          decoration: const InputDecoration(
+            border: InputBorder.none,
+            hintText: 'Title',
+          ),
         ),
         centerTitle: true,
         leading: IconButton(
@@ -72,6 +118,15 @@ class _CreateDeckPageState extends State<CreateDeckPage> {
             Navigator.of(context).pop();
           },
         ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () => _onNewDeck(context),
+            icon: const Icon(
+              Icons.save,
+              color: Colors.black,
+            ),
+          )
+        ],
         backgroundColor: const Color(0x00000000),
         elevation: 0,
       ),
