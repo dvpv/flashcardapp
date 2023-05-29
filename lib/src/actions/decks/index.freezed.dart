@@ -3107,3 +3107,1215 @@ abstract class GetDecksLocallyError
   _$$GetDecksLocallyErrorCopyWith<_$GetDecksLocallyError> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$SaveDecksCloud {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveDecksCloudStart value) start,
+    required TResult Function(SaveDecksCloudSuccessful value) successful,
+    required TResult Function(SaveDecksCloudError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveDecksCloudStart value)? start,
+    TResult? Function(SaveDecksCloudSuccessful value)? successful,
+    TResult? Function(SaveDecksCloudError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveDecksCloudStart value)? start,
+    TResult Function(SaveDecksCloudSuccessful value)? successful,
+    TResult Function(SaveDecksCloudError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SaveDecksCloudCopyWith<SaveDecksCloud> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SaveDecksCloudCopyWith<$Res> {
+  factory $SaveDecksCloudCopyWith(
+          SaveDecksCloud value, $Res Function(SaveDecksCloud) then) =
+      _$SaveDecksCloudCopyWithImpl<$Res, SaveDecksCloud>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SaveDecksCloudCopyWithImpl<$Res, $Val extends SaveDecksCloud>
+    implements $SaveDecksCloudCopyWith<$Res> {
+  _$SaveDecksCloudCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SaveDecksCloudStartCopyWith<$Res>
+    implements $SaveDecksCloudCopyWith<$Res> {
+  factory _$$SaveDecksCloudStartCopyWith(_$SaveDecksCloudStart value,
+          $Res Function(_$SaveDecksCloudStart) then) =
+      __$$SaveDecksCloudStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Deck> decks, ActionResult onResult, String pendingId});
+}
+
+/// @nodoc
+class __$$SaveDecksCloudStartCopyWithImpl<$Res>
+    extends _$SaveDecksCloudCopyWithImpl<$Res, _$SaveDecksCloudStart>
+    implements _$$SaveDecksCloudStartCopyWith<$Res> {
+  __$$SaveDecksCloudStartCopyWithImpl(
+      _$SaveDecksCloudStart _value, $Res Function(_$SaveDecksCloudStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? decks = null,
+    Object? onResult = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$SaveDecksCloudStart(
+      decks: null == decks
+          ? _value._decks
+          : decks // ignore: cast_nullable_to_non_nullable
+              as List<Deck>,
+      onResult: null == onResult
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SaveDecksCloudStart implements SaveDecksCloudStart {
+  const _$SaveDecksCloudStart(
+      {required final List<Deck> decks,
+      required this.onResult,
+      this.pendingId = _kSaveDecksCloudPendingId})
+      : _decks = decks;
+
+  final List<Deck> _decks;
+  @override
+  List<Deck> get decks {
+    if (_decks is EqualUnmodifiableListView) return _decks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_decks);
+  }
+
+  @override
+  final ActionResult onResult;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SaveDecksCloud.start(decks: $decks, onResult: $onResult, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveDecksCloudStart &&
+            const DeepCollectionEquality().equals(other._decks, _decks) &&
+            (identical(other.onResult, onResult) ||
+                other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_decks), onResult, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveDecksCloudStartCopyWith<_$SaveDecksCloudStart> get copyWith =>
+      __$$SaveDecksCloudStartCopyWithImpl<_$SaveDecksCloudStart>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(decks, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(decks, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(decks, onResult, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveDecksCloudStart value) start,
+    required TResult Function(SaveDecksCloudSuccessful value) successful,
+    required TResult Function(SaveDecksCloudError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveDecksCloudStart value)? start,
+    TResult? Function(SaveDecksCloudSuccessful value)? successful,
+    TResult? Function(SaveDecksCloudError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveDecksCloudStart value)? start,
+    TResult Function(SaveDecksCloudSuccessful value)? successful,
+    TResult Function(SaveDecksCloudError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveDecksCloudStart implements SaveDecksCloud, ActionStart {
+  const factory SaveDecksCloudStart(
+      {required final List<Deck> decks,
+      required final ActionResult onResult,
+      final String pendingId}) = _$SaveDecksCloudStart;
+
+  List<Deck> get decks;
+  ActionResult get onResult;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SaveDecksCloudStartCopyWith<_$SaveDecksCloudStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveDecksCloudSuccessfulCopyWith<$Res>
+    implements $SaveDecksCloudCopyWith<$Res> {
+  factory _$$SaveDecksCloudSuccessfulCopyWith(_$SaveDecksCloudSuccessful value,
+          $Res Function(_$SaveDecksCloudSuccessful) then) =
+      __$$SaveDecksCloudSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$SaveDecksCloudSuccessfulCopyWithImpl<$Res>
+    extends _$SaveDecksCloudCopyWithImpl<$Res, _$SaveDecksCloudSuccessful>
+    implements _$$SaveDecksCloudSuccessfulCopyWith<$Res> {
+  __$$SaveDecksCloudSuccessfulCopyWithImpl(_$SaveDecksCloudSuccessful _value,
+      $Res Function(_$SaveDecksCloudSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$SaveDecksCloudSuccessful(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SaveDecksCloudSuccessful implements SaveDecksCloudSuccessful {
+  const _$SaveDecksCloudSuccessful(
+      {this.pendingId = _kSaveDecksCloudPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SaveDecksCloud.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveDecksCloudSuccessful &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveDecksCloudSuccessfulCopyWith<_$SaveDecksCloudSuccessful>
+      get copyWith =>
+          __$$SaveDecksCloudSuccessfulCopyWithImpl<_$SaveDecksCloudSuccessful>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveDecksCloudStart value) start,
+    required TResult Function(SaveDecksCloudSuccessful value) successful,
+    required TResult Function(SaveDecksCloudError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveDecksCloudStart value)? start,
+    TResult? Function(SaveDecksCloudSuccessful value)? successful,
+    TResult? Function(SaveDecksCloudError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveDecksCloudStart value)? start,
+    TResult Function(SaveDecksCloudSuccessful value)? successful,
+    TResult Function(SaveDecksCloudError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveDecksCloudSuccessful implements SaveDecksCloud, ActionDone {
+  const factory SaveDecksCloudSuccessful({final String pendingId}) =
+      _$SaveDecksCloudSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SaveDecksCloudSuccessfulCopyWith<_$SaveDecksCloudSuccessful>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveDecksCloudErrorCopyWith<$Res>
+    implements $SaveDecksCloudCopyWith<$Res> {
+  factory _$$SaveDecksCloudErrorCopyWith(_$SaveDecksCloudError value,
+          $Res Function(_$SaveDecksCloudError) then) =
+      __$$SaveDecksCloudErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$SaveDecksCloudErrorCopyWithImpl<$Res>
+    extends _$SaveDecksCloudCopyWithImpl<$Res, _$SaveDecksCloudError>
+    implements _$$SaveDecksCloudErrorCopyWith<$Res> {
+  __$$SaveDecksCloudErrorCopyWithImpl(
+      _$SaveDecksCloudError _value, $Res Function(_$SaveDecksCloudError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$SaveDecksCloudError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SaveDecksCloudError implements SaveDecksCloudError {
+  const _$SaveDecksCloudError(this.error, this.stackTrace,
+      [this.pendingId = _kSaveDecksCloudPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SaveDecksCloud.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveDecksCloudError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveDecksCloudErrorCopyWith<_$SaveDecksCloudError> get copyWith =>
+      __$$SaveDecksCloudErrorCopyWithImpl<_$SaveDecksCloudError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SaveDecksCloudStart value) start,
+    required TResult Function(SaveDecksCloudSuccessful value) successful,
+    required TResult Function(SaveDecksCloudError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SaveDecksCloudStart value)? start,
+    TResult? Function(SaveDecksCloudSuccessful value)? successful,
+    TResult? Function(SaveDecksCloudError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SaveDecksCloudStart value)? start,
+    TResult Function(SaveDecksCloudSuccessful value)? successful,
+    TResult Function(SaveDecksCloudError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveDecksCloudError
+    implements SaveDecksCloud, ActionDone, ErrorAction {
+  const factory SaveDecksCloudError(
+      final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$SaveDecksCloudError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SaveDecksCloudErrorCopyWith<_$SaveDecksCloudError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$GetDecksCloud {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(List<Deck> decks, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(List<Deck> decks, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(List<Deck> decks, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDecksCloudStart value) start,
+    required TResult Function(GetDecksCloudSuccessful value) successful,
+    required TResult Function(GetDecksCloudError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDecksCloudStart value)? start,
+    TResult? Function(GetDecksCloudSuccessful value)? successful,
+    TResult? Function(GetDecksCloudError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDecksCloudStart value)? start,
+    TResult Function(GetDecksCloudSuccessful value)? successful,
+    TResult Function(GetDecksCloudError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GetDecksCloudCopyWith<GetDecksCloud> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetDecksCloudCopyWith<$Res> {
+  factory $GetDecksCloudCopyWith(
+          GetDecksCloud value, $Res Function(GetDecksCloud) then) =
+      _$GetDecksCloudCopyWithImpl<$Res, GetDecksCloud>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$GetDecksCloudCopyWithImpl<$Res, $Val extends GetDecksCloud>
+    implements $GetDecksCloudCopyWith<$Res> {
+  _$GetDecksCloudCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GetDecksCloudStartCopyWith<$Res>
+    implements $GetDecksCloudCopyWith<$Res> {
+  factory _$$GetDecksCloudStartCopyWith(_$GetDecksCloudStart value,
+          $Res Function(_$GetDecksCloudStart) then) =
+      __$$GetDecksCloudStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ActionResult onResult, String pendingId});
+}
+
+/// @nodoc
+class __$$GetDecksCloudStartCopyWithImpl<$Res>
+    extends _$GetDecksCloudCopyWithImpl<$Res, _$GetDecksCloudStart>
+    implements _$$GetDecksCloudStartCopyWith<$Res> {
+  __$$GetDecksCloudStartCopyWithImpl(
+      _$GetDecksCloudStart _value, $Res Function(_$GetDecksCloudStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? onResult = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetDecksCloudStart(
+      onResult: null == onResult
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetDecksCloudStart implements GetDecksCloudStart {
+  const _$GetDecksCloudStart(
+      {required this.onResult, this.pendingId = _kGetDecksCloudPendingId});
+
+  @override
+  final ActionResult onResult;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetDecksCloud.start(onResult: $onResult, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetDecksCloudStart &&
+            (identical(other.onResult, onResult) ||
+                other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, onResult, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetDecksCloudStartCopyWith<_$GetDecksCloudStart> get copyWith =>
+      __$$GetDecksCloudStartCopyWithImpl<_$GetDecksCloudStart>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(List<Deck> decks, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(List<Deck> decks, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(List<Deck> decks, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(onResult, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDecksCloudStart value) start,
+    required TResult Function(GetDecksCloudSuccessful value) successful,
+    required TResult Function(GetDecksCloudError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDecksCloudStart value)? start,
+    TResult? Function(GetDecksCloudSuccessful value)? successful,
+    TResult? Function(GetDecksCloudError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDecksCloudStart value)? start,
+    TResult Function(GetDecksCloudSuccessful value)? successful,
+    TResult Function(GetDecksCloudError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDecksCloudStart implements GetDecksCloud, ActionStart {
+  const factory GetDecksCloudStart(
+      {required final ActionResult onResult,
+      final String pendingId}) = _$GetDecksCloudStart;
+
+  ActionResult get onResult;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetDecksCloudStartCopyWith<_$GetDecksCloudStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetDecksCloudSuccessfulCopyWith<$Res>
+    implements $GetDecksCloudCopyWith<$Res> {
+  factory _$$GetDecksCloudSuccessfulCopyWith(_$GetDecksCloudSuccessful value,
+          $Res Function(_$GetDecksCloudSuccessful) then) =
+      __$$GetDecksCloudSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Deck> decks, String pendingId});
+}
+
+/// @nodoc
+class __$$GetDecksCloudSuccessfulCopyWithImpl<$Res>
+    extends _$GetDecksCloudCopyWithImpl<$Res, _$GetDecksCloudSuccessful>
+    implements _$$GetDecksCloudSuccessfulCopyWith<$Res> {
+  __$$GetDecksCloudSuccessfulCopyWithImpl(_$GetDecksCloudSuccessful _value,
+      $Res Function(_$GetDecksCloudSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? decks = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetDecksCloudSuccessful(
+      decks: null == decks
+          ? _value._decks
+          : decks // ignore: cast_nullable_to_non_nullable
+              as List<Deck>,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetDecksCloudSuccessful implements GetDecksCloudSuccessful {
+  const _$GetDecksCloudSuccessful(
+      {required final List<Deck> decks,
+      this.pendingId = _kGetDecksCloudPendingId})
+      : _decks = decks;
+
+  final List<Deck> _decks;
+  @override
+  List<Deck> get decks {
+    if (_decks is EqualUnmodifiableListView) return _decks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_decks);
+  }
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetDecksCloud.successful(decks: $decks, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetDecksCloudSuccessful &&
+            const DeepCollectionEquality().equals(other._decks, _decks) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_decks), pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetDecksCloudSuccessfulCopyWith<_$GetDecksCloudSuccessful> get copyWith =>
+      __$$GetDecksCloudSuccessfulCopyWithImpl<_$GetDecksCloudSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(List<Deck> decks, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(decks, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(List<Deck> decks, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(decks, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(List<Deck> decks, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(decks, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDecksCloudStart value) start,
+    required TResult Function(GetDecksCloudSuccessful value) successful,
+    required TResult Function(GetDecksCloudError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDecksCloudStart value)? start,
+    TResult? Function(GetDecksCloudSuccessful value)? successful,
+    TResult? Function(GetDecksCloudError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDecksCloudStart value)? start,
+    TResult Function(GetDecksCloudSuccessful value)? successful,
+    TResult Function(GetDecksCloudError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDecksCloudSuccessful implements GetDecksCloud, ActionDone {
+  const factory GetDecksCloudSuccessful(
+      {required final List<Deck> decks,
+      final String pendingId}) = _$GetDecksCloudSuccessful;
+
+  List<Deck> get decks;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetDecksCloudSuccessfulCopyWith<_$GetDecksCloudSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetDecksCloudErrorCopyWith<$Res>
+    implements $GetDecksCloudCopyWith<$Res> {
+  factory _$$GetDecksCloudErrorCopyWith(_$GetDecksCloudError value,
+          $Res Function(_$GetDecksCloudError) then) =
+      __$$GetDecksCloudErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$GetDecksCloudErrorCopyWithImpl<$Res>
+    extends _$GetDecksCloudCopyWithImpl<$Res, _$GetDecksCloudError>
+    implements _$$GetDecksCloudErrorCopyWith<$Res> {
+  __$$GetDecksCloudErrorCopyWithImpl(
+      _$GetDecksCloudError _value, $Res Function(_$GetDecksCloudError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetDecksCloudError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetDecksCloudError implements GetDecksCloudError {
+  const _$GetDecksCloudError(this.error, this.stackTrace,
+      [this.pendingId = _kGetDecksCloudPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetDecksCloud.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetDecksCloudError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetDecksCloudErrorCopyWith<_$GetDecksCloudError> get copyWith =>
+      __$$GetDecksCloudErrorCopyWithImpl<_$GetDecksCloudError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(List<Deck> decks, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(List<Deck> decks, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(List<Deck> decks, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDecksCloudStart value) start,
+    required TResult Function(GetDecksCloudSuccessful value) successful,
+    required TResult Function(GetDecksCloudError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDecksCloudStart value)? start,
+    TResult? Function(GetDecksCloudSuccessful value)? successful,
+    TResult? Function(GetDecksCloudError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDecksCloudStart value)? start,
+    TResult Function(GetDecksCloudSuccessful value)? successful,
+    TResult Function(GetDecksCloudError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDecksCloudError
+    implements GetDecksCloud, ActionDone, ErrorAction {
+  const factory GetDecksCloudError(
+      final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$GetDecksCloudError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetDecksCloudErrorCopyWith<_$GetDecksCloudError> get copyWith =>
+      throw _privateConstructorUsedError;
+}

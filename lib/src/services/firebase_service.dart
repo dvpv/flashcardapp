@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flashcard_app/src/models/index.dart';
+
+const String _kUserDataKey = 'userData';
 
 class FirebaseService {
   FirebaseService({required this.auth, required this.firestore});
@@ -39,5 +43,20 @@ class FirebaseService {
 
   Future<void> logout() async {
     await auth.signOut();
+  }
+
+  Future<void> saveDecks({required AppUser user, required List<Deck> decks}) async {
+    await firestore.doc('$_kUserDataKey/${user.uid}').set(<String, dynamic>{'decks': jsonEncode(decks)});
+  }
+
+  Future<List<Deck>> getDecks({required AppUser user}) async {
+    final DocumentSnapshot<Map<String, dynamic>> snapshot = await firestore.doc('$_kUserDataKey/${user.uid}').get();
+    if (!snapshot.exists || snapshot.data()!.isEmpty || snapshot.data()!['decks'] == null) {
+      await firestore.doc('$_kUserDataKey/${user.uid}').set(<String, dynamic>{});
+      return <Deck>[];
+    }
+    final String decksEncoded = snapshot.data()!['decks'] as String;
+    final List<dynamic> decksJson = jsonDecode(decksEncoded) as List<dynamic>;
+    return decksJson.map((dynamic json) => Deck.fromJson(json as Map<String, dynamic>)).toList();
   }
 }

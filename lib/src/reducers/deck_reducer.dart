@@ -7,6 +7,7 @@ Reducer<AppState> deckReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, UpdateDeckSuccessful>(_updateDeckSuccessful).call,
   TypedReducer<AppState, DeleteDeckSuccessful>(_deleteDeckSuccessful).call,
   TypedReducer<AppState, GetDecksLocallySuccessful>(_getDecksLocallySuccessful).call,
+  TypedReducer<AppState, GetDecksCloudSuccessful>(_getDecksCloudSuccessful).call,
 ]);
 
 AppState _createDeckSuccessful(AppState state, CreateDeckSuccessful action) {
@@ -29,4 +30,8 @@ AppState _deleteDeckSuccessful(AppState state, DeleteDeckSuccessful action) {
 
 AppState _getDecksLocallySuccessful(AppState state, GetDecksLocallySuccessful action) {
   return state.copyWith(decks: action.decks);
+}
+
+AppState _getDecksCloudSuccessful(AppState state, GetDecksCloudSuccessful action) {
+  return state.copyWith(decks: <Deck>[...state.decks, ...action.decks]);
 }

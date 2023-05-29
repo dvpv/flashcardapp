@@ -60,9 +60,7 @@ class FirebaseEpic {
   Stream<AppAction> _getCurrentUserStart(Stream<GetCurrentUserStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((GetCurrentUserStart action) {
       return Stream<void>.value(null)
-          .asyncMap(
-            (_) => _firebaseService.getCurrentUser(),
-          )
+          .asyncMap((_) => _firebaseService.getCurrentUser())
           .map<GetCurrentUser>((AppUser? user) => GetCurrentUserSuccessful(user: user, pendingId: action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => GetCurrentUserError(error, stackTrace, action.pendingId),
