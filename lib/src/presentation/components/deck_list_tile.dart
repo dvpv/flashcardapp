@@ -1,6 +1,10 @@
+import 'package:flashcard_app/src/actions/app_action.dart';
+import 'package:flashcard_app/src/actions/decks/index.dart';
 import 'package:flashcard_app/src/design/app_colors.dart';
 import 'package:flashcard_app/src/models/index.dart';
+import 'package:flashcard_app/src/presentation/components/app_snack_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DeckListTile extends StatefulWidget {
@@ -14,6 +18,36 @@ class DeckListTile extends StatefulWidget {
 
 class _DeckListTileState extends State<DeckListTile> {
   bool _isExpanded = false;
+
+  void _onDelete() {
+    StoreProvider.of<AppState>(context).dispatch(
+      DeleteDeckStart(
+        deck: widget.deck,
+        onResult: (AppAction action) {
+          if (action is DeleteDeckSuccessful) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const AppSnackBar(
+                content: Text('Deck deleted successfully'),
+              ),
+            );
+          } else if (action is ErrorAction) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              AppSnackBar(
+                content: Text(action.error.toString()),
+              ),
+            );
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const AppSnackBar(
+                content: Text('Something went wrong'),
+              ),
+            );
+          }
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -57,6 +91,10 @@ class _DeckListTileState extends State<DeckListTile> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
+                  TextButton(
+                    onPressed: _onDelete,
+                    child: const Text('Delete'),
+                  ),
                   TextButton(
                     child: const Text('Edit'),
                     onPressed: () {

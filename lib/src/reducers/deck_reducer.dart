@@ -5,6 +5,7 @@ import 'package:redux/redux.dart';
 Reducer<AppState> deckReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, CreateDeckSuccessful>(_createDeckSuccessful).call,
   TypedReducer<AppState, UpdateDeckSuccessful>(_updateDeckSuccessful).call,
+  TypedReducer<AppState, DeleteDeckSuccessful>(_deleteDeckSuccessful).call,
 ]);
 
 AppState _createDeckSuccessful(AppState state, CreateDeckSuccessful action) {
@@ -12,10 +13,15 @@ AppState _createDeckSuccessful(AppState state, CreateDeckSuccessful action) {
 }
 
 AppState _updateDeckSuccessful(AppState state, UpdateDeckSuccessful action) {
-  print(action.deck);
   return state.copyWith(
     decks: state.decks.toList()
       ..removeWhere((Deck deck) => deck.id == action.deck.id)
       ..add(action.deck),
+  );
+}
+
+AppState _deleteDeckSuccessful(AppState state, DeleteDeckSuccessful action) {
+  return state.copyWith(
+    decks: state.decks.toList()..removeWhere((Deck deck) => deck.id == action.deck.id),
   );
 }

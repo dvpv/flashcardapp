@@ -9,6 +9,7 @@ import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/authentication/register_page.dart';
 import 'package:flashcard_app/src/presentation/components/app_form_button.dart';
 import 'package:flashcard_app/src/presentation/components/app_list_view.dart';
+import 'package:flashcard_app/src/presentation/components/app_snack_bar.dart';
 import 'package:flashcard_app/src/presentation/components/signup_with_google_button.dart';
 import 'package:flashcard_app/src/presentation/components/text_divider.dart';
 import 'package:flashcard_app/src/presentation/components/title_text.dart';
@@ -44,13 +45,13 @@ class _LoginPageState extends State<LoginPage> {
           if (action is ErrorAction) {
             final Object error = action.error;
             if (error is FirebaseAuthException) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(error.message ?? '')));
+              ScaffoldMessenger.of(context).showSnackBar(AppSnackBar(content: Text(error.message ?? '')));
             } else {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$error')));
+              ScaffoldMessenger.of(context).showSnackBar(AppSnackBar(content: Text('$error')));
             }
           } else if (action is LoginSuccessful) {
             Navigator.of(context).popAndPushNamed(HomePage.route);
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Successfully logged in')));
+            ScaffoldMessenger.of(context).showSnackBar(const AppSnackBar(content: Text('Successfully logged in')));
           }
         },
       ),

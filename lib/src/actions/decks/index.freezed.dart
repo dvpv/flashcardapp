@@ -1265,3 +1265,629 @@ abstract class UpdateDeckError implements UpdateDeck, ActionDone, ErrorAction {
   _$$UpdateDeckErrorCopyWith<_$UpdateDeckError> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$DeleteDeck {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            Deck deck, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(Deck deck, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(Deck deck, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
+    TResult Function(Deck deck, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeleteDeckStart value) start,
+    required TResult Function(DeleteDeckSuccessful value) successful,
+    required TResult Function(DeleteDeckError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeleteDeckStart value)? start,
+    TResult? Function(DeleteDeckSuccessful value)? successful,
+    TResult? Function(DeleteDeckError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeleteDeckStart value)? start,
+    TResult Function(DeleteDeckSuccessful value)? successful,
+    TResult Function(DeleteDeckError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DeleteDeckCopyWith<DeleteDeck> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeleteDeckCopyWith<$Res> {
+  factory $DeleteDeckCopyWith(
+          DeleteDeck value, $Res Function(DeleteDeck) then) =
+      _$DeleteDeckCopyWithImpl<$Res, DeleteDeck>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$DeleteDeckCopyWithImpl<$Res, $Val extends DeleteDeck>
+    implements $DeleteDeckCopyWith<$Res> {
+  _$DeleteDeckCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DeleteDeckStartCopyWith<$Res>
+    implements $DeleteDeckCopyWith<$Res> {
+  factory _$$DeleteDeckStartCopyWith(
+          _$DeleteDeckStart value, $Res Function(_$DeleteDeckStart) then) =
+      __$$DeleteDeckStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Deck deck, ActionResult onResult, String pendingId});
+
+  $DeckCopyWith<$Res> get deck;
+}
+
+/// @nodoc
+class __$$DeleteDeckStartCopyWithImpl<$Res>
+    extends _$DeleteDeckCopyWithImpl<$Res, _$DeleteDeckStart>
+    implements _$$DeleteDeckStartCopyWith<$Res> {
+  __$$DeleteDeckStartCopyWithImpl(
+      _$DeleteDeckStart _value, $Res Function(_$DeleteDeckStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? deck = null,
+    Object? onResult = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$DeleteDeckStart(
+      deck: null == deck
+          ? _value.deck
+          : deck // ignore: cast_nullable_to_non_nullable
+              as Deck,
+      onResult: null == onResult
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DeckCopyWith<$Res> get deck {
+    return $DeckCopyWith<$Res>(_value.deck, (value) {
+      return _then(_value.copyWith(deck: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$DeleteDeckStart implements DeleteDeckStart {
+  const _$DeleteDeckStart(
+      {required this.deck,
+      required this.onResult,
+      this.pendingId = _kDeleteDeckPendingId});
+
+  @override
+  final Deck deck;
+  @override
+  final ActionResult onResult;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'DeleteDeck.start(deck: $deck, onResult: $onResult, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteDeckStart &&
+            (identical(other.deck, deck) || other.deck == deck) &&
+            (identical(other.onResult, onResult) ||
+                other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, deck, onResult, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteDeckStartCopyWith<_$DeleteDeckStart> get copyWith =>
+      __$$DeleteDeckStartCopyWithImpl<_$DeleteDeckStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            Deck deck, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(Deck deck, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(deck, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(Deck deck, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(deck, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
+    TResult Function(Deck deck, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(deck, onResult, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeleteDeckStart value) start,
+    required TResult Function(DeleteDeckSuccessful value) successful,
+    required TResult Function(DeleteDeckError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeleteDeckStart value)? start,
+    TResult? Function(DeleteDeckSuccessful value)? successful,
+    TResult? Function(DeleteDeckError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeleteDeckStart value)? start,
+    TResult Function(DeleteDeckSuccessful value)? successful,
+    TResult Function(DeleteDeckError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteDeckStart implements DeleteDeck, ActionStart {
+  const factory DeleteDeckStart(
+      {required final Deck deck,
+      required final ActionResult onResult,
+      final String pendingId}) = _$DeleteDeckStart;
+
+  Deck get deck;
+  ActionResult get onResult;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$DeleteDeckStartCopyWith<_$DeleteDeckStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteDeckSuccessfulCopyWith<$Res>
+    implements $DeleteDeckCopyWith<$Res> {
+  factory _$$DeleteDeckSuccessfulCopyWith(_$DeleteDeckSuccessful value,
+          $Res Function(_$DeleteDeckSuccessful) then) =
+      __$$DeleteDeckSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Deck deck, String pendingId});
+
+  $DeckCopyWith<$Res> get deck;
+}
+
+/// @nodoc
+class __$$DeleteDeckSuccessfulCopyWithImpl<$Res>
+    extends _$DeleteDeckCopyWithImpl<$Res, _$DeleteDeckSuccessful>
+    implements _$$DeleteDeckSuccessfulCopyWith<$Res> {
+  __$$DeleteDeckSuccessfulCopyWithImpl(_$DeleteDeckSuccessful _value,
+      $Res Function(_$DeleteDeckSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? deck = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$DeleteDeckSuccessful(
+      deck: null == deck
+          ? _value.deck
+          : deck // ignore: cast_nullable_to_non_nullable
+              as Deck,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DeckCopyWith<$Res> get deck {
+    return $DeckCopyWith<$Res>(_value.deck, (value) {
+      return _then(_value.copyWith(deck: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$DeleteDeckSuccessful implements DeleteDeckSuccessful {
+  const _$DeleteDeckSuccessful(
+      {required this.deck, this.pendingId = _kDeleteDeckPendingId});
+
+  @override
+  final Deck deck;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'DeleteDeck.successful(deck: $deck, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteDeckSuccessful &&
+            (identical(other.deck, deck) || other.deck == deck) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, deck, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteDeckSuccessfulCopyWith<_$DeleteDeckSuccessful> get copyWith =>
+      __$$DeleteDeckSuccessfulCopyWithImpl<_$DeleteDeckSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            Deck deck, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(Deck deck, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(deck, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(Deck deck, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(deck, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
+    TResult Function(Deck deck, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(deck, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeleteDeckStart value) start,
+    required TResult Function(DeleteDeckSuccessful value) successful,
+    required TResult Function(DeleteDeckError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeleteDeckStart value)? start,
+    TResult? Function(DeleteDeckSuccessful value)? successful,
+    TResult? Function(DeleteDeckError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeleteDeckStart value)? start,
+    TResult Function(DeleteDeckSuccessful value)? successful,
+    TResult Function(DeleteDeckError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteDeckSuccessful implements DeleteDeck, ActionDone {
+  const factory DeleteDeckSuccessful(
+      {required final Deck deck,
+      final String pendingId}) = _$DeleteDeckSuccessful;
+
+  Deck get deck;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$DeleteDeckSuccessfulCopyWith<_$DeleteDeckSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteDeckErrorCopyWith<$Res>
+    implements $DeleteDeckCopyWith<$Res> {
+  factory _$$DeleteDeckErrorCopyWith(
+          _$DeleteDeckError value, $Res Function(_$DeleteDeckError) then) =
+      __$$DeleteDeckErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$DeleteDeckErrorCopyWithImpl<$Res>
+    extends _$DeleteDeckCopyWithImpl<$Res, _$DeleteDeckError>
+    implements _$$DeleteDeckErrorCopyWith<$Res> {
+  __$$DeleteDeckErrorCopyWithImpl(
+      _$DeleteDeckError _value, $Res Function(_$DeleteDeckError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$DeleteDeckError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteDeckError implements DeleteDeckError {
+  const _$DeleteDeckError(this.error, this.stackTrace,
+      [this.pendingId = _kDeleteDeckPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'DeleteDeck.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteDeckError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteDeckErrorCopyWith<_$DeleteDeckError> get copyWith =>
+      __$$DeleteDeckErrorCopyWithImpl<_$DeleteDeckError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            Deck deck, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(Deck deck, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(Deck deck, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
+    TResult Function(Deck deck, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeleteDeckStart value) start,
+    required TResult Function(DeleteDeckSuccessful value) successful,
+    required TResult Function(DeleteDeckError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeleteDeckStart value)? start,
+    TResult? Function(DeleteDeckSuccessful value)? successful,
+    TResult? Function(DeleteDeckError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeleteDeckStart value)? start,
+    TResult Function(DeleteDeckSuccessful value)? successful,
+    TResult Function(DeleteDeckError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteDeckError implements DeleteDeck, ActionDone, ErrorAction {
+  const factory DeleteDeckError(final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$DeleteDeckError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$DeleteDeckErrorCopyWith<_$DeleteDeckError> get copyWith =>
+      throw _privateConstructorUsedError;
+}

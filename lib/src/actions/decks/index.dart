@@ -6,3 +6,4 @@ part 'index.freezed.dart';
 
 part 'create_deck.dart';
 part 'update_deck.dart';
+part 'delete_deck.dart';

@@ -1,6 +1,7 @@
 import 'package:flashcard_app/src/actions/app_action.dart';
 import 'package:flashcard_app/src/actions/decks/index.dart';
 import 'package:flashcard_app/src/models/index.dart';
+import 'package:flashcard_app/src/presentation/components/app_snack_bar.dart';
 import 'package:flashcard_app/src/presentation/components/card_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -53,13 +54,13 @@ class _CreateDeckPageState extends State<CreateDeckPage> {
           } else {
             if (action is ErrorAction) {
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
+                AppSnackBar(
                   content: Text(action.error.toString()),
                 ),
               );
             } else {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
+                const AppSnackBar(
                   content: Text('An error occurred.'),
                 ),
               );
