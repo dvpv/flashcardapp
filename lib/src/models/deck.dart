@@ -1,15 +1,15 @@
 part of 'index.dart';
 
 @freezed
-class Card with _$Card {
-  factory Card({
+class Flashcard with _$Flashcard {
+  factory Flashcard({
     required String id,
     required String front,
     required String back,
     @Default(false) bool completed,
-  }) = _Card;
+  }) = _Flashcard;
 
-  factory Card.fromJson(Map<String, dynamic> json) => _$CardFromJson(json);
+  factory Flashcard.fromJson(Map<String, dynamic> json) => _$FlashcardFromJson(json);
 }
 
 @freezed
@@ -18,7 +18,7 @@ class Deck with _$Deck {
     required String id,
     required String title,
     required DateTime createdAt,
-    @Default(<Card>[]) List<Card> cards,
+    @Default(<Flashcard>[]) List<Flashcard> cards,
     @Default(Duration.zero) Duration completionTime,
   }) = _Deck;
 

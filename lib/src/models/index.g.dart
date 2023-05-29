@@ -58,14 +58,15 @@ Map<String, dynamic> _$$_AppUserToJson(_$_AppUser instance) =>
       'username': instance.username,
     };
 
-_$_Card _$$_CardFromJson(Map<String, dynamic> json) => _$_Card(
+_$_Flashcard _$$_FlashcardFromJson(Map<String, dynamic> json) => _$_Flashcard(
       id: json['id'] as String,
       front: json['front'] as String,
       back: json['back'] as String,
       completed: json['completed'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_CardToJson(_$_Card instance) => <String, dynamic>{
+Map<String, dynamic> _$$_FlashcardToJson(_$_Flashcard instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'front': instance.front,
       'back': instance.back,
@@ -77,9 +78,9 @@ _$_Deck _$$_DeckFromJson(Map<String, dynamic> json) => _$_Deck(
       title: json['title'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       cards: (json['cards'] as List<dynamic>?)
-              ?.map((e) => Card.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => Flashcard.fromJson(e as Map<String, dynamic>))
               .toList() ??
-          const <Card>[],
+          const <Flashcard>[],
       completionTime: json['completionTime'] == null
           ? Duration.zero
           : Duration(microseconds: json['completionTime'] as int),

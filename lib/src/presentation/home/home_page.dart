@@ -4,6 +4,7 @@ import 'package:flashcard_app/src/containers/user_container.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/components/app_bar_menu_button.dart';
 import 'package:flashcard_app/src/presentation/components/deck_list_tile.dart';
+import 'package:flashcard_app/src/presentation/deck/create_deck_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
         return UserContainer(
           builder: (BuildContext context, AppUser? user) {
             if (user == null || pending.contains(GetCurrentUser.pendingKey)) {
-              return const CircularProgressIndicator();
+              return const Center(child: CircularProgressIndicator());
             }
             return Scaffold(
               appBar: AppBar(
@@ -32,6 +33,12 @@ class HomePage extends StatelessWidget {
                 ],
                 backgroundColor: const Color(0x00000000),
                 elevation: 0,
+              ),
+              floatingActionButton: FloatingActionButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(CreateDeckPage.route);
+                },
+                child: const Icon(Icons.add),
               ),
               body: Center(
                 child: ListView.builder(

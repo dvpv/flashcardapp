@@ -575,12 +575,12 @@ abstract class _AppUser implements AppUser {
       throw _privateConstructorUsedError;
 }
 
-Card _$CardFromJson(Map<String, dynamic> json) {
-  return _Card.fromJson(json);
+Flashcard _$FlashcardFromJson(Map<String, dynamic> json) {
+  return _Flashcard.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Card {
+mixin _$Flashcard {
   String get id => throw _privateConstructorUsedError;
   String get front => throw _privateConstructorUsedError;
   String get back => throw _privateConstructorUsedError;
@@ -588,21 +588,22 @@ mixin _$Card {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CardCopyWith<Card> get copyWith => throw _privateConstructorUsedError;
+  $FlashcardCopyWith<Flashcard> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CardCopyWith<$Res> {
-  factory $CardCopyWith(Card value, $Res Function(Card) then) =
-      _$CardCopyWithImpl<$Res, Card>;
+abstract class $FlashcardCopyWith<$Res> {
+  factory $FlashcardCopyWith(Flashcard value, $Res Function(Flashcard) then) =
+      _$FlashcardCopyWithImpl<$Res, Flashcard>;
   @useResult
   $Res call({String id, String front, String back, bool completed});
 }
 
 /// @nodoc
-class _$CardCopyWithImpl<$Res, $Val extends Card>
-    implements $CardCopyWith<$Res> {
-  _$CardCopyWithImpl(this._value, this._then);
+class _$FlashcardCopyWithImpl<$Res, $Val extends Flashcard>
+    implements $FlashcardCopyWith<$Res> {
+  _$FlashcardCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -639,18 +640,21 @@ class _$CardCopyWithImpl<$Res, $Val extends Card>
 }
 
 /// @nodoc
-abstract class _$$_CardCopyWith<$Res> implements $CardCopyWith<$Res> {
-  factory _$$_CardCopyWith(_$_Card value, $Res Function(_$_Card) then) =
-      __$$_CardCopyWithImpl<$Res>;
+abstract class _$$_FlashcardCopyWith<$Res> implements $FlashcardCopyWith<$Res> {
+  factory _$$_FlashcardCopyWith(
+          _$_Flashcard value, $Res Function(_$_Flashcard) then) =
+      __$$_FlashcardCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String front, String back, bool completed});
 }
 
 /// @nodoc
-class __$$_CardCopyWithImpl<$Res> extends _$CardCopyWithImpl<$Res, _$_Card>
-    implements _$$_CardCopyWith<$Res> {
-  __$$_CardCopyWithImpl(_$_Card _value, $Res Function(_$_Card) _then)
+class __$$_FlashcardCopyWithImpl<$Res>
+    extends _$FlashcardCopyWithImpl<$Res, _$_Flashcard>
+    implements _$$_FlashcardCopyWith<$Res> {
+  __$$_FlashcardCopyWithImpl(
+      _$_Flashcard _value, $Res Function(_$_Flashcard) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -661,7 +665,7 @@ class __$$_CardCopyWithImpl<$Res> extends _$CardCopyWithImpl<$Res, _$_Card>
     Object? back = null,
     Object? completed = null,
   }) {
-    return _then(_$_Card(
+    return _then(_$_Flashcard(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -684,14 +688,15 @@ class __$$_CardCopyWithImpl<$Res> extends _$CardCopyWithImpl<$Res, _$_Card>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Card implements _Card {
-  _$_Card(
+class _$_Flashcard implements _Flashcard {
+  _$_Flashcard(
       {required this.id,
       required this.front,
       required this.back,
       this.completed = false});
 
-  factory _$_Card.fromJson(Map<String, dynamic> json) => _$$_CardFromJson(json);
+  factory _$_Flashcard.fromJson(Map<String, dynamic> json) =>
+      _$$_FlashcardFromJson(json);
 
   @override
   final String id;
@@ -705,14 +710,14 @@ class _$_Card implements _Card {
 
   @override
   String toString() {
-    return 'Card(id: $id, front: $front, back: $back, completed: $completed)';
+    return 'Flashcard(id: $id, front: $front, back: $back, completed: $completed)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Card &&
+            other is _$_Flashcard &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.front, front) || other.front == front) &&
             (identical(other.back, back) || other.back == back) &&
@@ -727,25 +732,26 @@ class _$_Card implements _Card {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CardCopyWith<_$_Card> get copyWith =>
-      __$$_CardCopyWithImpl<_$_Card>(this, _$identity);
+  _$$_FlashcardCopyWith<_$_Flashcard> get copyWith =>
+      __$$_FlashcardCopyWithImpl<_$_Flashcard>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CardToJson(
+    return _$$_FlashcardToJson(
       this,
     );
   }
 }
 
-abstract class _Card implements Card {
-  factory _Card(
+abstract class _Flashcard implements Flashcard {
+  factory _Flashcard(
       {required final String id,
       required final String front,
       required final String back,
-      final bool completed}) = _$_Card;
+      final bool completed}) = _$_Flashcard;
 
-  factory _Card.fromJson(Map<String, dynamic> json) = _$_Card.fromJson;
+  factory _Flashcard.fromJson(Map<String, dynamic> json) =
+      _$_Flashcard.fromJson;
 
   @override
   String get id;
@@ -757,7 +763,8 @@ abstract class _Card implements Card {
   bool get completed;
   @override
   @JsonKey(ignore: true)
-  _$$_CardCopyWith<_$_Card> get copyWith => throw _privateConstructorUsedError;
+  _$$_FlashcardCopyWith<_$_Flashcard> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Deck _$DeckFromJson(Map<String, dynamic> json) {
@@ -769,7 +776,7 @@ mixin _$Deck {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
-  List<Card> get cards => throw _privateConstructorUsedError;
+  List<Flashcard> get cards => throw _privateConstructorUsedError;
   Duration get completionTime => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -786,7 +793,7 @@ abstract class $DeckCopyWith<$Res> {
       {String id,
       String title,
       DateTime createdAt,
-      List<Card> cards,
+      List<Flashcard> cards,
       Duration completionTime});
 }
 
@@ -825,7 +832,7 @@ class _$DeckCopyWithImpl<$Res, $Val extends Deck>
       cards: null == cards
           ? _value.cards
           : cards // ignore: cast_nullable_to_non_nullable
-              as List<Card>,
+              as List<Flashcard>,
       completionTime: null == completionTime
           ? _value.completionTime
           : completionTime // ignore: cast_nullable_to_non_nullable
@@ -844,7 +851,7 @@ abstract class _$$_DeckCopyWith<$Res> implements $DeckCopyWith<$Res> {
       {String id,
       String title,
       DateTime createdAt,
-      List<Card> cards,
+      List<Flashcard> cards,
       Duration completionTime});
 }
 
@@ -879,7 +886,7 @@ class __$$_DeckCopyWithImpl<$Res> extends _$DeckCopyWithImpl<$Res, _$_Deck>
       cards: null == cards
           ? _value._cards
           : cards // ignore: cast_nullable_to_non_nullable
-              as List<Card>,
+              as List<Flashcard>,
       completionTime: null == completionTime
           ? _value.completionTime
           : completionTime // ignore: cast_nullable_to_non_nullable
@@ -895,7 +902,7 @@ class _$_Deck implements _Deck {
       {required this.id,
       required this.title,
       required this.createdAt,
-      final List<Card> cards = const <Card>[],
+      final List<Flashcard> cards = const <Flashcard>[],
       this.completionTime = Duration.zero})
       : _cards = cards;
 
@@ -907,10 +914,10 @@ class _$_Deck implements _Deck {
   final String title;
   @override
   final DateTime createdAt;
-  final List<Card> _cards;
+  final List<Flashcard> _cards;
   @override
   @JsonKey()
-  List<Card> get cards {
+  List<Flashcard> get cards {
     if (_cards is EqualUnmodifiableListView) return _cards;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_cards);
@@ -963,7 +970,7 @@ abstract class _Deck implements Deck {
       {required final String id,
       required final String title,
       required final DateTime createdAt,
-      final List<Card> cards,
+      final List<Flashcard> cards,
       final Duration completionTime}) = _$_Deck;
 
   factory _Deck.fromJson(Map<String, dynamic> json) = _$_Deck.fromJson;
@@ -975,7 +982,7 @@ abstract class _Deck implements Deck {
   @override
   DateTime get createdAt;
   @override
-  List<Card> get cards;
+  List<Flashcard> get cards;
   @override
   Duration get completionTime;
   @override
