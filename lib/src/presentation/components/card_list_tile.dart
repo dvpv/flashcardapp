@@ -2,10 +2,18 @@ import 'package:flashcard_app/src/design/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CardListTile extends StatefulWidget {
-  const CardListTile({required this.front, required this.back, super.key});
+  const CardListTile({
+    required this.onFrontChanged,
+    required this.onBackChanged,
+    this.front = '',
+    this.back = '',
+    super.key,
+  });
 
   final String front;
   final String back;
+  final void Function(String change) onFrontChanged;
+  final void Function(String change) onBackChanged;
 
   @override
   State<CardListTile> createState() => _CardListTileState();
@@ -55,6 +63,7 @@ class _CardListTileState extends State<CardListTile> {
                           border: InputBorder.none,
                           hintText: 'Add your front text here.',
                         ),
+                        onChanged: widget.onFrontChanged,
                       ),
                     ),
                   );
@@ -86,6 +95,7 @@ class _CardListTileState extends State<CardListTile> {
                           border: InputBorder.none,
                           hintText: 'Add your back text here.',
                         ),
+                        onChanged: widget.onBackChanged,
                       ),
                     ),
                   );

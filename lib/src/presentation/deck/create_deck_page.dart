@@ -55,11 +55,24 @@ class _CreateDeckPageState extends State<CreateDeckPage> {
       body: Center(
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
-          itemCount: 50,
+          itemCount: _cards.length,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-              child: CardListTile(front: 'Front $index', back: 'Back $index'),
+              child: CardListTile(
+                front: 'Front $index',
+                back: 'Back $index',
+                onBackChanged: (String change) {
+                  setState(() {
+                    _cards[index] = _cards[index].copyWith(back: change);
+                  });
+                },
+                onFrontChanged: (String change) {
+                  setState(() {
+                    _cards[index] = _cards[index].copyWith(front: change);
+                  });
+                },
+              ),
             );
           },
         ),
