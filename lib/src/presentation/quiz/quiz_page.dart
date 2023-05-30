@@ -1,8 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flashcard_app/src/actions/app_action.dart';
+import 'package:flashcard_app/src/actions/decks/index.dart';
+import 'package:flashcard_app/src/containers/pending_container.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/quiz/quiz_buttons_fragment.dart';
 import 'package:flashcard_app/src/presentation/quiz/quiz_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 
 class QuizPage extends StatefulWidget {
   const QuizPage({super.key});
@@ -20,6 +23,12 @@ class _QuizPageState extends State<QuizPage> {
   bool _isRevealed = false;
 
   void _finishQuiz() {
+    StoreProvider.of<AppState>(context).dispatch(
+      UpdateDeckStart(
+        deck: _deck!,
+        onResult: (AppAction action) {},
+      ),
+    );
     Navigator.of(context).pop();
   }
 
@@ -91,57 +100,68 @@ class _QuizPageState extends State<QuizPage> {
         ),
       );
     } else {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            _deck!.title,
-            style: const TextStyle(
-              color: Colors.black,
-            ),
-          ),
-          centerTitle: true,
-          leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          backgroundColor: const Color(0x00000000),
-          elevation: 0,
-        ),
-        body: Center(
-          child: Flex(
-            direction: Axis.vertical,
-            // ignore: always_specify_types
-            children: [
-              Container(
-                height: 10,
-                margin: const EdgeInsets.symmetric(vertical: 30),
-                child: LinearProgressIndicator(
-                  value: (_deck!.cards.length - _queue.length - 1) / _deck!.cards.length,
-                  valueColor: const AlwaysStoppedAnimation<Color>(Colors.orange),
-                  backgroundColor: Colors.orange.withOpacity(0.3),
+      return PendingContainer(
+        builder: (BuildContext context, Set<String> pending) {
+          if (pending.contains(UpdateDeck.pendingKey)) {
+            return const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          }
+          return Scaffold(
+            appBar: AppBar(
+              title: Text(
+                _deck!.title,
+                style: const TextStyle(
+                  color: Colors.black,
                 ),
               ),
-              Expanded(
-                flex: 5,
-                child: QuizCard(text: !_isRevealed ? _currentCard.front : _currentCard.back),
-              ),
-              Expanded(
-                flex: 2,
-                child: QuizButtonsFragment(
-                  onCorrect: _onCorrect,
-                  onReshuffle: _onReshuffle,
-                  onSkip: _onSkip,
-                  onReveal: _onReveal,
+              centerTitle: true,
+              leading: IconButton(
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.black,
                 ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
               ),
-            ],
-          ),
-        ),
+              backgroundColor: const Color(0x00000000),
+              elevation: 0,
+            ),
+            body: Center(
+              child: Flex(
+                direction: Axis.vertical,
+                // ignore: always_specify_types
+                children: [
+                  Container(
+                    height: 10,
+                    margin: const EdgeInsets.symmetric(vertical: 30),
+                    child: LinearProgressIndicator(
+                      value: (_deck!.cards.length - _queue.length - 1) / _deck!.cards.length,
+                      valueColor: const AlwaysStoppedAnimation<Color>(Colors.orange),
+                      backgroundColor: Colors.orange.withOpacity(0.3),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 5,
+                    child: QuizCard(text: !_isRevealed ? _currentCard.front : _currentCard.back),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: QuizButtonsFragment(
+                      onCorrect: _onCorrect,
+                      onReshuffle: _onReshuffle,
+                      onSkip: _onSkip,
+                      onReveal: _onReveal,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
       );
     }
   }
