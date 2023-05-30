@@ -20,3 +20,17 @@ class PersistentState with _$PersistentState {
 
   factory PersistentState.fromJson(Map<String, dynamic> json) => _$PersistentStateFromJson(json);
 }
+
+// @freezed
+// class QuizState with _$QuizState {
+//   factory QuizState({
+//     @Default(QuestionStatus.notGuessed) QuestionStatus status,
+//   }) = _QuizState;
+
+//   factory QuizState.fromJson(Map<String, dynamic> json) => _$QuizStateFromJson(json);
+// }
+
+// enum QuestionStatus {
+//   notGuessed,
+//   guessed,
+// }
