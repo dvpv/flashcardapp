@@ -44,11 +44,12 @@ class HomePage extends StatelessWidget {
               body: Center(
                 child: DecksContainer(
                   builder: (BuildContext context, List<Deck> decks) {
+                    final List<Deck> sorted = decks.toList()..sort((Deck a, Deck b) => b.title.compareTo(a.title));
                     return ListView.builder(
-                      itemCount: decks.length,
+                      itemCount: sorted.length,
                       physics: const BouncingScrollPhysics(),
                       itemBuilder: (BuildContext context, int index) {
-                        final Deck deck = decks[index];
+                        final Deck deck = sorted[index];
                         return DeckListTile(deck: deck);
                       },
                     );

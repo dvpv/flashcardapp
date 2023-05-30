@@ -31,7 +31,7 @@ class _CreateDeckPageState extends State<CreateDeckPage> {
       _cards.add(
         Flashcard(
           id: const Uuid().v1(),
-          front: 'Card ${_cards.length + 1}',
+          front: '',
           back: '',
         ),
       );

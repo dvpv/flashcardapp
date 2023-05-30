@@ -36,7 +36,7 @@ class _EditDeckPageState extends State<EditDeckPage> {
           ...deck.cards,
           Flashcard(
             id: const Uuid().v1(),
-            front: 'Card ${deck.cards.length + 1}',
+            front: '',
             back: '',
           )
         ],
