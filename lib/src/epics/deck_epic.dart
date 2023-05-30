@@ -22,6 +22,7 @@ class DeckEpic {
       TypedEpic<AppState, GetDecksCloudStart>(_getDecksCloudStart).call,
       TypedEpic<AppState, SaveDecksCloudStart>(_saveDecksCloudStart).call,
       TypedEpic<AppState, ShareDeckStart>(_shareDeckStart).call,
+      TypedEpic<AppState, ImportDeckStart>(_importDeckStart).call,
     ]);
   }
 
@@ -153,6 +154,23 @@ class DeckEpic {
       return Stream<void>.value(null)
           .asyncMap((_) => firebaseService.shareDeck(deck: action.deck, user: store.state.user!))
           .map<ShareDeck>((String shareId) => ShareDeckSuccessful(shareId: shareId))
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => ShareDeckError(error, stackTrace, action.pendingId),
+          )
+          .doOnData(action.onResult);
+    });
+  }
+
+  Stream<AppAction> _importDeckStart(Stream<ImportDeckStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((ImportDeckStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => firebaseService.importDeck(shareId: action.shareId))
+          .expand<AppAction>(
+            (Deck deck) => <AppAction>[
+              const ImportDeckSuccessful(),
+              CreateDeckStart(deck: deck, onResult: action.onResult),
+            ],
+          )
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => ShareDeckError(error, stackTrace, action.pendingId),
           )

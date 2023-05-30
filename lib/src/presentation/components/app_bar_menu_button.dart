@@ -2,11 +2,12 @@ import 'package:flashcard_app/src/actions/app_action.dart';
 import 'package:flashcard_app/src/actions/authentication/index.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
+import 'package:flashcard_app/src/presentation/import/import_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
 enum _MenuOptions {
-  settings,
+  import,
   logout,
 }
 
@@ -18,9 +19,8 @@ class AppBarMenuButton extends StatelessWidget {
     return PopupMenuButton<_MenuOptions>(
       onSelected: (_MenuOptions result) {
         switch (result) {
-          case _MenuOptions.settings:
-            // TODO(dvpv): implement settings
-            break;
+          case _MenuOptions.import:
+            showDialog<void>(context: context, builder: (BuildContext context) => const ImportDialog());
           case _MenuOptions.logout:
             StoreProvider.of<AppState>(context).dispatch(
               LogoutStart(
@@ -39,10 +39,10 @@ class AppBarMenuButton extends StatelessWidget {
       ),
       itemBuilder: (BuildContext context) => <PopupMenuEntry<_MenuOptions>>[
         const PopupMenuItem<_MenuOptions>(
-          value: _MenuOptions.settings,
+          value: _MenuOptions.import,
           child: ListTile(
             title: Text(
-              'Settings',
+              'Import Deck',
             ),
           ),
         ),

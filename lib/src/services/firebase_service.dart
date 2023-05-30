@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flashcard_app/src/models/index.dart';
 
 const String _kUserDataKey = 'userData';
+const String _kSharedKey = 'shared';
 
 class FirebaseService {
   FirebaseService({required this.auth, required this.firestore});
@@ -60,7 +61,14 @@ class FirebaseService {
   }
 
   Future<String> shareDeck({required AppUser user, required Deck deck}) async {
-    await firestore.doc('$_kUserDataKey/${user.uid}').set(<String, dynamic>{deck.id: jsonEncode(deck)});
+    await firestore.doc('$_kSharedKey/${deck.id}').set(<String, dynamic>{deck.id: jsonEncode(deck)});
     return deck.id;
+  }
+
+  Future<Deck> importDeck({required String shareId}) async {
+    final DocumentSnapshot<Map<String, dynamic>> snapshot = await firestore.doc('$_kSharedKey/$shareId').get();
+    final String deckEncoded = snapshot.data()![shareId] as String;
+    final Map<String, dynamic> deckJson = jsonDecode(deckEncoded) as Map<String, dynamic>;
+    return Deck.fromJson(deckJson);
   }
 }

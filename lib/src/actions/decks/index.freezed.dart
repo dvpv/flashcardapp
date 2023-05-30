@@ -4934,3 +4934,602 @@ abstract class ShareDeckError implements ShareDeck, ActionDone, ErrorAction {
   _$$ShareDeckErrorCopyWith<_$ShareDeckError> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$ImportDeck {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String shareId, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String shareId, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String shareId, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ImportDeckStart value) start,
+    required TResult Function(ImportDeckSuccessful value) successful,
+    required TResult Function(ImportDeckError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ImportDeckStart value)? start,
+    TResult? Function(ImportDeckSuccessful value)? successful,
+    TResult? Function(ImportDeckError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ImportDeckStart value)? start,
+    TResult Function(ImportDeckSuccessful value)? successful,
+    TResult Function(ImportDeckError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ImportDeckCopyWith<ImportDeck> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ImportDeckCopyWith<$Res> {
+  factory $ImportDeckCopyWith(
+          ImportDeck value, $Res Function(ImportDeck) then) =
+      _$ImportDeckCopyWithImpl<$Res, ImportDeck>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$ImportDeckCopyWithImpl<$Res, $Val extends ImportDeck>
+    implements $ImportDeckCopyWith<$Res> {
+  _$ImportDeckCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ImportDeckStartCopyWith<$Res>
+    implements $ImportDeckCopyWith<$Res> {
+  factory _$$ImportDeckStartCopyWith(
+          _$ImportDeckStart value, $Res Function(_$ImportDeckStart) then) =
+      __$$ImportDeckStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String shareId, ActionResult onResult, String pendingId});
+}
+
+/// @nodoc
+class __$$ImportDeckStartCopyWithImpl<$Res>
+    extends _$ImportDeckCopyWithImpl<$Res, _$ImportDeckStart>
+    implements _$$ImportDeckStartCopyWith<$Res> {
+  __$$ImportDeckStartCopyWithImpl(
+      _$ImportDeckStart _value, $Res Function(_$ImportDeckStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? shareId = null,
+    Object? onResult = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ImportDeckStart(
+      shareId: null == shareId
+          ? _value.shareId
+          : shareId // ignore: cast_nullable_to_non_nullable
+              as String,
+      onResult: null == onResult
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ImportDeckStart implements ImportDeckStart {
+  const _$ImportDeckStart(
+      {required this.shareId,
+      required this.onResult,
+      this.pendingId = _kImportDeckPendingId});
+
+  @override
+  final String shareId;
+  @override
+  final ActionResult onResult;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ImportDeck.start(shareId: $shareId, onResult: $onResult, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImportDeckStart &&
+            (identical(other.shareId, shareId) || other.shareId == shareId) &&
+            (identical(other.onResult, onResult) ||
+                other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, shareId, onResult, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ImportDeckStartCopyWith<_$ImportDeckStart> get copyWith =>
+      __$$ImportDeckStartCopyWithImpl<_$ImportDeckStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String shareId, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(shareId, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String shareId, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(shareId, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String shareId, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(shareId, onResult, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ImportDeckStart value) start,
+    required TResult Function(ImportDeckSuccessful value) successful,
+    required TResult Function(ImportDeckError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ImportDeckStart value)? start,
+    TResult? Function(ImportDeckSuccessful value)? successful,
+    TResult? Function(ImportDeckError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ImportDeckStart value)? start,
+    TResult Function(ImportDeckSuccessful value)? successful,
+    TResult Function(ImportDeckError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImportDeckStart implements ImportDeck, ActionStart {
+  const factory ImportDeckStart(
+      {required final String shareId,
+      required final ActionResult onResult,
+      final String pendingId}) = _$ImportDeckStart;
+
+  String get shareId;
+  ActionResult get onResult;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ImportDeckStartCopyWith<_$ImportDeckStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ImportDeckSuccessfulCopyWith<$Res>
+    implements $ImportDeckCopyWith<$Res> {
+  factory _$$ImportDeckSuccessfulCopyWith(_$ImportDeckSuccessful value,
+          $Res Function(_$ImportDeckSuccessful) then) =
+      __$$ImportDeckSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$ImportDeckSuccessfulCopyWithImpl<$Res>
+    extends _$ImportDeckCopyWithImpl<$Res, _$ImportDeckSuccessful>
+    implements _$$ImportDeckSuccessfulCopyWith<$Res> {
+  __$$ImportDeckSuccessfulCopyWithImpl(_$ImportDeckSuccessful _value,
+      $Res Function(_$ImportDeckSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$ImportDeckSuccessful(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ImportDeckSuccessful implements ImportDeckSuccessful {
+  const _$ImportDeckSuccessful({this.pendingId = _kImportDeckPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ImportDeck.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImportDeckSuccessful &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ImportDeckSuccessfulCopyWith<_$ImportDeckSuccessful> get copyWith =>
+      __$$ImportDeckSuccessfulCopyWithImpl<_$ImportDeckSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String shareId, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String shareId, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String shareId, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ImportDeckStart value) start,
+    required TResult Function(ImportDeckSuccessful value) successful,
+    required TResult Function(ImportDeckError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ImportDeckStart value)? start,
+    TResult? Function(ImportDeckSuccessful value)? successful,
+    TResult? Function(ImportDeckError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ImportDeckStart value)? start,
+    TResult Function(ImportDeckSuccessful value)? successful,
+    TResult Function(ImportDeckError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImportDeckSuccessful implements ImportDeck, ActionDone {
+  const factory ImportDeckSuccessful({final String pendingId}) =
+      _$ImportDeckSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ImportDeckSuccessfulCopyWith<_$ImportDeckSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ImportDeckErrorCopyWith<$Res>
+    implements $ImportDeckCopyWith<$Res> {
+  factory _$$ImportDeckErrorCopyWith(
+          _$ImportDeckError value, $Res Function(_$ImportDeckError) then) =
+      __$$ImportDeckErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$ImportDeckErrorCopyWithImpl<$Res>
+    extends _$ImportDeckCopyWithImpl<$Res, _$ImportDeckError>
+    implements _$$ImportDeckErrorCopyWith<$Res> {
+  __$$ImportDeckErrorCopyWithImpl(
+      _$ImportDeckError _value, $Res Function(_$ImportDeckError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$ImportDeckError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ImportDeckError implements ImportDeckError {
+  const _$ImportDeckError(this.error, this.stackTrace,
+      [this.pendingId = _kImportDeckPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'ImportDeck.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImportDeckError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ImportDeckErrorCopyWith<_$ImportDeckError> get copyWith =>
+      __$$ImportDeckErrorCopyWithImpl<_$ImportDeckError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String shareId, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String shareId, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String shareId, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ImportDeckStart value) start,
+    required TResult Function(ImportDeckSuccessful value) successful,
+    required TResult Function(ImportDeckError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ImportDeckStart value)? start,
+    TResult? Function(ImportDeckSuccessful value)? successful,
+    TResult? Function(ImportDeckError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ImportDeckStart value)? start,
+    TResult Function(ImportDeckSuccessful value)? successful,
+    TResult Function(ImportDeckError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ImportDeckError implements ImportDeck, ActionDone, ErrorAction {
+  const factory ImportDeckError(final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$ImportDeckError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$ImportDeckErrorCopyWith<_$ImportDeckError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
