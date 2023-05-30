@@ -58,4 +58,9 @@ class FirebaseService {
     final List<dynamic> decksJson = jsonDecode(decksEncoded) as List<dynamic>;
     return decksJson.map((dynamic json) => Deck.fromJson(json as Map<String, dynamic>)).toList();
   }
+
+  Future<String> shareDeck({required AppUser user, required Deck deck}) async {
+    await firestore.doc('$_kUserDataKey/${user.uid}').set(<String, dynamic>{deck.id: jsonEncode(deck)});
+    return deck.id;
+  }
 }

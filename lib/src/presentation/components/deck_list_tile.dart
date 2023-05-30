@@ -5,6 +5,7 @@ import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/components/app_snack_bar.dart';
 import 'package:flashcard_app/src/presentation/deck/edit_deck_page.dart';
 import 'package:flashcard_app/src/presentation/quiz/quiz_page.dart';
+import 'package:flashcard_app/src/presentation/share/share_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_svg/svg.dart';
@@ -50,7 +51,7 @@ class _DeckListTileState extends State<DeckListTile> {
     if (completed == total) {
       return 'Completed';
     }
-    return '${completed * 100 / total}%';
+    return '${completed * 100 ~/ total}%';
   }
 
   @override
@@ -99,6 +100,17 @@ class _DeckListTileState extends State<DeckListTile> {
                   TextButton(
                     onPressed: _onDelete,
                     child: const Text('Delete'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      showDialog<void>(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return ShareDialog(deck: widget.deck);
+                        },
+                      );
+                    },
+                    child: const Text('Share'),
                   ),
                   TextButton(
                     child: const Text('Edit'),
