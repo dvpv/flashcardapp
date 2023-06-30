@@ -17,6 +17,7 @@ class FirebaseEpic {
       TypedEpic<AppState, LogoutStart>(_logoutStart).call,
       TypedEpic<AppState, RegisterStart>(_registerStart).call,
       TypedEpic<AppState, GetCurrentUserStart>(_getCurrentUserStart).call,
+      TypedEpic<AppState, GenerateDeckStart>(_generateDeckStart).call,
     ]);
   }
 
@@ -75,6 +76,23 @@ class FirebaseEpic {
           .map<GetCurrentUser>((AppUser? user) => GetCurrentUserSuccessful(user: user, pendingId: action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => GetCurrentUserError(error, stackTrace, action.pendingId),
+          )
+          .doOnData(action.onResult);
+    });
+  }
+
+  Stream<AppAction> _generateDeckStart(Stream<GenerateDeckStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((GenerateDeckStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => _firebaseService.generateDeck(text: action.text))
+          .expand<AppAction>(
+            (Deck deck) => <AppAction>[
+              GenerateDeckSuccessful(deck: deck),
+              CreateDeckStart(deck: deck, onResult: action.onResult),
+            ],
+          )
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => GenerateDeckError(error, stackTrace, action.pendingId),
           )
           .doOnData(action.onResult);
     });

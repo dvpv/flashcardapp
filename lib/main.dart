@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flashcard_app/firebase_options.dart';
@@ -27,7 +28,9 @@ Future<void> main() async {
   final FirebaseApp app = await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   final FirebaseAuth auth = FirebaseAuth.instanceFor(app: app);
   final FirebaseFirestore firestore = FirebaseFirestore.instanceFor(app: app);
-  final FirebaseService firebaseService = FirebaseService(auth: auth, firestore: firestore);
+  final FirebaseFunctions firebaseFunctions = FirebaseFunctions.instanceFor(app: app);
+  final FirebaseService firebaseService =
+      FirebaseService(auth: auth, firestore: firestore, functions: firebaseFunctions);
 
   final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   final LocalStorageService localStorageService = LocalStorageService(sharedPreferences: sharedPreferences);

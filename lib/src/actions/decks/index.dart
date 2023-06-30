@@ -13,3 +13,4 @@ part 'save_decks_cloud.dart';
 part 'get_decks_cloud.dart';
 part 'share_deck.dart';
 part 'import_deck.dart';
+part 'generate_deck.dart';

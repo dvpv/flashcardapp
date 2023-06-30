@@ -12,7 +12,7 @@ class QuizButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: <Widget>[
         ElevatedButton(
           onPressed: onPressed,
           style: ButtonStyle(

@@ -1,5 +1,6 @@
 import 'package:flashcard_app/src/actions/app_action.dart';
 import 'package:flashcard_app/src/actions/authentication/index.dart';
+import 'package:flashcard_app/src/actions/decks/index.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
 import 'package:flashcard_app/src/presentation/import/import_dialog.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
 enum _MenuOptions {
+  generate,
   import,
   logout,
 }
@@ -19,6 +21,13 @@ class AppBarMenuButton extends StatelessWidget {
     return PopupMenuButton<_MenuOptions>(
       onSelected: (_MenuOptions result) {
         switch (result) {
+          case _MenuOptions.generate:
+            StoreProvider.of<AppState>(context).dispatch(
+              GenerateDeckStart(
+                text: 'Ana are mere',
+                onResult: (AppAction action) {},
+              ),
+            );
           case _MenuOptions.import:
             showDialog<void>(context: context, builder: (BuildContext context) => const ImportDialog());
           case _MenuOptions.logout:
@@ -38,6 +47,14 @@ class AppBarMenuButton extends StatelessWidget {
         color: Colors.black,
       ),
       itemBuilder: (BuildContext context) => <PopupMenuEntry<_MenuOptions>>[
+        const PopupMenuItem<_MenuOptions>(
+          value: _MenuOptions.generate,
+          child: ListTile(
+            title: Text(
+              'Generate Deck',
+            ),
+          ),
+        ),
         const PopupMenuItem<_MenuOptions>(
           value: _MenuOptions.import,
           child: ListTile(

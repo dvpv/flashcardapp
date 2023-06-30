@@ -5533,3 +5533,628 @@ abstract class ImportDeckError implements ImportDeck, ActionDone, ErrorAction {
   _$$ImportDeckErrorCopyWith<_$ImportDeckError> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$GenerateDeck {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String text, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(Deck? deck, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String text, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(Deck? deck, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String text, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(Deck? deck, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GenerateDeckStart value) start,
+    required TResult Function(GenerateDeckSuccessful value) successful,
+    required TResult Function(GenerateDeckError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GenerateDeckStart value)? start,
+    TResult? Function(GenerateDeckSuccessful value)? successful,
+    TResult? Function(GenerateDeckError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GenerateDeckStart value)? start,
+    TResult Function(GenerateDeckSuccessful value)? successful,
+    TResult Function(GenerateDeckError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GenerateDeckCopyWith<GenerateDeck> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GenerateDeckCopyWith<$Res> {
+  factory $GenerateDeckCopyWith(
+          GenerateDeck value, $Res Function(GenerateDeck) then) =
+      _$GenerateDeckCopyWithImpl<$Res, GenerateDeck>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$GenerateDeckCopyWithImpl<$Res, $Val extends GenerateDeck>
+    implements $GenerateDeckCopyWith<$Res> {
+  _$GenerateDeckCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GenerateDeckStartCopyWith<$Res>
+    implements $GenerateDeckCopyWith<$Res> {
+  factory _$$GenerateDeckStartCopyWith(
+          _$GenerateDeckStart value, $Res Function(_$GenerateDeckStart) then) =
+      __$$GenerateDeckStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String text, ActionResult onResult, String pendingId});
+}
+
+/// @nodoc
+class __$$GenerateDeckStartCopyWithImpl<$Res>
+    extends _$GenerateDeckCopyWithImpl<$Res, _$GenerateDeckStart>
+    implements _$$GenerateDeckStartCopyWith<$Res> {
+  __$$GenerateDeckStartCopyWithImpl(
+      _$GenerateDeckStart _value, $Res Function(_$GenerateDeckStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? text = null,
+    Object? onResult = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GenerateDeckStart(
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+      onResult: null == onResult
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GenerateDeckStart implements GenerateDeckStart {
+  const _$GenerateDeckStart(
+      {required this.text,
+      required this.onResult,
+      this.pendingId = _kGenerateDeckPendingId});
+
+  @override
+  final String text;
+  @override
+  final ActionResult onResult;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GenerateDeck.start(text: $text, onResult: $onResult, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GenerateDeckStart &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.onResult, onResult) ||
+                other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, text, onResult, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GenerateDeckStartCopyWith<_$GenerateDeckStart> get copyWith =>
+      __$$GenerateDeckStartCopyWithImpl<_$GenerateDeckStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String text, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(Deck? deck, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(text, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String text, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(Deck? deck, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(text, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String text, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(Deck? deck, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(text, onResult, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GenerateDeckStart value) start,
+    required TResult Function(GenerateDeckSuccessful value) successful,
+    required TResult Function(GenerateDeckError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GenerateDeckStart value)? start,
+    TResult? Function(GenerateDeckSuccessful value)? successful,
+    TResult? Function(GenerateDeckError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GenerateDeckStart value)? start,
+    TResult Function(GenerateDeckSuccessful value)? successful,
+    TResult Function(GenerateDeckError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenerateDeckStart implements GenerateDeck, ActionStart {
+  const factory GenerateDeckStart(
+      {required final String text,
+      required final ActionResult onResult,
+      final String pendingId}) = _$GenerateDeckStart;
+
+  String get text;
+  ActionResult get onResult;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GenerateDeckStartCopyWith<_$GenerateDeckStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GenerateDeckSuccessfulCopyWith<$Res>
+    implements $GenerateDeckCopyWith<$Res> {
+  factory _$$GenerateDeckSuccessfulCopyWith(_$GenerateDeckSuccessful value,
+          $Res Function(_$GenerateDeckSuccessful) then) =
+      __$$GenerateDeckSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Deck? deck, String pendingId});
+
+  $DeckCopyWith<$Res>? get deck;
+}
+
+/// @nodoc
+class __$$GenerateDeckSuccessfulCopyWithImpl<$Res>
+    extends _$GenerateDeckCopyWithImpl<$Res, _$GenerateDeckSuccessful>
+    implements _$$GenerateDeckSuccessfulCopyWith<$Res> {
+  __$$GenerateDeckSuccessfulCopyWithImpl(_$GenerateDeckSuccessful _value,
+      $Res Function(_$GenerateDeckSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? deck = freezed,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GenerateDeckSuccessful(
+      deck: freezed == deck
+          ? _value.deck
+          : deck // ignore: cast_nullable_to_non_nullable
+              as Deck?,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DeckCopyWith<$Res>? get deck {
+    if (_value.deck == null) {
+      return null;
+    }
+
+    return $DeckCopyWith<$Res>(_value.deck!, (value) {
+      return _then(_value.copyWith(deck: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$GenerateDeckSuccessful implements GenerateDeckSuccessful {
+  const _$GenerateDeckSuccessful(
+      {this.deck, this.pendingId = _kGenerateDeckPendingId});
+
+  @override
+  final Deck? deck;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GenerateDeck.successful(deck: $deck, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GenerateDeckSuccessful &&
+            (identical(other.deck, deck) || other.deck == deck) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, deck, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GenerateDeckSuccessfulCopyWith<_$GenerateDeckSuccessful> get copyWith =>
+      __$$GenerateDeckSuccessfulCopyWithImpl<_$GenerateDeckSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String text, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(Deck? deck, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(deck, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String text, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(Deck? deck, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(deck, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String text, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(Deck? deck, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(deck, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GenerateDeckStart value) start,
+    required TResult Function(GenerateDeckSuccessful value) successful,
+    required TResult Function(GenerateDeckError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GenerateDeckStart value)? start,
+    TResult? Function(GenerateDeckSuccessful value)? successful,
+    TResult? Function(GenerateDeckError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GenerateDeckStart value)? start,
+    TResult Function(GenerateDeckSuccessful value)? successful,
+    TResult Function(GenerateDeckError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenerateDeckSuccessful implements GenerateDeck, ActionDone {
+  const factory GenerateDeckSuccessful(
+      {final Deck? deck, final String pendingId}) = _$GenerateDeckSuccessful;
+
+  Deck? get deck;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GenerateDeckSuccessfulCopyWith<_$GenerateDeckSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GenerateDeckErrorCopyWith<$Res>
+    implements $GenerateDeckCopyWith<$Res> {
+  factory _$$GenerateDeckErrorCopyWith(
+          _$GenerateDeckError value, $Res Function(_$GenerateDeckError) then) =
+      __$$GenerateDeckErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$GenerateDeckErrorCopyWithImpl<$Res>
+    extends _$GenerateDeckCopyWithImpl<$Res, _$GenerateDeckError>
+    implements _$$GenerateDeckErrorCopyWith<$Res> {
+  __$$GenerateDeckErrorCopyWithImpl(
+      _$GenerateDeckError _value, $Res Function(_$GenerateDeckError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GenerateDeckError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GenerateDeckError implements GenerateDeckError {
+  const _$GenerateDeckError(this.error, this.stackTrace,
+      [this.pendingId = _kGenerateDeckPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GenerateDeck.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GenerateDeckError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GenerateDeckErrorCopyWith<_$GenerateDeckError> get copyWith =>
+      __$$GenerateDeckErrorCopyWithImpl<_$GenerateDeckError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String text, ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(Deck? deck, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String text, ActionResult onResult, String pendingId)?
+        start,
+    TResult? Function(Deck? deck, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String text, ActionResult onResult, String pendingId)?
+        start,
+    TResult Function(Deck? deck, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GenerateDeckStart value) start,
+    required TResult Function(GenerateDeckSuccessful value) successful,
+    required TResult Function(GenerateDeckError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GenerateDeckStart value)? start,
+    TResult? Function(GenerateDeckSuccessful value)? successful,
+    TResult? Function(GenerateDeckError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GenerateDeckStart value)? start,
+    TResult Function(GenerateDeckSuccessful value)? successful,
+    TResult Function(GenerateDeckError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenerateDeckError
+    implements GenerateDeck, ActionDone, ErrorAction {
+  const factory GenerateDeckError(
+      final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$GenerateDeckError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GenerateDeckErrorCopyWith<_$GenerateDeckError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
