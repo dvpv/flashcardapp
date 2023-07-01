@@ -13,6 +13,10 @@ class HomePage extends StatelessWidget {
 
   static const String route = '/home';
 
+  void _onCreateDeck(BuildContext context) {
+    Navigator.of(context).pushNamed(CreateDeckPage.route);
+  }
+
   @override
   Widget build(BuildContext context) {
     return PendingContainer(
@@ -35,15 +39,35 @@ class HomePage extends StatelessWidget {
                 backgroundColor: const Color(0x00000000),
                 elevation: 0,
               ),
-              floatingActionButton: FloatingActionButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(CreateDeckPage.route);
+              floatingActionButton: DecksContainer(
+                builder: (BuildContext context, List<Deck> decks) {
+                  if (decks.isEmpty) {
+                    return const SizedBox.shrink();
+                  }
+                  return FloatingActionButton(
+                    onPressed: () => _onCreateDeck(context),
+                    child: const Icon(Icons.add),
+                  );
                 },
-                child: const Icon(Icons.add),
               ),
               body: Center(
                 child: DecksContainer(
                   builder: (BuildContext context, List<Deck> decks) {
+                    if (decks.isEmpty) {
+                      return Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          const Text('No decks found :(', style: TextStyle(fontSize: 24)),
+                          const SizedBox(height: 20),
+                          TextButton(
+                            onPressed: () => _onCreateDeck(context),
+                            child: const Text('Create a deck!', style: TextStyle(fontSize: 20)),
+                          ),
+                          SizedBox(height: MediaQuery.of(context).size.height * 0.2),
+                        ],
+                      );
+                    }
+
                     final List<Deck> sorted = decks.toList()..sort((Deck a, Deck b) => b.title.compareTo(a.title));
                     return ListView.builder(
                       itemCount: sorted.length,
