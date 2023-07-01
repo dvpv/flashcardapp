@@ -1,8 +1,8 @@
 import 'package:flashcard_app/src/actions/app_action.dart';
 import 'package:flashcard_app/src/actions/authentication/index.dart';
-import 'package:flashcard_app/src/actions/decks/index.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
+import 'package:flashcard_app/src/presentation/generate/generate_dialog.dart';
 import 'package:flashcard_app/src/presentation/import/import_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -13,21 +13,21 @@ enum _MenuOptions {
   logout,
 }
 
-class AppBarMenuButton extends StatelessWidget {
+class AppBarMenuButton extends StatefulWidget {
   const AppBarMenuButton({super.key});
 
+  @override
+  State<AppBarMenuButton> createState() => _AppBarMenuButtonState();
+}
+
+class _AppBarMenuButtonState extends State<AppBarMenuButton> {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<_MenuOptions>(
       onSelected: (_MenuOptions result) {
         switch (result) {
           case _MenuOptions.generate:
-            StoreProvider.of<AppState>(context).dispatch(
-              GenerateDeckStart(
-                text: 'Ana are mere',
-                onResult: (AppAction action) {},
-              ),
-            );
+            showDialog<void>(context: context, builder: (BuildContext context) => const GenerateDialog());
           case _MenuOptions.import:
             showDialog<void>(context: context, builder: (BuildContext context) => const ImportDialog());
           case _MenuOptions.logout:
@@ -51,7 +51,7 @@ class AppBarMenuButton extends StatelessWidget {
           value: _MenuOptions.generate,
           child: ListTile(
             title: Text(
-              'Generate Deck',
+              'Generate a Deck from a PDF',
             ),
           ),
         ),

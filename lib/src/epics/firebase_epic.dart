@@ -84,7 +84,7 @@ class FirebaseEpic {
   Stream<AppAction> _generateDeckStart(Stream<GenerateDeckStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((GenerateDeckStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => _firebaseService.generateDeck(text: action.text))
+          .asyncMap((_) => _firebaseService.generateDeck(text: action.text, questionCount: action.questionCount))
           .expand<AppAction>(
             (Deck deck) => <AppAction>[
               GenerateDeckSuccessful(deck: deck),

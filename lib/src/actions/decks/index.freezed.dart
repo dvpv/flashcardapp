@@ -5539,8 +5539,8 @@ mixin _$GenerateDeck {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String text, ActionResult onResult, String pendingId)
+    required TResult Function(String text, int questionCount,
+            ActionResult onResult, String pendingId)
         start,
     required TResult Function(Deck? deck, String pendingId) successful,
     required TResult Function(
@@ -5550,7 +5550,8 @@ mixin _$GenerateDeck {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String text, ActionResult onResult, String pendingId)?
+    TResult? Function(String text, int questionCount, ActionResult onResult,
+            String pendingId)?
         start,
     TResult? Function(Deck? deck, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -5559,7 +5560,8 @@ mixin _$GenerateDeck {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String text, ActionResult onResult, String pendingId)?
+    TResult Function(String text, int questionCount, ActionResult onResult,
+            String pendingId)?
         start,
     TResult Function(Deck? deck, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -5636,7 +5638,11 @@ abstract class _$$GenerateDeckStartCopyWith<$Res>
       __$$GenerateDeckStartCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String text, ActionResult onResult, String pendingId});
+  $Res call(
+      {String text,
+      int questionCount,
+      ActionResult onResult,
+      String pendingId});
 }
 
 /// @nodoc
@@ -5651,6 +5657,7 @@ class __$$GenerateDeckStartCopyWithImpl<$Res>
   @override
   $Res call({
     Object? text = null,
+    Object? questionCount = null,
     Object? onResult = null,
     Object? pendingId = null,
   }) {
@@ -5659,6 +5666,10 @@ class __$$GenerateDeckStartCopyWithImpl<$Res>
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
+      questionCount: null == questionCount
+          ? _value.questionCount
+          : questionCount // ignore: cast_nullable_to_non_nullable
+              as int,
       onResult: null == onResult
           ? _value.onResult
           : onResult // ignore: cast_nullable_to_non_nullable
@@ -5676,11 +5687,14 @@ class __$$GenerateDeckStartCopyWithImpl<$Res>
 class _$GenerateDeckStart implements GenerateDeckStart {
   const _$GenerateDeckStart(
       {required this.text,
+      required this.questionCount,
       required this.onResult,
       this.pendingId = _kGenerateDeckPendingId});
 
   @override
   final String text;
+  @override
+  final int questionCount;
   @override
   final ActionResult onResult;
   @override
@@ -5689,7 +5703,7 @@ class _$GenerateDeckStart implements GenerateDeckStart {
 
   @override
   String toString() {
-    return 'GenerateDeck.start(text: $text, onResult: $onResult, pendingId: $pendingId)';
+    return 'GenerateDeck.start(text: $text, questionCount: $questionCount, onResult: $onResult, pendingId: $pendingId)';
   }
 
   @override
@@ -5698,6 +5712,8 @@ class _$GenerateDeckStart implements GenerateDeckStart {
         (other.runtimeType == runtimeType &&
             other is _$GenerateDeckStart &&
             (identical(other.text, text) || other.text == text) &&
+            (identical(other.questionCount, questionCount) ||
+                other.questionCount == questionCount) &&
             (identical(other.onResult, onResult) ||
                 other.onResult == onResult) &&
             (identical(other.pendingId, pendingId) ||
@@ -5705,7 +5721,8 @@ class _$GenerateDeckStart implements GenerateDeckStart {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, text, onResult, pendingId);
+  int get hashCode =>
+      Object.hash(runtimeType, text, questionCount, onResult, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -5716,33 +5733,35 @@ class _$GenerateDeckStart implements GenerateDeckStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String text, ActionResult onResult, String pendingId)
+    required TResult Function(String text, int questionCount,
+            ActionResult onResult, String pendingId)
         start,
     required TResult Function(Deck? deck, String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
   }) {
-    return start(text, onResult, pendingId);
+    return start(text, questionCount, onResult, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String text, ActionResult onResult, String pendingId)?
+    TResult? Function(String text, int questionCount, ActionResult onResult,
+            String pendingId)?
         start,
     TResult? Function(Deck? deck, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) {
-    return start?.call(text, onResult, pendingId);
+    return start?.call(text, questionCount, onResult, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String text, ActionResult onResult, String pendingId)?
+    TResult Function(String text, int questionCount, ActionResult onResult,
+            String pendingId)?
         start,
     TResult Function(Deck? deck, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -5750,7 +5769,7 @@ class _$GenerateDeckStart implements GenerateDeckStart {
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start(text, onResult, pendingId);
+      return start(text, questionCount, onResult, pendingId);
     }
     return orElse();
   }
@@ -5793,10 +5812,12 @@ class _$GenerateDeckStart implements GenerateDeckStart {
 abstract class GenerateDeckStart implements GenerateDeck, ActionStart {
   const factory GenerateDeckStart(
       {required final String text,
+      required final int questionCount,
       required final ActionResult onResult,
       final String pendingId}) = _$GenerateDeckStart;
 
   String get text;
+  int get questionCount;
   ActionResult get onResult;
   @override
   String get pendingId;
@@ -5898,8 +5919,8 @@ class _$GenerateDeckSuccessful implements GenerateDeckSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String text, ActionResult onResult, String pendingId)
+    required TResult Function(String text, int questionCount,
+            ActionResult onResult, String pendingId)
         start,
     required TResult Function(Deck? deck, String pendingId) successful,
     required TResult Function(
@@ -5912,7 +5933,8 @@ class _$GenerateDeckSuccessful implements GenerateDeckSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String text, ActionResult onResult, String pendingId)?
+    TResult? Function(String text, int questionCount, ActionResult onResult,
+            String pendingId)?
         start,
     TResult? Function(Deck? deck, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -5924,7 +5946,8 @@ class _$GenerateDeckSuccessful implements GenerateDeckSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String text, ActionResult onResult, String pendingId)?
+    TResult Function(String text, int questionCount, ActionResult onResult,
+            String pendingId)?
         start,
     TResult Function(Deck? deck, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -6069,8 +6092,8 @@ class _$GenerateDeckError implements GenerateDeckError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String text, ActionResult onResult, String pendingId)
+    required TResult Function(String text, int questionCount,
+            ActionResult onResult, String pendingId)
         start,
     required TResult Function(Deck? deck, String pendingId) successful,
     required TResult Function(
@@ -6083,7 +6106,8 @@ class _$GenerateDeckError implements GenerateDeckError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String text, ActionResult onResult, String pendingId)?
+    TResult? Function(String text, int questionCount, ActionResult onResult,
+            String pendingId)?
         start,
     TResult? Function(Deck? deck, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -6095,7 +6119,8 @@ class _$GenerateDeckError implements GenerateDeckError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String text, ActionResult onResult, String pendingId)?
+    TResult Function(String text, int questionCount, ActionResult onResult,
+            String pendingId)?
         start,
     TResult Function(Deck? deck, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?

@@ -78,21 +78,20 @@ class FirebaseService {
     return Deck.fromJson(deckJson);
   }
 
-  Future<Deck> generateDeck({required String text}) async {
+  Future<Deck> generateDeck({required String text, required int questionCount}) async {
     final String uid = auth.currentUser!.uid;
     final DocumentSnapshot<Map<String, dynamic>> snapshot = await firestore.doc('$_kApiKeysKey/$uid').get();
     final String key = snapshot.data()!['key'] as String;
-    print('uid is $uid');
-    print('key is $key');
     final Response response = await post(
       Uri.parse('https://us-central1-flashcardapp-786f6.cloudfunctions.net/api/generate'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
-      body: jsonEncode(<String, String>{
+      body: jsonEncode(<String, dynamic>{
         'text': text,
         'uid': uid,
         'key': key,
+        'questionCount': questionCount,
       }),
     );
 
