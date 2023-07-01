@@ -84,7 +84,7 @@ class _EditDeckPageState extends State<EditDeckPage> {
           TextButton(
             onPressed: () {
               setState(() {
-                deck.cards.removeWhere((Flashcard x) => x == card);
+                deck = deck.copyWith(cards: deck.cards.toList()..removeWhere((Flashcard x) => x == card));
               });
               Navigator.of(context).pop();
             },

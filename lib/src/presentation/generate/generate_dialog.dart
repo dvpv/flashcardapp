@@ -36,9 +36,6 @@ class _GenerateDialogState extends State<GenerateDialog> {
         _text = text;
         _fileSelectionDone = true;
       });
-      print('Text: $text');
-      print('Generate deck started: $_generating');
-      print('File selection done: $_fileSelectionDone');
     } on PlatformException {
       _fileSelectionDone = true;
       _text = '';
