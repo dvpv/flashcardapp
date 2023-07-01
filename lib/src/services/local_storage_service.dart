@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flashcard_app/src/models/index.dart';
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const String _kDecksKey = 'decks';
@@ -10,6 +11,13 @@ class LocalStorageService {
   LocalStorageService({required this.sharedPreferences});
 
   final SharedPreferences sharedPreferences;
+
+  Future<void> clearAllDecks() async {
+    if (kDebugMode) {
+      print('Clearing all decks');
+    }
+    await sharedPreferences.remove(_kDecksKey);
+  }
 
   Future<void> saveDecks(List<Deck> decks) async {
     await sharedPreferences.setString(_kDecksKey, jsonEncode(decks));

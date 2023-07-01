@@ -19,7 +19,7 @@ AppState _googleLoginSuccessful(AppState state, GoogleLoginSuccessful action) {
 }
 
 AppState _logoutSuccessful(AppState state, LogoutSuccessful action) {
-  return state.copyWith(user: null);
+  return AppState();
 }
 
 AppState _registerSuccessful(AppState state, RegisterSuccessful action) {

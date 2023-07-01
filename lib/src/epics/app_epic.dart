@@ -16,7 +16,7 @@ class AppEpic {
 
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
-      FirebaseEpic(firebaseService).epics,
+      FirebaseEpic(firebaseService: firebaseService, localStorageService: localStorageService).epics,
       DeckEpic(localStorageService: localStorageService, firebaseService: firebaseService).epics,
     ]);
   }
