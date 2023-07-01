@@ -652,6 +652,600 @@ abstract class LoginError implements Login, ActionDone, ErrorAction {
 }
 
 /// @nodoc
+mixin _$GoogleLogin {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(AppUser user, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(AppUser user, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(AppUser user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoogleLoginStart value) start,
+    required TResult Function(GoogleLoginSuccessful value) successful,
+    required TResult Function(GoogleLoginError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoogleLoginStart value)? start,
+    TResult? Function(GoogleLoginSuccessful value)? successful,
+    TResult? Function(GoogleLoginError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoogleLoginStart value)? start,
+    TResult Function(GoogleLoginSuccessful value)? successful,
+    TResult Function(GoogleLoginError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GoogleLoginCopyWith<GoogleLogin> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GoogleLoginCopyWith<$Res> {
+  factory $GoogleLoginCopyWith(
+          GoogleLogin value, $Res Function(GoogleLogin) then) =
+      _$GoogleLoginCopyWithImpl<$Res, GoogleLogin>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$GoogleLoginCopyWithImpl<$Res, $Val extends GoogleLogin>
+    implements $GoogleLoginCopyWith<$Res> {
+  _$GoogleLoginCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GoogleLoginStartCopyWith<$Res>
+    implements $GoogleLoginCopyWith<$Res> {
+  factory _$$GoogleLoginStartCopyWith(
+          _$GoogleLoginStart value, $Res Function(_$GoogleLoginStart) then) =
+      __$$GoogleLoginStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ActionResult onResult, String pendingId});
+}
+
+/// @nodoc
+class __$$GoogleLoginStartCopyWithImpl<$Res>
+    extends _$GoogleLoginCopyWithImpl<$Res, _$GoogleLoginStart>
+    implements _$$GoogleLoginStartCopyWith<$Res> {
+  __$$GoogleLoginStartCopyWithImpl(
+      _$GoogleLoginStart _value, $Res Function(_$GoogleLoginStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? onResult = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GoogleLoginStart(
+      onResult: null == onResult
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GoogleLoginStart implements GoogleLoginStart {
+  const _$GoogleLoginStart(
+      {required this.onResult, this.pendingId = _kGoogleLoginPendingId});
+
+  @override
+  final ActionResult onResult;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GoogleLogin.start(onResult: $onResult, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleLoginStart &&
+            (identical(other.onResult, onResult) ||
+                other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, onResult, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoogleLoginStartCopyWith<_$GoogleLoginStart> get copyWith =>
+      __$$GoogleLoginStartCopyWithImpl<_$GoogleLoginStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(AppUser user, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return start(onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(AppUser user, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return start?.call(onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(AppUser user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(onResult, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoogleLoginStart value) start,
+    required TResult Function(GoogleLoginSuccessful value) successful,
+    required TResult Function(GoogleLoginError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoogleLoginStart value)? start,
+    TResult? Function(GoogleLoginSuccessful value)? successful,
+    TResult? Function(GoogleLoginError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoogleLoginStart value)? start,
+    TResult Function(GoogleLoginSuccessful value)? successful,
+    TResult Function(GoogleLoginError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoogleLoginStart implements GoogleLogin, ActionStart {
+  const factory GoogleLoginStart(
+      {required final ActionResult onResult,
+      final String pendingId}) = _$GoogleLoginStart;
+
+  ActionResult get onResult;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GoogleLoginStartCopyWith<_$GoogleLoginStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoogleLoginSuccessfulCopyWith<$Res>
+    implements $GoogleLoginCopyWith<$Res> {
+  factory _$$GoogleLoginSuccessfulCopyWith(_$GoogleLoginSuccessful value,
+          $Res Function(_$GoogleLoginSuccessful) then) =
+      __$$GoogleLoginSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({AppUser user, String pendingId});
+
+  $AppUserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$GoogleLoginSuccessfulCopyWithImpl<$Res>
+    extends _$GoogleLoginCopyWithImpl<$Res, _$GoogleLoginSuccessful>
+    implements _$$GoogleLoginSuccessfulCopyWith<$Res> {
+  __$$GoogleLoginSuccessfulCopyWithImpl(_$GoogleLoginSuccessful _value,
+      $Res Function(_$GoogleLoginSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GoogleLoginSuccessful(
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AppUserCopyWith<$Res> get user {
+    return $AppUserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$GoogleLoginSuccessful implements GoogleLoginSuccessful {
+  const _$GoogleLoginSuccessful(
+      {required this.user, this.pendingId = _kGoogleLoginPendingId});
+
+  @override
+  final AppUser user;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GoogleLogin.successful(user: $user, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleLoginSuccessful &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoogleLoginSuccessfulCopyWith<_$GoogleLoginSuccessful> get copyWith =>
+      __$$GoogleLoginSuccessfulCopyWithImpl<_$GoogleLoginSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(AppUser user, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(user, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(AppUser user, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(user, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(AppUser user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(user, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoogleLoginStart value) start,
+    required TResult Function(GoogleLoginSuccessful value) successful,
+    required TResult Function(GoogleLoginError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoogleLoginStart value)? start,
+    TResult? Function(GoogleLoginSuccessful value)? successful,
+    TResult? Function(GoogleLoginError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoogleLoginStart value)? start,
+    TResult Function(GoogleLoginSuccessful value)? successful,
+    TResult Function(GoogleLoginError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoogleLoginSuccessful implements GoogleLogin, ActionDone {
+  const factory GoogleLoginSuccessful(
+      {required final AppUser user,
+      final String pendingId}) = _$GoogleLoginSuccessful;
+
+  AppUser get user;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GoogleLoginSuccessfulCopyWith<_$GoogleLoginSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoogleLoginErrorCopyWith<$Res>
+    implements $GoogleLoginCopyWith<$Res> {
+  factory _$$GoogleLoginErrorCopyWith(
+          _$GoogleLoginError value, $Res Function(_$GoogleLoginError) then) =
+      __$$GoogleLoginErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$GoogleLoginErrorCopyWithImpl<$Res>
+    extends _$GoogleLoginCopyWithImpl<$Res, _$GoogleLoginError>
+    implements _$$GoogleLoginErrorCopyWith<$Res> {
+  __$$GoogleLoginErrorCopyWithImpl(
+      _$GoogleLoginError _value, $Res Function(_$GoogleLoginError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GoogleLoginError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GoogleLoginError implements GoogleLoginError {
+  const _$GoogleLoginError(this.error, this.stackTrace,
+      [this.pendingId = _kGoogleLoginPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GoogleLogin.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleLoginError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoogleLoginErrorCopyWith<_$GoogleLoginError> get copyWith =>
+      __$$GoogleLoginErrorCopyWithImpl<_$GoogleLoginError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult onResult, String pendingId) start,
+    required TResult Function(AppUser user, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ActionResult onResult, String pendingId)? start,
+    TResult? Function(AppUser user, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult onResult, String pendingId)? start,
+    TResult Function(AppUser user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GoogleLoginStart value) start,
+    required TResult Function(GoogleLoginSuccessful value) successful,
+    required TResult Function(GoogleLoginError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GoogleLoginStart value)? start,
+    TResult? Function(GoogleLoginSuccessful value)? successful,
+    TResult? Function(GoogleLoginError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GoogleLoginStart value)? start,
+    TResult Function(GoogleLoginSuccessful value)? successful,
+    TResult Function(GoogleLoginError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoogleLoginError
+    implements GoogleLogin, ActionDone, ErrorAction {
+  const factory GoogleLoginError(
+      final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$GoogleLoginError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GoogleLoginErrorCopyWith<_$GoogleLoginError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$Logout {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

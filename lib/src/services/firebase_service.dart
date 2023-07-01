@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flashcard_app/src/models/index.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart';
 import 'package:uuid/uuid.dart';
 
@@ -20,6 +21,25 @@ class FirebaseService {
 
   Future<AppUser> login({required String email, required String password}) async {
     final UserCredential userCredential = await auth.signInWithEmailAndPassword(email: email, password: password);
+    return AppUser(
+      uid: userCredential.user!.uid,
+      email: userCredential.user!.email!,
+      username: userCredential.user!.displayName!,
+    );
+  }
+
+  Future<AppUser> googleLogin() async {
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+    final OAuthCredential credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    final UserCredential userCredential = await auth.signInWithCredential(credential);
+
     return AppUser(
       uid: userCredential.user!.uid,
       email: userCredential.user!.email!,

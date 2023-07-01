@@ -13,12 +13,30 @@ class FirebaseEpic {
 
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
+      TypedEpic<AppState, GoogleLoginStart>(_googleLoginStart).call,
       TypedEpic<AppState, LoginStart>(_loginStart).call,
       TypedEpic<AppState, LogoutStart>(_logoutStart).call,
       TypedEpic<AppState, RegisterStart>(_registerStart).call,
       TypedEpic<AppState, GetCurrentUserStart>(_getCurrentUserStart).call,
       TypedEpic<AppState, GenerateDeckStart>(_generateDeckStart).call,
     ]);
+  }
+
+  Stream<AppAction> _googleLoginStart(Stream<GoogleLoginStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((GoogleLoginStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => _firebaseService.googleLogin())
+          .expand<AppAction>(
+            (AppUser user) => <AppAction>[
+              GoogleLoginSuccessful(user: user, pendingId: action.pendingId),
+              GetDecksCloudStart(onResult: (_) {}),
+            ],
+          )
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => GoogleLoginError(error, stackTrace, action.pendingId),
+          )
+          .doOnData(action.onResult);
+    });
   }
 
   Stream<AppAction> _loginStart(Stream<LoginStart> actions, EpicStore<AppState> store) {
@@ -88,7 +106,7 @@ class FirebaseEpic {
           .expand<AppAction>(
             (Deck deck) => <AppAction>[
               GenerateDeckSuccessful(deck: deck),
-              CreateDeckStart(deck: deck, onResult: action.onResult),
+              CreateDeckStart(deck: deck, onResult: (_) {}),
             ],
           )
           .onErrorReturnWith(
