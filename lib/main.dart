@@ -2,14 +2,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flashcard_app/env.dart';
 import 'package:flashcard_app/firebase_options.dart';
 import 'package:flashcard_app/src/epics/app_epic.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:flashcard_app/src/presentation/authentication/login_page.dart';
 import 'package:flashcard_app/src/presentation/authentication/register_page.dart';
+import 'package:flashcard_app/src/presentation/balance/balance_page.dart';
 import 'package:flashcard_app/src/presentation/deck/create_deck_page.dart';
 import 'package:flashcard_app/src/presentation/deck/edit_deck_page.dart';
 import 'package:flashcard_app/src/presentation/home/home_page.dart';
+import 'package:flashcard_app/src/presentation/pay/pay_page.dart';
 import 'package:flashcard_app/src/presentation/quiz/quiz_page.dart';
 import 'package:flashcard_app/src/presentation/start_page.dart';
 import 'package:flashcard_app/src/reducers/reducer.dart';
@@ -18,12 +21,15 @@ import 'package:flashcard_app/src/services/local_storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Stripe.publishableKey = stripePublishableKey;
+  await Stripe.instance.applySettings();
 
   final FirebaseApp app = await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   final FirebaseAuth auth = FirebaseAuth.instanceFor(app: app);
@@ -85,6 +91,8 @@ class App extends StatelessWidget {
             CreateDeckPage.route: (BuildContext context) => const CreateDeckPage(),
             EditDeckPage.route: (BuildContext context) => const EditDeckPage(),
             QuizPage.route: (BuildContext context) => const QuizPage(),
+            PayPage.route: (BuildContext context) => const PayPage(),
+            BalancePage.route: (BuildContext context) => const BalancePage(),
           },
         ),
       ),
