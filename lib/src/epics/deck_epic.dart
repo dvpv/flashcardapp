@@ -5,6 +5,7 @@ import 'package:flashcard_app/src/services/firebase_service.dart';
 import 'package:flashcard_app/src/services/local_storage_service.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/transformers.dart';
+import 'package:uuid/uuid.dart';
 
 class DeckEpic {
   DeckEpic({required this.localStorageService, required this.firebaseService});
@@ -168,7 +169,7 @@ class DeckEpic {
           .expand<AppAction>(
             (Deck deck) => <AppAction>[
               const ImportDeckSuccessful(),
-              CreateDeckStart(deck: deck, onResult: action.onResult),
+              CreateDeckStart(deck: deck.copyWith(id: const Uuid().v1()), onResult: action.onResult),
             ],
           )
           .onErrorReturnWith(

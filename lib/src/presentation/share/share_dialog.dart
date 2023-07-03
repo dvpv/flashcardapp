@@ -47,7 +47,10 @@ class _ShareDialogState extends State<ShareDialog> {
     }
     return AlertDialog(
       title: const Text('Share Deck'),
-      content: Text(shareId),
+      content: Text(
+        shareId,
+        textAlign: TextAlign.center,
+      ),
       actions: <Widget>[
         TextButton(
           onPressed: () {

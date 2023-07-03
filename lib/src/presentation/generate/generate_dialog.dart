@@ -2,6 +2,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flashcard_app/src/actions/app_action.dart';
 import 'package:flashcard_app/src/actions/decks/index.dart';
 import 'package:flashcard_app/src/models/index.dart';
+import 'package:flashcard_app/src/presentation/components/app_snack_bar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -21,14 +22,19 @@ class _GenerateDialogState extends State<GenerateDialog> {
   bool _generating = false;
   String _text = '';
   int _questionCount = 10;
+  String _deckName = '';
 
   Future<void> _handleGenerateDeck() async {
-    final FilePickerResult? result = await FilePicker.platform.pickFiles();
+    final FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: <String>['pdf'],
+    );
 
     if (result == null) {
       return;
     }
     final String path = result.files.single.path!;
+    _deckName = result.files.single.name.replaceAll('.pdf', '');
 
     try {
       final String text = await ReadPdfText.getPDFtext(path);
@@ -55,11 +61,23 @@ class _GenerateDialogState extends State<GenerateDialog> {
     });
     StoreProvider.of<AppState>(context).dispatch(
       GenerateDeckStart(
+        name: _deckName,
         text: _text,
         questionCount: _questionCount,
         onResult: (AppAction action) {
           if (action is GenerateDeckSuccessful) {
             Navigator.of(context).pop();
+          } else if (action is GenerateDeckError) {
+            if (kDebugMode) {
+              print('Error: ${action.error}');
+              print(action.stackTrace);
+            }
+            Navigator.of(context).pop();
+            ScaffoldMessenger.of(context).showSnackBar(
+              const AppSnackBar(
+                content: Text('An error occurred, generation failed'),
+              ),
+            );
           }
         },
       ),
@@ -105,16 +123,19 @@ class _GenerateDialogState extends State<GenerateDialog> {
               Text('You have selected a file containing ${_text.length} characters.'),
               const SizedBox(height: 10),
               const Text('How many cards do you want to generate?'),
-              NumberPicker(
-                minValue: 5,
-                maxValue: 100,
-                value: _questionCount,
-                axis: Axis.horizontal,
-                onChanged: (int value) {
-                  setState(() {
-                    _questionCount = value;
-                  });
-                },
+              Center(
+                child: NumberPicker(
+                  itemWidth: 60,
+                  minValue: 5,
+                  maxValue: 100,
+                  value: _questionCount,
+                  axis: Axis.horizontal,
+                  onChanged: (int value) {
+                    setState(() {
+                      _questionCount = value;
+                    });
+                  },
+                ),
               ),
               const SizedBox(height: 10),
               const Text('Do you want to generate a deck from this file?'),

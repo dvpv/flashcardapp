@@ -21,7 +21,7 @@ class _ImportDialogState extends State<ImportDialog> {
         onResult: (AppAction action) {
           if (action is CreateDeckSuccessful) {
             Navigator.of(context).pop();
-          } else if (action is! ImportDeckSuccessful) {
+          } else if (action is ImportDeckError) {
             ScaffoldMessenger.of(context).showSnackBar(const AppSnackBar(content: Text('Invalid share id')));
           }
         },

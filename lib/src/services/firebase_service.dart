@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flashcard_app/src/models/index.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 
 const String _kUserDataKey = 'userData';
@@ -98,7 +99,7 @@ class FirebaseService {
     return Deck.fromJson(deckJson);
   }
 
-  Future<Deck> generateDeck({required String text, required int questionCount}) async {
+  Future<Deck> generateDeck({required String text, required int questionCount, required String name}) async {
     final String uid = auth.currentUser!.uid;
     final DocumentSnapshot<Map<String, dynamic>> snapshot = await firestore.doc('$_kApiKeysKey/$uid').get();
     final String key = snapshot.data()!['key'] as String;
@@ -126,7 +127,7 @@ class FirebaseService {
 
     return Deck(
       id: const Uuid().v1(),
-      title: 'Generated Deck',
+      title: name.isNotEmpty ? name : 'Generated Deck ${DateFormat('dd/MM/yyyy H:Hm:Hms').format(DateTime.now())}}',
       createdAt: DateTime.now(),
       updatedAt: DateTime.now(),
       cards: cards,
