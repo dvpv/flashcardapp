@@ -19,30 +19,23 @@ mixin _$CreateDeck {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -70,22 +63,19 @@ mixin _$CreateDeck {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CreateDeckCopyWith<CreateDeck> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreateDeckCopyWith<CreateDeck> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreateDeckCopyWith<$Res> {
-  factory $CreateDeckCopyWith(
-          CreateDeck value, $Res Function(CreateDeck) then) =
+  factory $CreateDeckCopyWith(CreateDeck value, $Res Function(CreateDeck) then) =
       _$CreateDeckCopyWithImpl<$Res, CreateDeck>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$CreateDeckCopyWithImpl<$Res, $Val extends CreateDeck>
-    implements $CreateDeckCopyWith<$Res> {
+class _$CreateDeckCopyWithImpl<$Res, $Val extends CreateDeck> implements $CreateDeckCopyWith<$Res> {
   _$CreateDeckCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -108,10 +98,8 @@ class _$CreateDeckCopyWithImpl<$Res, $Val extends CreateDeck>
 }
 
 /// @nodoc
-abstract class _$$CreateDeckStartCopyWith<$Res>
-    implements $CreateDeckCopyWith<$Res> {
-  factory _$$CreateDeckStartCopyWith(
-          _$CreateDeckStart value, $Res Function(_$CreateDeckStart) then) =
+abstract class _$$CreateDeckStartCopyWith<$Res> implements $CreateDeckCopyWith<$Res> {
+  factory _$$CreateDeckStartCopyWith(_$CreateDeckStart value, $Res Function(_$CreateDeckStart) then) =
       __$$CreateDeckStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -121,11 +109,9 @@ abstract class _$$CreateDeckStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CreateDeckStartCopyWithImpl<$Res>
-    extends _$CreateDeckCopyWithImpl<$Res, _$CreateDeckStart>
+class __$$CreateDeckStartCopyWithImpl<$Res> extends _$CreateDeckCopyWithImpl<$Res, _$CreateDeckStart>
     implements _$$CreateDeckStartCopyWith<$Res> {
-  __$$CreateDeckStartCopyWithImpl(
-      _$CreateDeckStart _value, $Res Function(_$CreateDeckStart) _then)
+  __$$CreateDeckStartCopyWithImpl(_$CreateDeckStart _value, $Res Function(_$CreateDeckStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -163,10 +149,7 @@ class __$$CreateDeckStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreateDeckStart implements CreateDeckStart {
-  const _$CreateDeckStart(
-      {required this.deck,
-      required this.onResult,
-      this.pendingId = _kCreateDeckPendingId});
+  const _$CreateDeckStart({required this.deck, required this.onResult, this.pendingId = _kCreateDeckPendingId});
 
   @override
   final Deck deck;
@@ -187,10 +170,8 @@ class _$CreateDeckStart implements CreateDeckStart {
         (other.runtimeType == runtimeType &&
             other is _$CreateDeckStart &&
             (identical(other.deck, deck) || other.deck == deck) &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -205,13 +186,9 @@ class _$CreateDeckStart implements CreateDeckStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(deck, onResult, pendingId);
   }
@@ -219,11 +196,9 @@ class _$CreateDeckStart implements CreateDeckStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(deck, onResult, pendingId);
   }
@@ -233,8 +208,7 @@ class _$CreateDeckStart implements CreateDeckStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -280,9 +254,7 @@ class _$CreateDeckStart implements CreateDeckStart {
 
 abstract class CreateDeckStart implements CreateDeck, ActionStart {
   const factory CreateDeckStart(
-      {required final Deck deck,
-      required final ActionResult onResult,
-      final String pendingId}) = _$CreateDeckStart;
+      {required final Deck deck, required final ActionResult onResult, final String pendingId}) = _$CreateDeckStart;
 
   Deck get deck;
   ActionResult get onResult;
@@ -290,15 +262,12 @@ abstract class CreateDeckStart implements CreateDeck, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$CreateDeckStartCopyWith<_$CreateDeckStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CreateDeckStartCopyWith<_$CreateDeckStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CreateDeckSuccessfulCopyWith<$Res>
-    implements $CreateDeckCopyWith<$Res> {
-  factory _$$CreateDeckSuccessfulCopyWith(_$CreateDeckSuccessful value,
-          $Res Function(_$CreateDeckSuccessful) then) =
+abstract class _$$CreateDeckSuccessfulCopyWith<$Res> implements $CreateDeckCopyWith<$Res> {
+  factory _$$CreateDeckSuccessfulCopyWith(_$CreateDeckSuccessful value, $Res Function(_$CreateDeckSuccessful) then) =
       __$$CreateDeckSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -308,11 +277,9 @@ abstract class _$$CreateDeckSuccessfulCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CreateDeckSuccessfulCopyWithImpl<$Res>
-    extends _$CreateDeckCopyWithImpl<$Res, _$CreateDeckSuccessful>
+class __$$CreateDeckSuccessfulCopyWithImpl<$Res> extends _$CreateDeckCopyWithImpl<$Res, _$CreateDeckSuccessful>
     implements _$$CreateDeckSuccessfulCopyWith<$Res> {
-  __$$CreateDeckSuccessfulCopyWithImpl(_$CreateDeckSuccessful _value,
-      $Res Function(_$CreateDeckSuccessful) _then)
+  __$$CreateDeckSuccessfulCopyWithImpl(_$CreateDeckSuccessful _value, $Res Function(_$CreateDeckSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -345,8 +312,7 @@ class __$$CreateDeckSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreateDeckSuccessful implements CreateDeckSuccessful {
-  const _$CreateDeckSuccessful(
-      {required this.deck, this.pendingId = _kCreateDeckPendingId});
+  const _$CreateDeckSuccessful({required this.deck, this.pendingId = _kCreateDeckPendingId});
 
   @override
   final Deck deck;
@@ -365,8 +331,7 @@ class _$CreateDeckSuccessful implements CreateDeckSuccessful {
         (other.runtimeType == runtimeType &&
             other is _$CreateDeckSuccessful &&
             (identical(other.deck, deck) || other.deck == deck) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -376,19 +341,14 @@ class _$CreateDeckSuccessful implements CreateDeckSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$CreateDeckSuccessfulCopyWith<_$CreateDeckSuccessful> get copyWith =>
-      __$$CreateDeckSuccessfulCopyWithImpl<_$CreateDeckSuccessful>(
-          this, _$identity);
+      __$$CreateDeckSuccessfulCopyWithImpl<_$CreateDeckSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(deck, pendingId);
   }
@@ -396,11 +356,9 @@ class _$CreateDeckSuccessful implements CreateDeckSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(deck, pendingId);
   }
@@ -410,8 +368,7 @@ class _$CreateDeckSuccessful implements CreateDeckSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -456,24 +413,19 @@ class _$CreateDeckSuccessful implements CreateDeckSuccessful {
 }
 
 abstract class CreateDeckSuccessful implements CreateDeck, ActionDone {
-  const factory CreateDeckSuccessful(
-      {required final Deck deck,
-      final String pendingId}) = _$CreateDeckSuccessful;
+  const factory CreateDeckSuccessful({required final Deck deck, final String pendingId}) = _$CreateDeckSuccessful;
 
   Deck get deck;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$CreateDeckSuccessfulCopyWith<_$CreateDeckSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CreateDeckSuccessfulCopyWith<_$CreateDeckSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CreateDeckErrorCopyWith<$Res>
-    implements $CreateDeckCopyWith<$Res> {
-  factory _$$CreateDeckErrorCopyWith(
-          _$CreateDeckError value, $Res Function(_$CreateDeckError) then) =
+abstract class _$$CreateDeckErrorCopyWith<$Res> implements $CreateDeckCopyWith<$Res> {
+  factory _$$CreateDeckErrorCopyWith(_$CreateDeckError value, $Res Function(_$CreateDeckError) then) =
       __$$CreateDeckErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -481,11 +433,9 @@ abstract class _$$CreateDeckErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CreateDeckErrorCopyWithImpl<$Res>
-    extends _$CreateDeckCopyWithImpl<$Res, _$CreateDeckError>
+class __$$CreateDeckErrorCopyWithImpl<$Res> extends _$CreateDeckCopyWithImpl<$Res, _$CreateDeckError>
     implements _$$CreateDeckErrorCopyWith<$Res> {
-  __$$CreateDeckErrorCopyWithImpl(
-      _$CreateDeckError _value, $Res Function(_$CreateDeckError) _then)
+  __$$CreateDeckErrorCopyWithImpl(_$CreateDeckError _value, $Res Function(_$CreateDeckError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -512,8 +462,7 @@ class __$$CreateDeckErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreateDeckError implements CreateDeckError {
-  const _$CreateDeckError(this.error, this.stackTrace,
-      [this.pendingId = _kCreateDeckPendingId]);
+  const _$CreateDeckError(this.error, this.stackTrace, [this.pendingId = _kCreateDeckPendingId]);
 
   @override
   final Object error;
@@ -534,15 +483,12 @@ class _$CreateDeckError implements CreateDeckError {
         (other.runtimeType == runtimeType &&
             other is _$CreateDeckError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -553,13 +499,9 @@ class _$CreateDeckError implements CreateDeckError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -567,11 +509,9 @@ class _$CreateDeckError implements CreateDeckError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -581,8 +521,7 @@ class _$CreateDeckError implements CreateDeckError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -627,8 +566,8 @@ class _$CreateDeckError implements CreateDeckError {
 }
 
 abstract class CreateDeckError implements CreateDeck, ActionDone, ErrorAction {
-  const factory CreateDeckError(final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$CreateDeckError;
+  const factory CreateDeckError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$CreateDeckError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -636,8 +575,7 @@ abstract class CreateDeckError implements CreateDeck, ActionDone, ErrorAction {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$CreateDeckErrorCopyWith<_$CreateDeckError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CreateDeckErrorCopyWith<_$CreateDeckError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -645,30 +583,23 @@ mixin _$UpdateDeck {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -696,22 +627,19 @@ mixin _$UpdateDeck {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UpdateDeckCopyWith<UpdateDeck> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UpdateDeckCopyWith<UpdateDeck> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UpdateDeckCopyWith<$Res> {
-  factory $UpdateDeckCopyWith(
-          UpdateDeck value, $Res Function(UpdateDeck) then) =
+  factory $UpdateDeckCopyWith(UpdateDeck value, $Res Function(UpdateDeck) then) =
       _$UpdateDeckCopyWithImpl<$Res, UpdateDeck>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$UpdateDeckCopyWithImpl<$Res, $Val extends UpdateDeck>
-    implements $UpdateDeckCopyWith<$Res> {
+class _$UpdateDeckCopyWithImpl<$Res, $Val extends UpdateDeck> implements $UpdateDeckCopyWith<$Res> {
   _$UpdateDeckCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -734,10 +662,8 @@ class _$UpdateDeckCopyWithImpl<$Res, $Val extends UpdateDeck>
 }
 
 /// @nodoc
-abstract class _$$UpdateDeckStartCopyWith<$Res>
-    implements $UpdateDeckCopyWith<$Res> {
-  factory _$$UpdateDeckStartCopyWith(
-          _$UpdateDeckStart value, $Res Function(_$UpdateDeckStart) then) =
+abstract class _$$UpdateDeckStartCopyWith<$Res> implements $UpdateDeckCopyWith<$Res> {
+  factory _$$UpdateDeckStartCopyWith(_$UpdateDeckStart value, $Res Function(_$UpdateDeckStart) then) =
       __$$UpdateDeckStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -747,11 +673,9 @@ abstract class _$$UpdateDeckStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$UpdateDeckStartCopyWithImpl<$Res>
-    extends _$UpdateDeckCopyWithImpl<$Res, _$UpdateDeckStart>
+class __$$UpdateDeckStartCopyWithImpl<$Res> extends _$UpdateDeckCopyWithImpl<$Res, _$UpdateDeckStart>
     implements _$$UpdateDeckStartCopyWith<$Res> {
-  __$$UpdateDeckStartCopyWithImpl(
-      _$UpdateDeckStart _value, $Res Function(_$UpdateDeckStart) _then)
+  __$$UpdateDeckStartCopyWithImpl(_$UpdateDeckStart _value, $Res Function(_$UpdateDeckStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -789,10 +713,7 @@ class __$$UpdateDeckStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateDeckStart implements UpdateDeckStart {
-  const _$UpdateDeckStart(
-      {required this.deck,
-      required this.onResult,
-      this.pendingId = _kUpdateDeckPendingId});
+  const _$UpdateDeckStart({required this.deck, required this.onResult, this.pendingId = _kUpdateDeckPendingId});
 
   @override
   final Deck deck;
@@ -813,10 +734,8 @@ class _$UpdateDeckStart implements UpdateDeckStart {
         (other.runtimeType == runtimeType &&
             other is _$UpdateDeckStart &&
             (identical(other.deck, deck) || other.deck == deck) &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -831,13 +750,9 @@ class _$UpdateDeckStart implements UpdateDeckStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(deck, onResult, pendingId);
   }
@@ -845,11 +760,9 @@ class _$UpdateDeckStart implements UpdateDeckStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(deck, onResult, pendingId);
   }
@@ -859,8 +772,7 @@ class _$UpdateDeckStart implements UpdateDeckStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -906,9 +818,7 @@ class _$UpdateDeckStart implements UpdateDeckStart {
 
 abstract class UpdateDeckStart implements UpdateDeck, ActionStart {
   const factory UpdateDeckStart(
-      {required final Deck deck,
-      required final ActionResult onResult,
-      final String pendingId}) = _$UpdateDeckStart;
+      {required final Deck deck, required final ActionResult onResult, final String pendingId}) = _$UpdateDeckStart;
 
   Deck get deck;
   ActionResult get onResult;
@@ -916,15 +826,12 @@ abstract class UpdateDeckStart implements UpdateDeck, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$UpdateDeckStartCopyWith<_$UpdateDeckStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateDeckStartCopyWith<_$UpdateDeckStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateDeckSuccessfulCopyWith<$Res>
-    implements $UpdateDeckCopyWith<$Res> {
-  factory _$$UpdateDeckSuccessfulCopyWith(_$UpdateDeckSuccessful value,
-          $Res Function(_$UpdateDeckSuccessful) then) =
+abstract class _$$UpdateDeckSuccessfulCopyWith<$Res> implements $UpdateDeckCopyWith<$Res> {
+  factory _$$UpdateDeckSuccessfulCopyWith(_$UpdateDeckSuccessful value, $Res Function(_$UpdateDeckSuccessful) then) =
       __$$UpdateDeckSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -934,11 +841,9 @@ abstract class _$$UpdateDeckSuccessfulCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$UpdateDeckSuccessfulCopyWithImpl<$Res>
-    extends _$UpdateDeckCopyWithImpl<$Res, _$UpdateDeckSuccessful>
+class __$$UpdateDeckSuccessfulCopyWithImpl<$Res> extends _$UpdateDeckCopyWithImpl<$Res, _$UpdateDeckSuccessful>
     implements _$$UpdateDeckSuccessfulCopyWith<$Res> {
-  __$$UpdateDeckSuccessfulCopyWithImpl(_$UpdateDeckSuccessful _value,
-      $Res Function(_$UpdateDeckSuccessful) _then)
+  __$$UpdateDeckSuccessfulCopyWithImpl(_$UpdateDeckSuccessful _value, $Res Function(_$UpdateDeckSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -971,8 +876,7 @@ class __$$UpdateDeckSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateDeckSuccessful implements UpdateDeckSuccessful {
-  const _$UpdateDeckSuccessful(
-      {required this.deck, this.pendingId = _kUpdateDeckPendingId});
+  const _$UpdateDeckSuccessful({required this.deck, this.pendingId = _kUpdateDeckPendingId});
 
   @override
   final Deck deck;
@@ -991,8 +895,7 @@ class _$UpdateDeckSuccessful implements UpdateDeckSuccessful {
         (other.runtimeType == runtimeType &&
             other is _$UpdateDeckSuccessful &&
             (identical(other.deck, deck) || other.deck == deck) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -1002,19 +905,14 @@ class _$UpdateDeckSuccessful implements UpdateDeckSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateDeckSuccessfulCopyWith<_$UpdateDeckSuccessful> get copyWith =>
-      __$$UpdateDeckSuccessfulCopyWithImpl<_$UpdateDeckSuccessful>(
-          this, _$identity);
+      __$$UpdateDeckSuccessfulCopyWithImpl<_$UpdateDeckSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(deck, pendingId);
   }
@@ -1022,11 +920,9 @@ class _$UpdateDeckSuccessful implements UpdateDeckSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(deck, pendingId);
   }
@@ -1036,8 +932,7 @@ class _$UpdateDeckSuccessful implements UpdateDeckSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -1082,24 +977,19 @@ class _$UpdateDeckSuccessful implements UpdateDeckSuccessful {
 }
 
 abstract class UpdateDeckSuccessful implements UpdateDeck, ActionDone {
-  const factory UpdateDeckSuccessful(
-      {required final Deck deck,
-      final String pendingId}) = _$UpdateDeckSuccessful;
+  const factory UpdateDeckSuccessful({required final Deck deck, final String pendingId}) = _$UpdateDeckSuccessful;
 
   Deck get deck;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$UpdateDeckSuccessfulCopyWith<_$UpdateDeckSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateDeckSuccessfulCopyWith<_$UpdateDeckSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateDeckErrorCopyWith<$Res>
-    implements $UpdateDeckCopyWith<$Res> {
-  factory _$$UpdateDeckErrorCopyWith(
-          _$UpdateDeckError value, $Res Function(_$UpdateDeckError) then) =
+abstract class _$$UpdateDeckErrorCopyWith<$Res> implements $UpdateDeckCopyWith<$Res> {
+  factory _$$UpdateDeckErrorCopyWith(_$UpdateDeckError value, $Res Function(_$UpdateDeckError) then) =
       __$$UpdateDeckErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1107,11 +997,9 @@ abstract class _$$UpdateDeckErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$UpdateDeckErrorCopyWithImpl<$Res>
-    extends _$UpdateDeckCopyWithImpl<$Res, _$UpdateDeckError>
+class __$$UpdateDeckErrorCopyWithImpl<$Res> extends _$UpdateDeckCopyWithImpl<$Res, _$UpdateDeckError>
     implements _$$UpdateDeckErrorCopyWith<$Res> {
-  __$$UpdateDeckErrorCopyWithImpl(
-      _$UpdateDeckError _value, $Res Function(_$UpdateDeckError) _then)
+  __$$UpdateDeckErrorCopyWithImpl(_$UpdateDeckError _value, $Res Function(_$UpdateDeckError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1138,8 +1026,7 @@ class __$$UpdateDeckErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateDeckError implements UpdateDeckError {
-  const _$UpdateDeckError(this.error, this.stackTrace,
-      [this.pendingId = _kUpdateDeckPendingId]);
+  const _$UpdateDeckError(this.error, this.stackTrace, [this.pendingId = _kUpdateDeckPendingId]);
 
   @override
   final Object error;
@@ -1160,15 +1047,12 @@ class _$UpdateDeckError implements UpdateDeckError {
         (other.runtimeType == runtimeType &&
             other is _$UpdateDeckError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -1179,13 +1063,9 @@ class _$UpdateDeckError implements UpdateDeckError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -1193,11 +1073,9 @@ class _$UpdateDeckError implements UpdateDeckError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -1207,8 +1085,7 @@ class _$UpdateDeckError implements UpdateDeckError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1253,8 +1130,8 @@ class _$UpdateDeckError implements UpdateDeckError {
 }
 
 abstract class UpdateDeckError implements UpdateDeck, ActionDone, ErrorAction {
-  const factory UpdateDeckError(final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$UpdateDeckError;
+  const factory UpdateDeckError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$UpdateDeckError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -1262,8 +1139,7 @@ abstract class UpdateDeckError implements UpdateDeck, ActionDone, ErrorAction {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$UpdateDeckErrorCopyWith<_$UpdateDeckError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateDeckErrorCopyWith<_$UpdateDeckError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1271,30 +1147,23 @@ mixin _$DeleteDeck {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1322,22 +1191,19 @@ mixin _$DeleteDeck {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DeleteDeckCopyWith<DeleteDeck> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeleteDeckCopyWith<DeleteDeck> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeleteDeckCopyWith<$Res> {
-  factory $DeleteDeckCopyWith(
-          DeleteDeck value, $Res Function(DeleteDeck) then) =
+  factory $DeleteDeckCopyWith(DeleteDeck value, $Res Function(DeleteDeck) then) =
       _$DeleteDeckCopyWithImpl<$Res, DeleteDeck>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$DeleteDeckCopyWithImpl<$Res, $Val extends DeleteDeck>
-    implements $DeleteDeckCopyWith<$Res> {
+class _$DeleteDeckCopyWithImpl<$Res, $Val extends DeleteDeck> implements $DeleteDeckCopyWith<$Res> {
   _$DeleteDeckCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1360,10 +1226,8 @@ class _$DeleteDeckCopyWithImpl<$Res, $Val extends DeleteDeck>
 }
 
 /// @nodoc
-abstract class _$$DeleteDeckStartCopyWith<$Res>
-    implements $DeleteDeckCopyWith<$Res> {
-  factory _$$DeleteDeckStartCopyWith(
-          _$DeleteDeckStart value, $Res Function(_$DeleteDeckStart) then) =
+abstract class _$$DeleteDeckStartCopyWith<$Res> implements $DeleteDeckCopyWith<$Res> {
+  factory _$$DeleteDeckStartCopyWith(_$DeleteDeckStart value, $Res Function(_$DeleteDeckStart) then) =
       __$$DeleteDeckStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1373,11 +1237,9 @@ abstract class _$$DeleteDeckStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DeleteDeckStartCopyWithImpl<$Res>
-    extends _$DeleteDeckCopyWithImpl<$Res, _$DeleteDeckStart>
+class __$$DeleteDeckStartCopyWithImpl<$Res> extends _$DeleteDeckCopyWithImpl<$Res, _$DeleteDeckStart>
     implements _$$DeleteDeckStartCopyWith<$Res> {
-  __$$DeleteDeckStartCopyWithImpl(
-      _$DeleteDeckStart _value, $Res Function(_$DeleteDeckStart) _then)
+  __$$DeleteDeckStartCopyWithImpl(_$DeleteDeckStart _value, $Res Function(_$DeleteDeckStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1415,10 +1277,7 @@ class __$$DeleteDeckStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DeleteDeckStart implements DeleteDeckStart {
-  const _$DeleteDeckStart(
-      {required this.deck,
-      required this.onResult,
-      this.pendingId = _kDeleteDeckPendingId});
+  const _$DeleteDeckStart({required this.deck, required this.onResult, this.pendingId = _kDeleteDeckPendingId});
 
   @override
   final Deck deck;
@@ -1439,10 +1298,8 @@ class _$DeleteDeckStart implements DeleteDeckStart {
         (other.runtimeType == runtimeType &&
             other is _$DeleteDeckStart &&
             (identical(other.deck, deck) || other.deck == deck) &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -1457,13 +1314,9 @@ class _$DeleteDeckStart implements DeleteDeckStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(deck, onResult, pendingId);
   }
@@ -1471,11 +1324,9 @@ class _$DeleteDeckStart implements DeleteDeckStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(deck, onResult, pendingId);
   }
@@ -1485,8 +1336,7 @@ class _$DeleteDeckStart implements DeleteDeckStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -1532,9 +1382,7 @@ class _$DeleteDeckStart implements DeleteDeckStart {
 
 abstract class DeleteDeckStart implements DeleteDeck, ActionStart {
   const factory DeleteDeckStart(
-      {required final Deck deck,
-      required final ActionResult onResult,
-      final String pendingId}) = _$DeleteDeckStart;
+      {required final Deck deck, required final ActionResult onResult, final String pendingId}) = _$DeleteDeckStart;
 
   Deck get deck;
   ActionResult get onResult;
@@ -1542,15 +1390,12 @@ abstract class DeleteDeckStart implements DeleteDeck, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$DeleteDeckStartCopyWith<_$DeleteDeckStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DeleteDeckStartCopyWith<_$DeleteDeckStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DeleteDeckSuccessfulCopyWith<$Res>
-    implements $DeleteDeckCopyWith<$Res> {
-  factory _$$DeleteDeckSuccessfulCopyWith(_$DeleteDeckSuccessful value,
-          $Res Function(_$DeleteDeckSuccessful) then) =
+abstract class _$$DeleteDeckSuccessfulCopyWith<$Res> implements $DeleteDeckCopyWith<$Res> {
+  factory _$$DeleteDeckSuccessfulCopyWith(_$DeleteDeckSuccessful value, $Res Function(_$DeleteDeckSuccessful) then) =
       __$$DeleteDeckSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1560,11 +1405,9 @@ abstract class _$$DeleteDeckSuccessfulCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DeleteDeckSuccessfulCopyWithImpl<$Res>
-    extends _$DeleteDeckCopyWithImpl<$Res, _$DeleteDeckSuccessful>
+class __$$DeleteDeckSuccessfulCopyWithImpl<$Res> extends _$DeleteDeckCopyWithImpl<$Res, _$DeleteDeckSuccessful>
     implements _$$DeleteDeckSuccessfulCopyWith<$Res> {
-  __$$DeleteDeckSuccessfulCopyWithImpl(_$DeleteDeckSuccessful _value,
-      $Res Function(_$DeleteDeckSuccessful) _then)
+  __$$DeleteDeckSuccessfulCopyWithImpl(_$DeleteDeckSuccessful _value, $Res Function(_$DeleteDeckSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1597,8 +1440,7 @@ class __$$DeleteDeckSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DeleteDeckSuccessful implements DeleteDeckSuccessful {
-  const _$DeleteDeckSuccessful(
-      {required this.deck, this.pendingId = _kDeleteDeckPendingId});
+  const _$DeleteDeckSuccessful({required this.deck, this.pendingId = _kDeleteDeckPendingId});
 
   @override
   final Deck deck;
@@ -1617,8 +1459,7 @@ class _$DeleteDeckSuccessful implements DeleteDeckSuccessful {
         (other.runtimeType == runtimeType &&
             other is _$DeleteDeckSuccessful &&
             (identical(other.deck, deck) || other.deck == deck) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -1628,19 +1469,14 @@ class _$DeleteDeckSuccessful implements DeleteDeckSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteDeckSuccessfulCopyWith<_$DeleteDeckSuccessful> get copyWith =>
-      __$$DeleteDeckSuccessfulCopyWithImpl<_$DeleteDeckSuccessful>(
-          this, _$identity);
+      __$$DeleteDeckSuccessfulCopyWithImpl<_$DeleteDeckSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(deck, pendingId);
   }
@@ -1648,11 +1484,9 @@ class _$DeleteDeckSuccessful implements DeleteDeckSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(deck, pendingId);
   }
@@ -1662,8 +1496,7 @@ class _$DeleteDeckSuccessful implements DeleteDeckSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -1708,24 +1541,19 @@ class _$DeleteDeckSuccessful implements DeleteDeckSuccessful {
 }
 
 abstract class DeleteDeckSuccessful implements DeleteDeck, ActionDone {
-  const factory DeleteDeckSuccessful(
-      {required final Deck deck,
-      final String pendingId}) = _$DeleteDeckSuccessful;
+  const factory DeleteDeckSuccessful({required final Deck deck, final String pendingId}) = _$DeleteDeckSuccessful;
 
   Deck get deck;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$DeleteDeckSuccessfulCopyWith<_$DeleteDeckSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DeleteDeckSuccessfulCopyWith<_$DeleteDeckSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DeleteDeckErrorCopyWith<$Res>
-    implements $DeleteDeckCopyWith<$Res> {
-  factory _$$DeleteDeckErrorCopyWith(
-          _$DeleteDeckError value, $Res Function(_$DeleteDeckError) then) =
+abstract class _$$DeleteDeckErrorCopyWith<$Res> implements $DeleteDeckCopyWith<$Res> {
+  factory _$$DeleteDeckErrorCopyWith(_$DeleteDeckError value, $Res Function(_$DeleteDeckError) then) =
       __$$DeleteDeckErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1733,11 +1561,9 @@ abstract class _$$DeleteDeckErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DeleteDeckErrorCopyWithImpl<$Res>
-    extends _$DeleteDeckCopyWithImpl<$Res, _$DeleteDeckError>
+class __$$DeleteDeckErrorCopyWithImpl<$Res> extends _$DeleteDeckCopyWithImpl<$Res, _$DeleteDeckError>
     implements _$$DeleteDeckErrorCopyWith<$Res> {
-  __$$DeleteDeckErrorCopyWithImpl(
-      _$DeleteDeckError _value, $Res Function(_$DeleteDeckError) _then)
+  __$$DeleteDeckErrorCopyWithImpl(_$DeleteDeckError _value, $Res Function(_$DeleteDeckError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1764,8 +1590,7 @@ class __$$DeleteDeckErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DeleteDeckError implements DeleteDeckError {
-  const _$DeleteDeckError(this.error, this.stackTrace,
-      [this.pendingId = _kDeleteDeckPendingId]);
+  const _$DeleteDeckError(this.error, this.stackTrace, [this.pendingId = _kDeleteDeckPendingId]);
 
   @override
   final Object error;
@@ -1786,15 +1611,12 @@ class _$DeleteDeckError implements DeleteDeckError {
         (other.runtimeType == runtimeType &&
             other is _$DeleteDeckError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -1805,13 +1627,9 @@ class _$DeleteDeckError implements DeleteDeckError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(Deck deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -1819,11 +1637,9 @@ class _$DeleteDeckError implements DeleteDeckError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -1833,8 +1649,7 @@ class _$DeleteDeckError implements DeleteDeckError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1879,8 +1694,8 @@ class _$DeleteDeckError implements DeleteDeckError {
 }
 
 abstract class DeleteDeckError implements DeleteDeck, ActionDone, ErrorAction {
-  const factory DeleteDeckError(final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$DeleteDeckError;
+  const factory DeleteDeckError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$DeleteDeckError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -1888,8 +1703,7 @@ abstract class DeleteDeckError implements DeleteDeck, ActionDone, ErrorAction {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$DeleteDeckErrorCopyWith<_$DeleteDeckError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DeleteDeckErrorCopyWith<_$DeleteDeckError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1897,32 +1711,23 @@ mixin _$SaveDecksLocally {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(List<Deck> decks, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1950,22 +1755,19 @@ mixin _$SaveDecksLocally {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SaveDecksLocallyCopyWith<SaveDecksLocally> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SaveDecksLocallyCopyWith<SaveDecksLocally> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SaveDecksLocallyCopyWith<$Res> {
-  factory $SaveDecksLocallyCopyWith(
-          SaveDecksLocally value, $Res Function(SaveDecksLocally) then) =
+  factory $SaveDecksLocallyCopyWith(SaveDecksLocally value, $Res Function(SaveDecksLocally) then) =
       _$SaveDecksLocallyCopyWithImpl<$Res, SaveDecksLocally>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$SaveDecksLocallyCopyWithImpl<$Res, $Val extends SaveDecksLocally>
-    implements $SaveDecksLocallyCopyWith<$Res> {
+class _$SaveDecksLocallyCopyWithImpl<$Res, $Val extends SaveDecksLocally> implements $SaveDecksLocallyCopyWith<$Res> {
   _$SaveDecksLocallyCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1988,10 +1790,8 @@ class _$SaveDecksLocallyCopyWithImpl<$Res, $Val extends SaveDecksLocally>
 }
 
 /// @nodoc
-abstract class _$$SaveDecksLocallyStartCopyWith<$Res>
-    implements $SaveDecksLocallyCopyWith<$Res> {
-  factory _$$SaveDecksLocallyStartCopyWith(_$SaveDecksLocallyStart value,
-          $Res Function(_$SaveDecksLocallyStart) then) =
+abstract class _$$SaveDecksLocallyStartCopyWith<$Res> implements $SaveDecksLocallyCopyWith<$Res> {
+  factory _$$SaveDecksLocallyStartCopyWith(_$SaveDecksLocallyStart value, $Res Function(_$SaveDecksLocallyStart) then) =
       __$$SaveDecksLocallyStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1999,11 +1799,9 @@ abstract class _$$SaveDecksLocallyStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SaveDecksLocallyStartCopyWithImpl<$Res>
-    extends _$SaveDecksLocallyCopyWithImpl<$Res, _$SaveDecksLocallyStart>
+class __$$SaveDecksLocallyStartCopyWithImpl<$Res> extends _$SaveDecksLocallyCopyWithImpl<$Res, _$SaveDecksLocallyStart>
     implements _$$SaveDecksLocallyStartCopyWith<$Res> {
-  __$$SaveDecksLocallyStartCopyWithImpl(_$SaveDecksLocallyStart _value,
-      $Res Function(_$SaveDecksLocallyStart) _then)
+  __$$SaveDecksLocallyStartCopyWithImpl(_$SaveDecksLocallyStart _value, $Res Function(_$SaveDecksLocallyStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2034,9 +1832,7 @@ class __$$SaveDecksLocallyStartCopyWithImpl<$Res>
 
 class _$SaveDecksLocallyStart implements SaveDecksLocallyStart {
   const _$SaveDecksLocallyStart(
-      {required final List<Deck> decks,
-      required this.onResult,
-      this.pendingId = _kSaveDecksLocallyPendingId})
+      {required final List<Deck> decks, required this.onResult, this.pendingId = _kSaveDecksLocallyPendingId})
       : _decks = decks;
 
   final List<Deck> _decks;
@@ -2064,33 +1860,25 @@ class _$SaveDecksLocallyStart implements SaveDecksLocallyStart {
         (other.runtimeType == runtimeType &&
             other is _$SaveDecksLocallyStart &&
             const DeepCollectionEquality().equals(other._decks, _decks) &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_decks), onResult, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_decks), onResult, pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SaveDecksLocallyStartCopyWith<_$SaveDecksLocallyStart> get copyWith =>
-      __$$SaveDecksLocallyStartCopyWithImpl<_$SaveDecksLocallyStart>(
-          this, _$identity);
+      __$$SaveDecksLocallyStartCopyWithImpl<_$SaveDecksLocallyStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(List<Deck> decks, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(decks, onResult, pendingId);
   }
@@ -2098,12 +1886,9 @@ class _$SaveDecksLocallyStart implements SaveDecksLocallyStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(decks, onResult, pendingId);
   }
@@ -2111,11 +1896,9 @@ class _$SaveDecksLocallyStart implements SaveDecksLocallyStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -2171,16 +1954,13 @@ abstract class SaveDecksLocallyStart implements SaveDecksLocally, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$SaveDecksLocallyStartCopyWith<_$SaveDecksLocallyStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SaveDecksLocallyStartCopyWith<_$SaveDecksLocallyStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SaveDecksLocallySuccessfulCopyWith<$Res>
-    implements $SaveDecksLocallyCopyWith<$Res> {
+abstract class _$$SaveDecksLocallySuccessfulCopyWith<$Res> implements $SaveDecksLocallyCopyWith<$Res> {
   factory _$$SaveDecksLocallySuccessfulCopyWith(
-          _$SaveDecksLocallySuccessful value,
-          $Res Function(_$SaveDecksLocallySuccessful) then) =
+          _$SaveDecksLocallySuccessful value, $Res Function(_$SaveDecksLocallySuccessful) then) =
       __$$SaveDecksLocallySuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2192,8 +1972,7 @@ class __$$SaveDecksLocallySuccessfulCopyWithImpl<$Res>
     extends _$SaveDecksLocallyCopyWithImpl<$Res, _$SaveDecksLocallySuccessful>
     implements _$$SaveDecksLocallySuccessfulCopyWith<$Res> {
   __$$SaveDecksLocallySuccessfulCopyWithImpl(
-      _$SaveDecksLocallySuccessful _value,
-      $Res Function(_$SaveDecksLocallySuccessful) _then)
+      _$SaveDecksLocallySuccessful _value, $Res Function(_$SaveDecksLocallySuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2213,8 +1992,7 @@ class __$$SaveDecksLocallySuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SaveDecksLocallySuccessful implements SaveDecksLocallySuccessful {
-  const _$SaveDecksLocallySuccessful(
-      {this.pendingId = _kSaveDecksLocallyPendingId});
+  const _$SaveDecksLocallySuccessful({this.pendingId = _kSaveDecksLocallyPendingId});
 
   @override
   @JsonKey()
@@ -2230,8 +2008,7 @@ class _$SaveDecksLocallySuccessful implements SaveDecksLocallySuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SaveDecksLocallySuccessful &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -2240,20 +2017,15 @@ class _$SaveDecksLocallySuccessful implements SaveDecksLocallySuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SaveDecksLocallySuccessfulCopyWith<_$SaveDecksLocallySuccessful>
-      get copyWith => __$$SaveDecksLocallySuccessfulCopyWithImpl<
-          _$SaveDecksLocallySuccessful>(this, _$identity);
+  _$$SaveDecksLocallySuccessfulCopyWith<_$SaveDecksLocallySuccessful> get copyWith =>
+      __$$SaveDecksLocallySuccessfulCopyWithImpl<_$SaveDecksLocallySuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(List<Deck> decks, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(pendingId);
   }
@@ -2261,12 +2033,9 @@ class _$SaveDecksLocallySuccessful implements SaveDecksLocallySuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(pendingId);
   }
@@ -2274,11 +2043,9 @@ class _$SaveDecksLocallySuccessful implements SaveDecksLocallySuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -2322,24 +2089,20 @@ class _$SaveDecksLocallySuccessful implements SaveDecksLocallySuccessful {
   }
 }
 
-abstract class SaveDecksLocallySuccessful
-    implements SaveDecksLocally, ActionDone {
-  const factory SaveDecksLocallySuccessful({final String pendingId}) =
-      _$SaveDecksLocallySuccessful;
+abstract class SaveDecksLocallySuccessful implements SaveDecksLocally, ActionDone {
+  const factory SaveDecksLocallySuccessful({final String pendingId}) = _$SaveDecksLocallySuccessful;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$SaveDecksLocallySuccessfulCopyWith<_$SaveDecksLocallySuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SaveDecksLocallySuccessfulCopyWith<_$SaveDecksLocallySuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SaveDecksLocallyErrorCopyWith<$Res>
-    implements $SaveDecksLocallyCopyWith<$Res> {
-  factory _$$SaveDecksLocallyErrorCopyWith(_$SaveDecksLocallyError value,
-          $Res Function(_$SaveDecksLocallyError) then) =
+abstract class _$$SaveDecksLocallyErrorCopyWith<$Res> implements $SaveDecksLocallyCopyWith<$Res> {
+  factory _$$SaveDecksLocallyErrorCopyWith(_$SaveDecksLocallyError value, $Res Function(_$SaveDecksLocallyError) then) =
       __$$SaveDecksLocallyErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2347,11 +2110,9 @@ abstract class _$$SaveDecksLocallyErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SaveDecksLocallyErrorCopyWithImpl<$Res>
-    extends _$SaveDecksLocallyCopyWithImpl<$Res, _$SaveDecksLocallyError>
+class __$$SaveDecksLocallyErrorCopyWithImpl<$Res> extends _$SaveDecksLocallyCopyWithImpl<$Res, _$SaveDecksLocallyError>
     implements _$$SaveDecksLocallyErrorCopyWith<$Res> {
-  __$$SaveDecksLocallyErrorCopyWithImpl(_$SaveDecksLocallyError _value,
-      $Res Function(_$SaveDecksLocallyError) _then)
+  __$$SaveDecksLocallyErrorCopyWithImpl(_$SaveDecksLocallyError _value, $Res Function(_$SaveDecksLocallyError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2378,8 +2139,7 @@ class __$$SaveDecksLocallyErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SaveDecksLocallyError implements SaveDecksLocallyError {
-  const _$SaveDecksLocallyError(this.error, this.stackTrace,
-      [this.pendingId = _kSaveDecksLocallyPendingId]);
+  const _$SaveDecksLocallyError(this.error, this.stackTrace, [this.pendingId = _kSaveDecksLocallyPendingId]);
 
   @override
   final Object error;
@@ -2400,33 +2160,25 @@ class _$SaveDecksLocallyError implements SaveDecksLocallyError {
         (other.runtimeType == runtimeType &&
             other is _$SaveDecksLocallyError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SaveDecksLocallyErrorCopyWith<_$SaveDecksLocallyError> get copyWith =>
-      __$$SaveDecksLocallyErrorCopyWithImpl<_$SaveDecksLocallyError>(
-          this, _$identity);
+      __$$SaveDecksLocallyErrorCopyWithImpl<_$SaveDecksLocallyError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(List<Deck> decks, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -2434,12 +2186,9 @@ class _$SaveDecksLocallyError implements SaveDecksLocallyError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -2447,11 +2196,9 @@ class _$SaveDecksLocallyError implements SaveDecksLocallyError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -2495,11 +2242,9 @@ class _$SaveDecksLocallyError implements SaveDecksLocallyError {
   }
 }
 
-abstract class SaveDecksLocallyError
-    implements SaveDecksLocally, ActionDone, ErrorAction {
-  const factory SaveDecksLocallyError(
-      final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$SaveDecksLocallyError;
+abstract class SaveDecksLocallyError implements SaveDecksLocally, ActionDone, ErrorAction {
+  const factory SaveDecksLocallyError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$SaveDecksLocallyError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -2507,8 +2252,7 @@ abstract class SaveDecksLocallyError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$SaveDecksLocallyErrorCopyWith<_$SaveDecksLocallyError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SaveDecksLocallyErrorCopyWith<_$SaveDecksLocallyError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2518,25 +2262,21 @@ mixin _$GetDecksLocally {
   TResult when<TResult extends Object?>({
     required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(List<Deck> decks, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ActionResult onResult, String pendingId)? start,
     TResult? Function(List<Deck> decks, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(List<Deck> decks, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2564,22 +2304,19 @@ mixin _$GetDecksLocally {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetDecksLocallyCopyWith<GetDecksLocally> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetDecksLocallyCopyWith<GetDecksLocally> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetDecksLocallyCopyWith<$Res> {
-  factory $GetDecksLocallyCopyWith(
-          GetDecksLocally value, $Res Function(GetDecksLocally) then) =
+  factory $GetDecksLocallyCopyWith(GetDecksLocally value, $Res Function(GetDecksLocally) then) =
       _$GetDecksLocallyCopyWithImpl<$Res, GetDecksLocally>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$GetDecksLocallyCopyWithImpl<$Res, $Val extends GetDecksLocally>
-    implements $GetDecksLocallyCopyWith<$Res> {
+class _$GetDecksLocallyCopyWithImpl<$Res, $Val extends GetDecksLocally> implements $GetDecksLocallyCopyWith<$Res> {
   _$GetDecksLocallyCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -2602,10 +2339,8 @@ class _$GetDecksLocallyCopyWithImpl<$Res, $Val extends GetDecksLocally>
 }
 
 /// @nodoc
-abstract class _$$GetDecksLocallyStartCopyWith<$Res>
-    implements $GetDecksLocallyCopyWith<$Res> {
-  factory _$$GetDecksLocallyStartCopyWith(_$GetDecksLocallyStart value,
-          $Res Function(_$GetDecksLocallyStart) then) =
+abstract class _$$GetDecksLocallyStartCopyWith<$Res> implements $GetDecksLocallyCopyWith<$Res> {
+  factory _$$GetDecksLocallyStartCopyWith(_$GetDecksLocallyStart value, $Res Function(_$GetDecksLocallyStart) then) =
       __$$GetDecksLocallyStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2613,11 +2348,9 @@ abstract class _$$GetDecksLocallyStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetDecksLocallyStartCopyWithImpl<$Res>
-    extends _$GetDecksLocallyCopyWithImpl<$Res, _$GetDecksLocallyStart>
+class __$$GetDecksLocallyStartCopyWithImpl<$Res> extends _$GetDecksLocallyCopyWithImpl<$Res, _$GetDecksLocallyStart>
     implements _$$GetDecksLocallyStartCopyWith<$Res> {
-  __$$GetDecksLocallyStartCopyWithImpl(_$GetDecksLocallyStart _value,
-      $Res Function(_$GetDecksLocallyStart) _then)
+  __$$GetDecksLocallyStartCopyWithImpl(_$GetDecksLocallyStart _value, $Res Function(_$GetDecksLocallyStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2642,8 +2375,7 @@ class __$$GetDecksLocallyStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetDecksLocallyStart implements GetDecksLocallyStart {
-  const _$GetDecksLocallyStart(
-      {required this.onResult, this.pendingId = _kGetDecksLocallyPendingId});
+  const _$GetDecksLocallyStart({required this.onResult, this.pendingId = _kGetDecksLocallyPendingId});
 
   @override
   final ActionResult onResult;
@@ -2661,10 +2393,8 @@ class _$GetDecksLocallyStart implements GetDecksLocallyStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetDecksLocallyStart &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -2674,17 +2404,14 @@ class _$GetDecksLocallyStart implements GetDecksLocallyStart {
   @override
   @pragma('vm:prefer-inline')
   _$$GetDecksLocallyStartCopyWith<_$GetDecksLocallyStart> get copyWith =>
-      __$$GetDecksLocallyStartCopyWithImpl<_$GetDecksLocallyStart>(
-          this, _$identity);
+      __$$GetDecksLocallyStartCopyWithImpl<_$GetDecksLocallyStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(List<Deck> decks, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(onResult, pendingId);
   }
@@ -2694,8 +2421,7 @@ class _$GetDecksLocallyStart implements GetDecksLocallyStart {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ActionResult onResult, String pendingId)? start,
     TResult? Function(List<Deck> decks, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(onResult, pendingId);
   }
@@ -2705,8 +2431,7 @@ class _$GetDecksLocallyStart implements GetDecksLocallyStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(List<Deck> decks, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -2751,25 +2476,21 @@ class _$GetDecksLocallyStart implements GetDecksLocallyStart {
 }
 
 abstract class GetDecksLocallyStart implements GetDecksLocally, ActionStart {
-  const factory GetDecksLocallyStart(
-      {required final ActionResult onResult,
-      final String pendingId}) = _$GetDecksLocallyStart;
+  const factory GetDecksLocallyStart({required final ActionResult onResult, final String pendingId}) =
+      _$GetDecksLocallyStart;
 
   ActionResult get onResult;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDecksLocallyStartCopyWith<_$GetDecksLocallyStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetDecksLocallyStartCopyWith<_$GetDecksLocallyStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetDecksLocallySuccessfulCopyWith<$Res>
-    implements $GetDecksLocallyCopyWith<$Res> {
+abstract class _$$GetDecksLocallySuccessfulCopyWith<$Res> implements $GetDecksLocallyCopyWith<$Res> {
   factory _$$GetDecksLocallySuccessfulCopyWith(
-          _$GetDecksLocallySuccessful value,
-          $Res Function(_$GetDecksLocallySuccessful) then) =
+          _$GetDecksLocallySuccessful value, $Res Function(_$GetDecksLocallySuccessful) then) =
       __$$GetDecksLocallySuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2780,8 +2501,8 @@ abstract class _$$GetDecksLocallySuccessfulCopyWith<$Res>
 class __$$GetDecksLocallySuccessfulCopyWithImpl<$Res>
     extends _$GetDecksLocallyCopyWithImpl<$Res, _$GetDecksLocallySuccessful>
     implements _$$GetDecksLocallySuccessfulCopyWith<$Res> {
-  __$$GetDecksLocallySuccessfulCopyWithImpl(_$GetDecksLocallySuccessful _value,
-      $Res Function(_$GetDecksLocallySuccessful) _then)
+  __$$GetDecksLocallySuccessfulCopyWithImpl(
+      _$GetDecksLocallySuccessful _value, $Res Function(_$GetDecksLocallySuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2806,9 +2527,7 @@ class __$$GetDecksLocallySuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetDecksLocallySuccessful implements GetDecksLocallySuccessful {
-  const _$GetDecksLocallySuccessful(
-      {required final List<Deck> decks,
-      this.pendingId = _kGetDecksLocallyPendingId})
+  const _$GetDecksLocallySuccessful({required final List<Deck> decks, this.pendingId = _kGetDecksLocallyPendingId})
       : _decks = decks;
 
   final List<Deck> _decks;
@@ -2834,29 +2553,24 @@ class _$GetDecksLocallySuccessful implements GetDecksLocallySuccessful {
         (other.runtimeType == runtimeType &&
             other is _$GetDecksLocallySuccessful &&
             const DeepCollectionEquality().equals(other._decks, _decks) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_decks), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_decks), pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetDecksLocallySuccessfulCopyWith<_$GetDecksLocallySuccessful>
-      get copyWith => __$$GetDecksLocallySuccessfulCopyWithImpl<
-          _$GetDecksLocallySuccessful>(this, _$identity);
+  _$$GetDecksLocallySuccessfulCopyWith<_$GetDecksLocallySuccessful> get copyWith =>
+      __$$GetDecksLocallySuccessfulCopyWithImpl<_$GetDecksLocallySuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(List<Deck> decks, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(decks, pendingId);
   }
@@ -2866,8 +2580,7 @@ class _$GetDecksLocallySuccessful implements GetDecksLocallySuccessful {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ActionResult onResult, String pendingId)? start,
     TResult? Function(List<Deck> decks, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(decks, pendingId);
   }
@@ -2877,8 +2590,7 @@ class _$GetDecksLocallySuccessful implements GetDecksLocallySuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(List<Deck> decks, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -2922,26 +2634,21 @@ class _$GetDecksLocallySuccessful implements GetDecksLocallySuccessful {
   }
 }
 
-abstract class GetDecksLocallySuccessful
-    implements GetDecksLocally, ActionDone {
-  const factory GetDecksLocallySuccessful(
-      {required final List<Deck> decks,
-      final String pendingId}) = _$GetDecksLocallySuccessful;
+abstract class GetDecksLocallySuccessful implements GetDecksLocally, ActionDone {
+  const factory GetDecksLocallySuccessful({required final List<Deck> decks, final String pendingId}) =
+      _$GetDecksLocallySuccessful;
 
   List<Deck> get decks;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDecksLocallySuccessfulCopyWith<_$GetDecksLocallySuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetDecksLocallySuccessfulCopyWith<_$GetDecksLocallySuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetDecksLocallyErrorCopyWith<$Res>
-    implements $GetDecksLocallyCopyWith<$Res> {
-  factory _$$GetDecksLocallyErrorCopyWith(_$GetDecksLocallyError value,
-          $Res Function(_$GetDecksLocallyError) then) =
+abstract class _$$GetDecksLocallyErrorCopyWith<$Res> implements $GetDecksLocallyCopyWith<$Res> {
+  factory _$$GetDecksLocallyErrorCopyWith(_$GetDecksLocallyError value, $Res Function(_$GetDecksLocallyError) then) =
       __$$GetDecksLocallyErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2949,11 +2656,9 @@ abstract class _$$GetDecksLocallyErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetDecksLocallyErrorCopyWithImpl<$Res>
-    extends _$GetDecksLocallyCopyWithImpl<$Res, _$GetDecksLocallyError>
+class __$$GetDecksLocallyErrorCopyWithImpl<$Res> extends _$GetDecksLocallyCopyWithImpl<$Res, _$GetDecksLocallyError>
     implements _$$GetDecksLocallyErrorCopyWith<$Res> {
-  __$$GetDecksLocallyErrorCopyWithImpl(_$GetDecksLocallyError _value,
-      $Res Function(_$GetDecksLocallyError) _then)
+  __$$GetDecksLocallyErrorCopyWithImpl(_$GetDecksLocallyError _value, $Res Function(_$GetDecksLocallyError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2980,8 +2685,7 @@ class __$$GetDecksLocallyErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetDecksLocallyError implements GetDecksLocallyError {
-  const _$GetDecksLocallyError(this.error, this.stackTrace,
-      [this.pendingId = _kGetDecksLocallyPendingId]);
+  const _$GetDecksLocallyError(this.error, this.stackTrace, [this.pendingId = _kGetDecksLocallyPendingId]);
 
   @override
   final Object error;
@@ -3002,31 +2706,25 @@ class _$GetDecksLocallyError implements GetDecksLocallyError {
         (other.runtimeType == runtimeType &&
             other is _$GetDecksLocallyError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetDecksLocallyErrorCopyWith<_$GetDecksLocallyError> get copyWith =>
-      __$$GetDecksLocallyErrorCopyWithImpl<_$GetDecksLocallyError>(
-          this, _$identity);
+      __$$GetDecksLocallyErrorCopyWithImpl<_$GetDecksLocallyError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(List<Deck> decks, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -3036,8 +2734,7 @@ class _$GetDecksLocallyError implements GetDecksLocallyError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ActionResult onResult, String pendingId)? start,
     TResult? Function(List<Deck> decks, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -3047,8 +2744,7 @@ class _$GetDecksLocallyError implements GetDecksLocallyError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(List<Deck> decks, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -3092,11 +2788,9 @@ class _$GetDecksLocallyError implements GetDecksLocallyError {
   }
 }
 
-abstract class GetDecksLocallyError
-    implements GetDecksLocally, ActionDone, ErrorAction {
-  const factory GetDecksLocallyError(
-      final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$GetDecksLocallyError;
+abstract class GetDecksLocallyError implements GetDecksLocally, ActionDone, ErrorAction {
+  const factory GetDecksLocallyError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$GetDecksLocallyError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -3104,8 +2798,7 @@ abstract class GetDecksLocallyError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDecksLocallyErrorCopyWith<_$GetDecksLocallyError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetDecksLocallyErrorCopyWith<_$GetDecksLocallyError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3113,32 +2806,23 @@ mixin _$SaveDecksCloud {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(List<Deck> decks, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3166,22 +2850,19 @@ mixin _$SaveDecksCloud {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SaveDecksCloudCopyWith<SaveDecksCloud> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SaveDecksCloudCopyWith<SaveDecksCloud> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SaveDecksCloudCopyWith<$Res> {
-  factory $SaveDecksCloudCopyWith(
-          SaveDecksCloud value, $Res Function(SaveDecksCloud) then) =
+  factory $SaveDecksCloudCopyWith(SaveDecksCloud value, $Res Function(SaveDecksCloud) then) =
       _$SaveDecksCloudCopyWithImpl<$Res, SaveDecksCloud>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$SaveDecksCloudCopyWithImpl<$Res, $Val extends SaveDecksCloud>
-    implements $SaveDecksCloudCopyWith<$Res> {
+class _$SaveDecksCloudCopyWithImpl<$Res, $Val extends SaveDecksCloud> implements $SaveDecksCloudCopyWith<$Res> {
   _$SaveDecksCloudCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -3204,10 +2885,8 @@ class _$SaveDecksCloudCopyWithImpl<$Res, $Val extends SaveDecksCloud>
 }
 
 /// @nodoc
-abstract class _$$SaveDecksCloudStartCopyWith<$Res>
-    implements $SaveDecksCloudCopyWith<$Res> {
-  factory _$$SaveDecksCloudStartCopyWith(_$SaveDecksCloudStart value,
-          $Res Function(_$SaveDecksCloudStart) then) =
+abstract class _$$SaveDecksCloudStartCopyWith<$Res> implements $SaveDecksCloudCopyWith<$Res> {
+  factory _$$SaveDecksCloudStartCopyWith(_$SaveDecksCloudStart value, $Res Function(_$SaveDecksCloudStart) then) =
       __$$SaveDecksCloudStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -3215,11 +2894,9 @@ abstract class _$$SaveDecksCloudStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SaveDecksCloudStartCopyWithImpl<$Res>
-    extends _$SaveDecksCloudCopyWithImpl<$Res, _$SaveDecksCloudStart>
+class __$$SaveDecksCloudStartCopyWithImpl<$Res> extends _$SaveDecksCloudCopyWithImpl<$Res, _$SaveDecksCloudStart>
     implements _$$SaveDecksCloudStartCopyWith<$Res> {
-  __$$SaveDecksCloudStartCopyWithImpl(
-      _$SaveDecksCloudStart _value, $Res Function(_$SaveDecksCloudStart) _then)
+  __$$SaveDecksCloudStartCopyWithImpl(_$SaveDecksCloudStart _value, $Res Function(_$SaveDecksCloudStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3250,9 +2927,7 @@ class __$$SaveDecksCloudStartCopyWithImpl<$Res>
 
 class _$SaveDecksCloudStart implements SaveDecksCloudStart {
   const _$SaveDecksCloudStart(
-      {required final List<Deck> decks,
-      required this.onResult,
-      this.pendingId = _kSaveDecksCloudPendingId})
+      {required final List<Deck> decks, required this.onResult, this.pendingId = _kSaveDecksCloudPendingId})
       : _decks = decks;
 
   final List<Deck> _decks;
@@ -3280,33 +2955,25 @@ class _$SaveDecksCloudStart implements SaveDecksCloudStart {
         (other.runtimeType == runtimeType &&
             other is _$SaveDecksCloudStart &&
             const DeepCollectionEquality().equals(other._decks, _decks) &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_decks), onResult, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_decks), onResult, pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SaveDecksCloudStartCopyWith<_$SaveDecksCloudStart> get copyWith =>
-      __$$SaveDecksCloudStartCopyWithImpl<_$SaveDecksCloudStart>(
-          this, _$identity);
+      __$$SaveDecksCloudStartCopyWithImpl<_$SaveDecksCloudStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(List<Deck> decks, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(decks, onResult, pendingId);
   }
@@ -3314,12 +2981,9 @@ class _$SaveDecksCloudStart implements SaveDecksCloudStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(decks, onResult, pendingId);
   }
@@ -3327,11 +2991,9 @@ class _$SaveDecksCloudStart implements SaveDecksCloudStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -3387,15 +3049,13 @@ abstract class SaveDecksCloudStart implements SaveDecksCloud, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$SaveDecksCloudStartCopyWith<_$SaveDecksCloudStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SaveDecksCloudStartCopyWith<_$SaveDecksCloudStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SaveDecksCloudSuccessfulCopyWith<$Res>
-    implements $SaveDecksCloudCopyWith<$Res> {
-  factory _$$SaveDecksCloudSuccessfulCopyWith(_$SaveDecksCloudSuccessful value,
-          $Res Function(_$SaveDecksCloudSuccessful) then) =
+abstract class _$$SaveDecksCloudSuccessfulCopyWith<$Res> implements $SaveDecksCloudCopyWith<$Res> {
+  factory _$$SaveDecksCloudSuccessfulCopyWith(
+          _$SaveDecksCloudSuccessful value, $Res Function(_$SaveDecksCloudSuccessful) then) =
       __$$SaveDecksCloudSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -3406,8 +3066,8 @@ abstract class _$$SaveDecksCloudSuccessfulCopyWith<$Res>
 class __$$SaveDecksCloudSuccessfulCopyWithImpl<$Res>
     extends _$SaveDecksCloudCopyWithImpl<$Res, _$SaveDecksCloudSuccessful>
     implements _$$SaveDecksCloudSuccessfulCopyWith<$Res> {
-  __$$SaveDecksCloudSuccessfulCopyWithImpl(_$SaveDecksCloudSuccessful _value,
-      $Res Function(_$SaveDecksCloudSuccessful) _then)
+  __$$SaveDecksCloudSuccessfulCopyWithImpl(
+      _$SaveDecksCloudSuccessful _value, $Res Function(_$SaveDecksCloudSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3427,8 +3087,7 @@ class __$$SaveDecksCloudSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SaveDecksCloudSuccessful implements SaveDecksCloudSuccessful {
-  const _$SaveDecksCloudSuccessful(
-      {this.pendingId = _kSaveDecksCloudPendingId});
+  const _$SaveDecksCloudSuccessful({this.pendingId = _kSaveDecksCloudPendingId});
 
   @override
   @JsonKey()
@@ -3444,8 +3103,7 @@ class _$SaveDecksCloudSuccessful implements SaveDecksCloudSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SaveDecksCloudSuccessful &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -3454,21 +3112,15 @@ class _$SaveDecksCloudSuccessful implements SaveDecksCloudSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SaveDecksCloudSuccessfulCopyWith<_$SaveDecksCloudSuccessful>
-      get copyWith =>
-          __$$SaveDecksCloudSuccessfulCopyWithImpl<_$SaveDecksCloudSuccessful>(
-              this, _$identity);
+  _$$SaveDecksCloudSuccessfulCopyWith<_$SaveDecksCloudSuccessful> get copyWith =>
+      __$$SaveDecksCloudSuccessfulCopyWithImpl<_$SaveDecksCloudSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(List<Deck> decks, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(pendingId);
   }
@@ -3476,12 +3128,9 @@ class _$SaveDecksCloudSuccessful implements SaveDecksCloudSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(pendingId);
   }
@@ -3489,11 +3138,9 @@ class _$SaveDecksCloudSuccessful implements SaveDecksCloudSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -3538,22 +3185,18 @@ class _$SaveDecksCloudSuccessful implements SaveDecksCloudSuccessful {
 }
 
 abstract class SaveDecksCloudSuccessful implements SaveDecksCloud, ActionDone {
-  const factory SaveDecksCloudSuccessful({final String pendingId}) =
-      _$SaveDecksCloudSuccessful;
+  const factory SaveDecksCloudSuccessful({final String pendingId}) = _$SaveDecksCloudSuccessful;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$SaveDecksCloudSuccessfulCopyWith<_$SaveDecksCloudSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SaveDecksCloudSuccessfulCopyWith<_$SaveDecksCloudSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SaveDecksCloudErrorCopyWith<$Res>
-    implements $SaveDecksCloudCopyWith<$Res> {
-  factory _$$SaveDecksCloudErrorCopyWith(_$SaveDecksCloudError value,
-          $Res Function(_$SaveDecksCloudError) then) =
+abstract class _$$SaveDecksCloudErrorCopyWith<$Res> implements $SaveDecksCloudCopyWith<$Res> {
+  factory _$$SaveDecksCloudErrorCopyWith(_$SaveDecksCloudError value, $Res Function(_$SaveDecksCloudError) then) =
       __$$SaveDecksCloudErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -3561,11 +3204,9 @@ abstract class _$$SaveDecksCloudErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SaveDecksCloudErrorCopyWithImpl<$Res>
-    extends _$SaveDecksCloudCopyWithImpl<$Res, _$SaveDecksCloudError>
+class __$$SaveDecksCloudErrorCopyWithImpl<$Res> extends _$SaveDecksCloudCopyWithImpl<$Res, _$SaveDecksCloudError>
     implements _$$SaveDecksCloudErrorCopyWith<$Res> {
-  __$$SaveDecksCloudErrorCopyWithImpl(
-      _$SaveDecksCloudError _value, $Res Function(_$SaveDecksCloudError) _then)
+  __$$SaveDecksCloudErrorCopyWithImpl(_$SaveDecksCloudError _value, $Res Function(_$SaveDecksCloudError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3592,8 +3233,7 @@ class __$$SaveDecksCloudErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SaveDecksCloudError implements SaveDecksCloudError {
-  const _$SaveDecksCloudError(this.error, this.stackTrace,
-      [this.pendingId = _kSaveDecksCloudPendingId]);
+  const _$SaveDecksCloudError(this.error, this.stackTrace, [this.pendingId = _kSaveDecksCloudPendingId]);
 
   @override
   final Object error;
@@ -3614,33 +3254,25 @@ class _$SaveDecksCloudError implements SaveDecksCloudError {
         (other.runtimeType == runtimeType &&
             other is _$SaveDecksCloudError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SaveDecksCloudErrorCopyWith<_$SaveDecksCloudError> get copyWith =>
-      __$$SaveDecksCloudErrorCopyWithImpl<_$SaveDecksCloudError>(
-          this, _$identity);
+      __$$SaveDecksCloudErrorCopyWithImpl<_$SaveDecksCloudError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(List<Deck> decks, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -3648,12 +3280,9 @@ class _$SaveDecksCloudError implements SaveDecksCloudError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -3661,11 +3290,9 @@ class _$SaveDecksCloudError implements SaveDecksCloudError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(List<Deck> decks, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -3709,11 +3336,9 @@ class _$SaveDecksCloudError implements SaveDecksCloudError {
   }
 }
 
-abstract class SaveDecksCloudError
-    implements SaveDecksCloud, ActionDone, ErrorAction {
-  const factory SaveDecksCloudError(
-      final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$SaveDecksCloudError;
+abstract class SaveDecksCloudError implements SaveDecksCloud, ActionDone, ErrorAction {
+  const factory SaveDecksCloudError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$SaveDecksCloudError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -3721,8 +3346,7 @@ abstract class SaveDecksCloudError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$SaveDecksCloudErrorCopyWith<_$SaveDecksCloudError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SaveDecksCloudErrorCopyWith<_$SaveDecksCloudError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3732,25 +3356,21 @@ mixin _$GetDecksCloud {
   TResult when<TResult extends Object?>({
     required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(List<Deck> decks, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ActionResult onResult, String pendingId)? start,
     TResult? Function(List<Deck> decks, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(List<Deck> decks, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3778,22 +3398,19 @@ mixin _$GetDecksCloud {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetDecksCloudCopyWith<GetDecksCloud> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetDecksCloudCopyWith<GetDecksCloud> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetDecksCloudCopyWith<$Res> {
-  factory $GetDecksCloudCopyWith(
-          GetDecksCloud value, $Res Function(GetDecksCloud) then) =
+  factory $GetDecksCloudCopyWith(GetDecksCloud value, $Res Function(GetDecksCloud) then) =
       _$GetDecksCloudCopyWithImpl<$Res, GetDecksCloud>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$GetDecksCloudCopyWithImpl<$Res, $Val extends GetDecksCloud>
-    implements $GetDecksCloudCopyWith<$Res> {
+class _$GetDecksCloudCopyWithImpl<$Res, $Val extends GetDecksCloud> implements $GetDecksCloudCopyWith<$Res> {
   _$GetDecksCloudCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -3816,10 +3433,8 @@ class _$GetDecksCloudCopyWithImpl<$Res, $Val extends GetDecksCloud>
 }
 
 /// @nodoc
-abstract class _$$GetDecksCloudStartCopyWith<$Res>
-    implements $GetDecksCloudCopyWith<$Res> {
-  factory _$$GetDecksCloudStartCopyWith(_$GetDecksCloudStart value,
-          $Res Function(_$GetDecksCloudStart) then) =
+abstract class _$$GetDecksCloudStartCopyWith<$Res> implements $GetDecksCloudCopyWith<$Res> {
+  factory _$$GetDecksCloudStartCopyWith(_$GetDecksCloudStart value, $Res Function(_$GetDecksCloudStart) then) =
       __$$GetDecksCloudStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -3827,11 +3442,9 @@ abstract class _$$GetDecksCloudStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetDecksCloudStartCopyWithImpl<$Res>
-    extends _$GetDecksCloudCopyWithImpl<$Res, _$GetDecksCloudStart>
+class __$$GetDecksCloudStartCopyWithImpl<$Res> extends _$GetDecksCloudCopyWithImpl<$Res, _$GetDecksCloudStart>
     implements _$$GetDecksCloudStartCopyWith<$Res> {
-  __$$GetDecksCloudStartCopyWithImpl(
-      _$GetDecksCloudStart _value, $Res Function(_$GetDecksCloudStart) _then)
+  __$$GetDecksCloudStartCopyWithImpl(_$GetDecksCloudStart _value, $Res Function(_$GetDecksCloudStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3856,8 +3469,7 @@ class __$$GetDecksCloudStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetDecksCloudStart implements GetDecksCloudStart {
-  const _$GetDecksCloudStart(
-      {required this.onResult, this.pendingId = _kGetDecksCloudPendingId});
+  const _$GetDecksCloudStart({required this.onResult, this.pendingId = _kGetDecksCloudPendingId});
 
   @override
   final ActionResult onResult;
@@ -3875,10 +3487,8 @@ class _$GetDecksCloudStart implements GetDecksCloudStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetDecksCloudStart &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -3888,17 +3498,14 @@ class _$GetDecksCloudStart implements GetDecksCloudStart {
   @override
   @pragma('vm:prefer-inline')
   _$$GetDecksCloudStartCopyWith<_$GetDecksCloudStart> get copyWith =>
-      __$$GetDecksCloudStartCopyWithImpl<_$GetDecksCloudStart>(
-          this, _$identity);
+      __$$GetDecksCloudStartCopyWithImpl<_$GetDecksCloudStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(List<Deck> decks, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(onResult, pendingId);
   }
@@ -3908,8 +3515,7 @@ class _$GetDecksCloudStart implements GetDecksCloudStart {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ActionResult onResult, String pendingId)? start,
     TResult? Function(List<Deck> decks, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(onResult, pendingId);
   }
@@ -3919,8 +3525,7 @@ class _$GetDecksCloudStart implements GetDecksCloudStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(List<Deck> decks, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -3965,24 +3570,21 @@ class _$GetDecksCloudStart implements GetDecksCloudStart {
 }
 
 abstract class GetDecksCloudStart implements GetDecksCloud, ActionStart {
-  const factory GetDecksCloudStart(
-      {required final ActionResult onResult,
-      final String pendingId}) = _$GetDecksCloudStart;
+  const factory GetDecksCloudStart({required final ActionResult onResult, final String pendingId}) =
+      _$GetDecksCloudStart;
 
   ActionResult get onResult;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDecksCloudStartCopyWith<_$GetDecksCloudStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetDecksCloudStartCopyWith<_$GetDecksCloudStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetDecksCloudSuccessfulCopyWith<$Res>
-    implements $GetDecksCloudCopyWith<$Res> {
-  factory _$$GetDecksCloudSuccessfulCopyWith(_$GetDecksCloudSuccessful value,
-          $Res Function(_$GetDecksCloudSuccessful) then) =
+abstract class _$$GetDecksCloudSuccessfulCopyWith<$Res> implements $GetDecksCloudCopyWith<$Res> {
+  factory _$$GetDecksCloudSuccessfulCopyWith(
+          _$GetDecksCloudSuccessful value, $Res Function(_$GetDecksCloudSuccessful) then) =
       __$$GetDecksCloudSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -3990,11 +3592,10 @@ abstract class _$$GetDecksCloudSuccessfulCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetDecksCloudSuccessfulCopyWithImpl<$Res>
-    extends _$GetDecksCloudCopyWithImpl<$Res, _$GetDecksCloudSuccessful>
+class __$$GetDecksCloudSuccessfulCopyWithImpl<$Res> extends _$GetDecksCloudCopyWithImpl<$Res, _$GetDecksCloudSuccessful>
     implements _$$GetDecksCloudSuccessfulCopyWith<$Res> {
-  __$$GetDecksCloudSuccessfulCopyWithImpl(_$GetDecksCloudSuccessful _value,
-      $Res Function(_$GetDecksCloudSuccessful) _then)
+  __$$GetDecksCloudSuccessfulCopyWithImpl(
+      _$GetDecksCloudSuccessful _value, $Res Function(_$GetDecksCloudSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -4019,9 +3620,7 @@ class __$$GetDecksCloudSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetDecksCloudSuccessful implements GetDecksCloudSuccessful {
-  const _$GetDecksCloudSuccessful(
-      {required final List<Deck> decks,
-      this.pendingId = _kGetDecksCloudPendingId})
+  const _$GetDecksCloudSuccessful({required final List<Deck> decks, this.pendingId = _kGetDecksCloudPendingId})
       : _decks = decks;
 
   final List<Deck> _decks;
@@ -4047,29 +3646,24 @@ class _$GetDecksCloudSuccessful implements GetDecksCloudSuccessful {
         (other.runtimeType == runtimeType &&
             other is _$GetDecksCloudSuccessful &&
             const DeepCollectionEquality().equals(other._decks, _decks) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_decks), pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_decks), pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetDecksCloudSuccessfulCopyWith<_$GetDecksCloudSuccessful> get copyWith =>
-      __$$GetDecksCloudSuccessfulCopyWithImpl<_$GetDecksCloudSuccessful>(
-          this, _$identity);
+      __$$GetDecksCloudSuccessfulCopyWithImpl<_$GetDecksCloudSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(List<Deck> decks, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(decks, pendingId);
   }
@@ -4079,8 +3673,7 @@ class _$GetDecksCloudSuccessful implements GetDecksCloudSuccessful {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ActionResult onResult, String pendingId)? start,
     TResult? Function(List<Deck> decks, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(decks, pendingId);
   }
@@ -4090,8 +3683,7 @@ class _$GetDecksCloudSuccessful implements GetDecksCloudSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(List<Deck> decks, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -4136,24 +3728,20 @@ class _$GetDecksCloudSuccessful implements GetDecksCloudSuccessful {
 }
 
 abstract class GetDecksCloudSuccessful implements GetDecksCloud, ActionDone {
-  const factory GetDecksCloudSuccessful(
-      {required final List<Deck> decks,
-      final String pendingId}) = _$GetDecksCloudSuccessful;
+  const factory GetDecksCloudSuccessful({required final List<Deck> decks, final String pendingId}) =
+      _$GetDecksCloudSuccessful;
 
   List<Deck> get decks;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDecksCloudSuccessfulCopyWith<_$GetDecksCloudSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetDecksCloudSuccessfulCopyWith<_$GetDecksCloudSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetDecksCloudErrorCopyWith<$Res>
-    implements $GetDecksCloudCopyWith<$Res> {
-  factory _$$GetDecksCloudErrorCopyWith(_$GetDecksCloudError value,
-          $Res Function(_$GetDecksCloudError) then) =
+abstract class _$$GetDecksCloudErrorCopyWith<$Res> implements $GetDecksCloudCopyWith<$Res> {
+  factory _$$GetDecksCloudErrorCopyWith(_$GetDecksCloudError value, $Res Function(_$GetDecksCloudError) then) =
       __$$GetDecksCloudErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -4161,11 +3749,9 @@ abstract class _$$GetDecksCloudErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetDecksCloudErrorCopyWithImpl<$Res>
-    extends _$GetDecksCloudCopyWithImpl<$Res, _$GetDecksCloudError>
+class __$$GetDecksCloudErrorCopyWithImpl<$Res> extends _$GetDecksCloudCopyWithImpl<$Res, _$GetDecksCloudError>
     implements _$$GetDecksCloudErrorCopyWith<$Res> {
-  __$$GetDecksCloudErrorCopyWithImpl(
-      _$GetDecksCloudError _value, $Res Function(_$GetDecksCloudError) _then)
+  __$$GetDecksCloudErrorCopyWithImpl(_$GetDecksCloudError _value, $Res Function(_$GetDecksCloudError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -4192,8 +3778,7 @@ class __$$GetDecksCloudErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetDecksCloudError implements GetDecksCloudError {
-  const _$GetDecksCloudError(this.error, this.stackTrace,
-      [this.pendingId = _kGetDecksCloudPendingId]);
+  const _$GetDecksCloudError(this.error, this.stackTrace, [this.pendingId = _kGetDecksCloudPendingId]);
 
   @override
   final Object error;
@@ -4214,31 +3799,25 @@ class _$GetDecksCloudError implements GetDecksCloudError {
         (other.runtimeType == runtimeType &&
             other is _$GetDecksCloudError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetDecksCloudErrorCopyWith<_$GetDecksCloudError> get copyWith =>
-      __$$GetDecksCloudErrorCopyWithImpl<_$GetDecksCloudError>(
-          this, _$identity);
+      __$$GetDecksCloudErrorCopyWithImpl<_$GetDecksCloudError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(List<Deck> decks, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -4248,8 +3827,7 @@ class _$GetDecksCloudError implements GetDecksCloudError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ActionResult onResult, String pendingId)? start,
     TResult? Function(List<Deck> decks, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -4259,8 +3837,7 @@ class _$GetDecksCloudError implements GetDecksCloudError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(List<Deck> decks, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -4304,11 +3881,9 @@ class _$GetDecksCloudError implements GetDecksCloudError {
   }
 }
 
-abstract class GetDecksCloudError
-    implements GetDecksCloud, ActionDone, ErrorAction {
-  const factory GetDecksCloudError(
-      final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$GetDecksCloudError;
+abstract class GetDecksCloudError implements GetDecksCloud, ActionDone, ErrorAction {
+  const factory GetDecksCloudError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$GetDecksCloudError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -4316,8 +3891,7 @@ abstract class GetDecksCloudError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDecksCloudErrorCopyWith<_$GetDecksCloudError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetDecksCloudErrorCopyWith<_$GetDecksCloudError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4325,30 +3899,23 @@ mixin _$ShareDeck {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(String shareId, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(String shareId, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(String shareId, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -4376,21 +3943,18 @@ mixin _$ShareDeck {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ShareDeckCopyWith<ShareDeck> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ShareDeckCopyWith<ShareDeck> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ShareDeckCopyWith<$Res> {
-  factory $ShareDeckCopyWith(ShareDeck value, $Res Function(ShareDeck) then) =
-      _$ShareDeckCopyWithImpl<$Res, ShareDeck>;
+  factory $ShareDeckCopyWith(ShareDeck value, $Res Function(ShareDeck) then) = _$ShareDeckCopyWithImpl<$Res, ShareDeck>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$ShareDeckCopyWithImpl<$Res, $Val extends ShareDeck>
-    implements $ShareDeckCopyWith<$Res> {
+class _$ShareDeckCopyWithImpl<$Res, $Val extends ShareDeck> implements $ShareDeckCopyWith<$Res> {
   _$ShareDeckCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -4413,10 +3977,8 @@ class _$ShareDeckCopyWithImpl<$Res, $Val extends ShareDeck>
 }
 
 /// @nodoc
-abstract class _$$ShareDeckStartCopyWith<$Res>
-    implements $ShareDeckCopyWith<$Res> {
-  factory _$$ShareDeckStartCopyWith(
-          _$ShareDeckStart value, $Res Function(_$ShareDeckStart) then) =
+abstract class _$$ShareDeckStartCopyWith<$Res> implements $ShareDeckCopyWith<$Res> {
+  factory _$$ShareDeckStartCopyWith(_$ShareDeckStart value, $Res Function(_$ShareDeckStart) then) =
       __$$ShareDeckStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -4426,12 +3988,9 @@ abstract class _$$ShareDeckStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ShareDeckStartCopyWithImpl<$Res>
-    extends _$ShareDeckCopyWithImpl<$Res, _$ShareDeckStart>
+class __$$ShareDeckStartCopyWithImpl<$Res> extends _$ShareDeckCopyWithImpl<$Res, _$ShareDeckStart>
     implements _$$ShareDeckStartCopyWith<$Res> {
-  __$$ShareDeckStartCopyWithImpl(
-      _$ShareDeckStart _value, $Res Function(_$ShareDeckStart) _then)
-      : super(_value, _then);
+  __$$ShareDeckStartCopyWithImpl(_$ShareDeckStart _value, $Res Function(_$ShareDeckStart) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -4468,10 +4027,7 @@ class __$$ShareDeckStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ShareDeckStart implements ShareDeckStart {
-  const _$ShareDeckStart(
-      {required this.deck,
-      required this.onResult,
-      this.pendingId = _kShareDeckPendingId});
+  const _$ShareDeckStart({required this.deck, required this.onResult, this.pendingId = _kShareDeckPendingId});
 
   @override
   final Deck deck;
@@ -4492,10 +4048,8 @@ class _$ShareDeckStart implements ShareDeckStart {
         (other.runtimeType == runtimeType &&
             other is _$ShareDeckStart &&
             (identical(other.deck, deck) || other.deck == deck) &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -4510,13 +4064,9 @@ class _$ShareDeckStart implements ShareDeckStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(String shareId, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(deck, onResult, pendingId);
   }
@@ -4524,11 +4074,9 @@ class _$ShareDeckStart implements ShareDeckStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(String shareId, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(deck, onResult, pendingId);
   }
@@ -4538,8 +4086,7 @@ class _$ShareDeckStart implements ShareDeckStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(String shareId, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -4585,9 +4132,7 @@ class _$ShareDeckStart implements ShareDeckStart {
 
 abstract class ShareDeckStart implements ShareDeck, ActionStart {
   const factory ShareDeckStart(
-      {required final Deck deck,
-      required final ActionResult onResult,
-      final String pendingId}) = _$ShareDeckStart;
+      {required final Deck deck, required final ActionResult onResult, final String pendingId}) = _$ShareDeckStart;
 
   Deck get deck;
   ActionResult get onResult;
@@ -4595,15 +4140,12 @@ abstract class ShareDeckStart implements ShareDeck, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$ShareDeckStartCopyWith<_$ShareDeckStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ShareDeckStartCopyWith<_$ShareDeckStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ShareDeckSuccessfulCopyWith<$Res>
-    implements $ShareDeckCopyWith<$Res> {
-  factory _$$ShareDeckSuccessfulCopyWith(_$ShareDeckSuccessful value,
-          $Res Function(_$ShareDeckSuccessful) then) =
+abstract class _$$ShareDeckSuccessfulCopyWith<$Res> implements $ShareDeckCopyWith<$Res> {
+  factory _$$ShareDeckSuccessfulCopyWith(_$ShareDeckSuccessful value, $Res Function(_$ShareDeckSuccessful) then) =
       __$$ShareDeckSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -4611,11 +4153,9 @@ abstract class _$$ShareDeckSuccessfulCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ShareDeckSuccessfulCopyWithImpl<$Res>
-    extends _$ShareDeckCopyWithImpl<$Res, _$ShareDeckSuccessful>
+class __$$ShareDeckSuccessfulCopyWithImpl<$Res> extends _$ShareDeckCopyWithImpl<$Res, _$ShareDeckSuccessful>
     implements _$$ShareDeckSuccessfulCopyWith<$Res> {
-  __$$ShareDeckSuccessfulCopyWithImpl(
-      _$ShareDeckSuccessful _value, $Res Function(_$ShareDeckSuccessful) _then)
+  __$$ShareDeckSuccessfulCopyWithImpl(_$ShareDeckSuccessful _value, $Res Function(_$ShareDeckSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -4640,8 +4180,7 @@ class __$$ShareDeckSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ShareDeckSuccessful implements ShareDeckSuccessful {
-  const _$ShareDeckSuccessful(
-      {required this.shareId, this.pendingId = _kShareDeckPendingId});
+  const _$ShareDeckSuccessful({required this.shareId, this.pendingId = _kShareDeckPendingId});
 
   @override
   final String shareId;
@@ -4660,8 +4199,7 @@ class _$ShareDeckSuccessful implements ShareDeckSuccessful {
         (other.runtimeType == runtimeType &&
             other is _$ShareDeckSuccessful &&
             (identical(other.shareId, shareId) || other.shareId == shareId) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -4671,19 +4209,14 @@ class _$ShareDeckSuccessful implements ShareDeckSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$ShareDeckSuccessfulCopyWith<_$ShareDeckSuccessful> get copyWith =>
-      __$$ShareDeckSuccessfulCopyWithImpl<_$ShareDeckSuccessful>(
-          this, _$identity);
+      __$$ShareDeckSuccessfulCopyWithImpl<_$ShareDeckSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(String shareId, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(shareId, pendingId);
   }
@@ -4691,11 +4224,9 @@ class _$ShareDeckSuccessful implements ShareDeckSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(String shareId, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(shareId, pendingId);
   }
@@ -4705,8 +4236,7 @@ class _$ShareDeckSuccessful implements ShareDeckSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(String shareId, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -4751,24 +4281,19 @@ class _$ShareDeckSuccessful implements ShareDeckSuccessful {
 }
 
 abstract class ShareDeckSuccessful implements ShareDeck, ActionDone {
-  const factory ShareDeckSuccessful(
-      {required final String shareId,
-      final String pendingId}) = _$ShareDeckSuccessful;
+  const factory ShareDeckSuccessful({required final String shareId, final String pendingId}) = _$ShareDeckSuccessful;
 
   String get shareId;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$ShareDeckSuccessfulCopyWith<_$ShareDeckSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ShareDeckSuccessfulCopyWith<_$ShareDeckSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ShareDeckErrorCopyWith<$Res>
-    implements $ShareDeckCopyWith<$Res> {
-  factory _$$ShareDeckErrorCopyWith(
-          _$ShareDeckError value, $Res Function(_$ShareDeckError) then) =
+abstract class _$$ShareDeckErrorCopyWith<$Res> implements $ShareDeckCopyWith<$Res> {
+  factory _$$ShareDeckErrorCopyWith(_$ShareDeckError value, $Res Function(_$ShareDeckError) then) =
       __$$ShareDeckErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -4776,12 +4301,9 @@ abstract class _$$ShareDeckErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ShareDeckErrorCopyWithImpl<$Res>
-    extends _$ShareDeckCopyWithImpl<$Res, _$ShareDeckError>
+class __$$ShareDeckErrorCopyWithImpl<$Res> extends _$ShareDeckCopyWithImpl<$Res, _$ShareDeckError>
     implements _$$ShareDeckErrorCopyWith<$Res> {
-  __$$ShareDeckErrorCopyWithImpl(
-      _$ShareDeckError _value, $Res Function(_$ShareDeckError) _then)
-      : super(_value, _then);
+  __$$ShareDeckErrorCopyWithImpl(_$ShareDeckError _value, $Res Function(_$ShareDeckError) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -4807,8 +4329,7 @@ class __$$ShareDeckErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ShareDeckError implements ShareDeckError {
-  const _$ShareDeckError(this.error, this.stackTrace,
-      [this.pendingId = _kShareDeckPendingId]);
+  const _$ShareDeckError(this.error, this.stackTrace, [this.pendingId = _kShareDeckPendingId]);
 
   @override
   final Object error;
@@ -4829,15 +4350,12 @@ class _$ShareDeckError implements ShareDeckError {
         (other.runtimeType == runtimeType &&
             other is _$ShareDeckError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -4848,13 +4366,9 @@ class _$ShareDeckError implements ShareDeckError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Deck deck, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(Deck deck, ActionResult onResult, String pendingId) start,
     required TResult Function(String shareId, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -4862,11 +4376,9 @@ class _$ShareDeckError implements ShareDeckError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Deck deck, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult? Function(String shareId, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -4876,8 +4388,7 @@ class _$ShareDeckError implements ShareDeckError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Deck deck, ActionResult onResult, String pendingId)? start,
     TResult Function(String shareId, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -4922,8 +4433,8 @@ class _$ShareDeckError implements ShareDeckError {
 }
 
 abstract class ShareDeckError implements ShareDeck, ActionDone, ErrorAction {
-  const factory ShareDeckError(final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$ShareDeckError;
+  const factory ShareDeckError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$ShareDeckError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -4931,8 +4442,7 @@ abstract class ShareDeckError implements ShareDeck, ActionDone, ErrorAction {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$ShareDeckErrorCopyWith<_$ShareDeckError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ShareDeckErrorCopyWith<_$ShareDeckError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4940,31 +4450,23 @@ mixin _$ImportDeck {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String shareId, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(String shareId, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String shareId, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(String shareId, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String shareId, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(String shareId, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -4992,22 +4494,19 @@ mixin _$ImportDeck {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ImportDeckCopyWith<ImportDeck> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ImportDeckCopyWith<ImportDeck> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ImportDeckCopyWith<$Res> {
-  factory $ImportDeckCopyWith(
-          ImportDeck value, $Res Function(ImportDeck) then) =
+  factory $ImportDeckCopyWith(ImportDeck value, $Res Function(ImportDeck) then) =
       _$ImportDeckCopyWithImpl<$Res, ImportDeck>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$ImportDeckCopyWithImpl<$Res, $Val extends ImportDeck>
-    implements $ImportDeckCopyWith<$Res> {
+class _$ImportDeckCopyWithImpl<$Res, $Val extends ImportDeck> implements $ImportDeckCopyWith<$Res> {
   _$ImportDeckCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5030,10 +4529,8 @@ class _$ImportDeckCopyWithImpl<$Res, $Val extends ImportDeck>
 }
 
 /// @nodoc
-abstract class _$$ImportDeckStartCopyWith<$Res>
-    implements $ImportDeckCopyWith<$Res> {
-  factory _$$ImportDeckStartCopyWith(
-          _$ImportDeckStart value, $Res Function(_$ImportDeckStart) then) =
+abstract class _$$ImportDeckStartCopyWith<$Res> implements $ImportDeckCopyWith<$Res> {
+  factory _$$ImportDeckStartCopyWith(_$ImportDeckStart value, $Res Function(_$ImportDeckStart) then) =
       __$$ImportDeckStartCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5041,11 +4538,9 @@ abstract class _$$ImportDeckStartCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ImportDeckStartCopyWithImpl<$Res>
-    extends _$ImportDeckCopyWithImpl<$Res, _$ImportDeckStart>
+class __$$ImportDeckStartCopyWithImpl<$Res> extends _$ImportDeckCopyWithImpl<$Res, _$ImportDeckStart>
     implements _$$ImportDeckStartCopyWith<$Res> {
-  __$$ImportDeckStartCopyWithImpl(
-      _$ImportDeckStart _value, $Res Function(_$ImportDeckStart) _then)
+  __$$ImportDeckStartCopyWithImpl(_$ImportDeckStart _value, $Res Function(_$ImportDeckStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5075,10 +4570,7 @@ class __$$ImportDeckStartCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ImportDeckStart implements ImportDeckStart {
-  const _$ImportDeckStart(
-      {required this.shareId,
-      required this.onResult,
-      this.pendingId = _kImportDeckPendingId});
+  const _$ImportDeckStart({required this.shareId, required this.onResult, this.pendingId = _kImportDeckPendingId});
 
   @override
   final String shareId;
@@ -5099,10 +4591,8 @@ class _$ImportDeckStart implements ImportDeckStart {
         (other.runtimeType == runtimeType &&
             other is _$ImportDeckStart &&
             (identical(other.shareId, shareId) || other.shareId == shareId) &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -5117,13 +4607,9 @@ class _$ImportDeckStart implements ImportDeckStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String shareId, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(String shareId, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(shareId, onResult, pendingId);
   }
@@ -5131,11 +4617,9 @@ class _$ImportDeckStart implements ImportDeckStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String shareId, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(String shareId, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(shareId, onResult, pendingId);
   }
@@ -5143,11 +4627,9 @@ class _$ImportDeckStart implements ImportDeckStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String shareId, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(String shareId, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -5203,15 +4685,12 @@ abstract class ImportDeckStart implements ImportDeck, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$ImportDeckStartCopyWith<_$ImportDeckStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ImportDeckStartCopyWith<_$ImportDeckStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ImportDeckSuccessfulCopyWith<$Res>
-    implements $ImportDeckCopyWith<$Res> {
-  factory _$$ImportDeckSuccessfulCopyWith(_$ImportDeckSuccessful value,
-          $Res Function(_$ImportDeckSuccessful) then) =
+abstract class _$$ImportDeckSuccessfulCopyWith<$Res> implements $ImportDeckCopyWith<$Res> {
+  factory _$$ImportDeckSuccessfulCopyWith(_$ImportDeckSuccessful value, $Res Function(_$ImportDeckSuccessful) then) =
       __$$ImportDeckSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5219,11 +4698,9 @@ abstract class _$$ImportDeckSuccessfulCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ImportDeckSuccessfulCopyWithImpl<$Res>
-    extends _$ImportDeckCopyWithImpl<$Res, _$ImportDeckSuccessful>
+class __$$ImportDeckSuccessfulCopyWithImpl<$Res> extends _$ImportDeckCopyWithImpl<$Res, _$ImportDeckSuccessful>
     implements _$$ImportDeckSuccessfulCopyWith<$Res> {
-  __$$ImportDeckSuccessfulCopyWithImpl(_$ImportDeckSuccessful _value,
-      $Res Function(_$ImportDeckSuccessful) _then)
+  __$$ImportDeckSuccessfulCopyWithImpl(_$ImportDeckSuccessful _value, $Res Function(_$ImportDeckSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5259,8 +4736,7 @@ class _$ImportDeckSuccessful implements ImportDeckSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ImportDeckSuccessful &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -5270,19 +4746,14 @@ class _$ImportDeckSuccessful implements ImportDeckSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$ImportDeckSuccessfulCopyWith<_$ImportDeckSuccessful> get copyWith =>
-      __$$ImportDeckSuccessfulCopyWithImpl<_$ImportDeckSuccessful>(
-          this, _$identity);
+      __$$ImportDeckSuccessfulCopyWithImpl<_$ImportDeckSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String shareId, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(String shareId, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(pendingId);
   }
@@ -5290,11 +4761,9 @@ class _$ImportDeckSuccessful implements ImportDeckSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String shareId, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(String shareId, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(pendingId);
   }
@@ -5302,11 +4771,9 @@ class _$ImportDeckSuccessful implements ImportDeckSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String shareId, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(String shareId, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -5351,22 +4818,18 @@ class _$ImportDeckSuccessful implements ImportDeckSuccessful {
 }
 
 abstract class ImportDeckSuccessful implements ImportDeck, ActionDone {
-  const factory ImportDeckSuccessful({final String pendingId}) =
-      _$ImportDeckSuccessful;
+  const factory ImportDeckSuccessful({final String pendingId}) = _$ImportDeckSuccessful;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$ImportDeckSuccessfulCopyWith<_$ImportDeckSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ImportDeckSuccessfulCopyWith<_$ImportDeckSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ImportDeckErrorCopyWith<$Res>
-    implements $ImportDeckCopyWith<$Res> {
-  factory _$$ImportDeckErrorCopyWith(
-          _$ImportDeckError value, $Res Function(_$ImportDeckError) then) =
+abstract class _$$ImportDeckErrorCopyWith<$Res> implements $ImportDeckCopyWith<$Res> {
+  factory _$$ImportDeckErrorCopyWith(_$ImportDeckError value, $Res Function(_$ImportDeckError) then) =
       __$$ImportDeckErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5374,11 +4837,9 @@ abstract class _$$ImportDeckErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ImportDeckErrorCopyWithImpl<$Res>
-    extends _$ImportDeckCopyWithImpl<$Res, _$ImportDeckError>
+class __$$ImportDeckErrorCopyWithImpl<$Res> extends _$ImportDeckCopyWithImpl<$Res, _$ImportDeckError>
     implements _$$ImportDeckErrorCopyWith<$Res> {
-  __$$ImportDeckErrorCopyWithImpl(
-      _$ImportDeckError _value, $Res Function(_$ImportDeckError) _then)
+  __$$ImportDeckErrorCopyWithImpl(_$ImportDeckError _value, $Res Function(_$ImportDeckError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5405,8 +4866,7 @@ class __$$ImportDeckErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ImportDeckError implements ImportDeckError {
-  const _$ImportDeckError(this.error, this.stackTrace,
-      [this.pendingId = _kImportDeckPendingId]);
+  const _$ImportDeckError(this.error, this.stackTrace, [this.pendingId = _kImportDeckPendingId]);
 
   @override
   final Object error;
@@ -5427,15 +4887,12 @@ class _$ImportDeckError implements ImportDeckError {
         (other.runtimeType == runtimeType &&
             other is _$ImportDeckError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -5446,13 +4903,9 @@ class _$ImportDeckError implements ImportDeckError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String shareId, ActionResult onResult, String pendingId)
-        start,
+    required TResult Function(String shareId, ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -5460,11 +4913,9 @@ class _$ImportDeckError implements ImportDeckError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String shareId, ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(String shareId, ActionResult onResult, String pendingId)? start,
     TResult? Function(String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -5472,11 +4923,9 @@ class _$ImportDeckError implements ImportDeckError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String shareId, ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(String shareId, ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -5521,8 +4970,8 @@ class _$ImportDeckError implements ImportDeckError {
 }
 
 abstract class ImportDeckError implements ImportDeck, ActionDone, ErrorAction {
-  const factory ImportDeckError(final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$ImportDeckError;
+  const factory ImportDeckError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$ImportDeckError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -5530,8 +4979,7 @@ abstract class ImportDeckError implements ImportDeck, ActionDone, ErrorAction {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$ImportDeckErrorCopyWith<_$ImportDeckError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ImportDeckErrorCopyWith<_$ImportDeckError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5539,33 +4987,24 @@ mixin _$GenerateDeck {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)
+    required TResult Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)
         start,
     required TResult Function(Deck? deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck? deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck? deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -5593,22 +5032,19 @@ mixin _$GenerateDeck {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GenerateDeckCopyWith<GenerateDeck> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GenerateDeckCopyWith<GenerateDeck> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GenerateDeckCopyWith<$Res> {
-  factory $GenerateDeckCopyWith(
-          GenerateDeck value, $Res Function(GenerateDeck) then) =
+  factory $GenerateDeckCopyWith(GenerateDeck value, $Res Function(GenerateDeck) then) =
       _$GenerateDeckCopyWithImpl<$Res, GenerateDeck>;
   @useResult
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$GenerateDeckCopyWithImpl<$Res, $Val extends GenerateDeck>
-    implements $GenerateDeckCopyWith<$Res> {
+class _$GenerateDeckCopyWithImpl<$Res, $Val extends GenerateDeck> implements $GenerateDeckCopyWith<$Res> {
   _$GenerateDeckCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5631,27 +5067,18 @@ class _$GenerateDeckCopyWithImpl<$Res, $Val extends GenerateDeck>
 }
 
 /// @nodoc
-abstract class _$$GenerateDeckStartCopyWith<$Res>
-    implements $GenerateDeckCopyWith<$Res> {
-  factory _$$GenerateDeckStartCopyWith(
-          _$GenerateDeckStart value, $Res Function(_$GenerateDeckStart) then) =
+abstract class _$$GenerateDeckStartCopyWith<$Res> implements $GenerateDeckCopyWith<$Res> {
+  factory _$$GenerateDeckStartCopyWith(_$GenerateDeckStart value, $Res Function(_$GenerateDeckStart) then) =
       __$$GenerateDeckStartCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String text,
-      String name,
-      int questionCount,
-      ActionResult onResult,
-      String pendingId});
+  $Res call({String text, String name, int questionCount, ActionResult onResult, String pendingId});
 }
 
 /// @nodoc
-class __$$GenerateDeckStartCopyWithImpl<$Res>
-    extends _$GenerateDeckCopyWithImpl<$Res, _$GenerateDeckStart>
+class __$$GenerateDeckStartCopyWithImpl<$Res> extends _$GenerateDeckCopyWithImpl<$Res, _$GenerateDeckStart>
     implements _$$GenerateDeckStartCopyWith<$Res> {
-  __$$GenerateDeckStartCopyWithImpl(
-      _$GenerateDeckStart _value, $Res Function(_$GenerateDeckStart) _then)
+  __$$GenerateDeckStartCopyWithImpl(_$GenerateDeckStart _value, $Res Function(_$GenerateDeckStart) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5722,17 +5149,13 @@ class _$GenerateDeckStart implements GenerateDeckStart {
             other is _$GenerateDeckStart &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.questionCount, questionCount) ||
-                other.questionCount == questionCount) &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.questionCount, questionCount) || other.questionCount == questionCount) &&
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, text, name, questionCount, onResult, pendingId);
+  int get hashCode => Object.hash(runtimeType, text, name, questionCount, onResult, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -5743,13 +5166,10 @@ class _$GenerateDeckStart implements GenerateDeckStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)
+    required TResult Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)
         start,
     required TResult Function(Deck? deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(text, name, questionCount, onResult, pendingId);
   }
@@ -5757,12 +5177,9 @@ class _$GenerateDeckStart implements GenerateDeckStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck? deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(text, name, questionCount, onResult, pendingId);
   }
@@ -5770,12 +5187,9 @@ class _$GenerateDeckStart implements GenerateDeckStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck? deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -5835,15 +5249,13 @@ abstract class GenerateDeckStart implements GenerateDeck, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GenerateDeckStartCopyWith<_$GenerateDeckStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GenerateDeckStartCopyWith<_$GenerateDeckStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GenerateDeckSuccessfulCopyWith<$Res>
-    implements $GenerateDeckCopyWith<$Res> {
-  factory _$$GenerateDeckSuccessfulCopyWith(_$GenerateDeckSuccessful value,
-          $Res Function(_$GenerateDeckSuccessful) then) =
+abstract class _$$GenerateDeckSuccessfulCopyWith<$Res> implements $GenerateDeckCopyWith<$Res> {
+  factory _$$GenerateDeckSuccessfulCopyWith(
+          _$GenerateDeckSuccessful value, $Res Function(_$GenerateDeckSuccessful) then) =
       __$$GenerateDeckSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5853,11 +5265,9 @@ abstract class _$$GenerateDeckSuccessfulCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GenerateDeckSuccessfulCopyWithImpl<$Res>
-    extends _$GenerateDeckCopyWithImpl<$Res, _$GenerateDeckSuccessful>
+class __$$GenerateDeckSuccessfulCopyWithImpl<$Res> extends _$GenerateDeckCopyWithImpl<$Res, _$GenerateDeckSuccessful>
     implements _$$GenerateDeckSuccessfulCopyWith<$Res> {
-  __$$GenerateDeckSuccessfulCopyWithImpl(_$GenerateDeckSuccessful _value,
-      $Res Function(_$GenerateDeckSuccessful) _then)
+  __$$GenerateDeckSuccessfulCopyWithImpl(_$GenerateDeckSuccessful _value, $Res Function(_$GenerateDeckSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5894,8 +5304,7 @@ class __$$GenerateDeckSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GenerateDeckSuccessful implements GenerateDeckSuccessful {
-  const _$GenerateDeckSuccessful(
-      {this.deck, this.pendingId = _kGenerateDeckPendingId});
+  const _$GenerateDeckSuccessful({this.deck, this.pendingId = _kGenerateDeckPendingId});
 
   @override
   final Deck? deck;
@@ -5914,8 +5323,7 @@ class _$GenerateDeckSuccessful implements GenerateDeckSuccessful {
         (other.runtimeType == runtimeType &&
             other is _$GenerateDeckSuccessful &&
             (identical(other.deck, deck) || other.deck == deck) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
@@ -5925,19 +5333,15 @@ class _$GenerateDeckSuccessful implements GenerateDeckSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$GenerateDeckSuccessfulCopyWith<_$GenerateDeckSuccessful> get copyWith =>
-      __$$GenerateDeckSuccessfulCopyWithImpl<_$GenerateDeckSuccessful>(
-          this, _$identity);
+      __$$GenerateDeckSuccessfulCopyWithImpl<_$GenerateDeckSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)
+    required TResult Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)
         start,
     required TResult Function(Deck? deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(deck, pendingId);
   }
@@ -5945,12 +5349,9 @@ class _$GenerateDeckSuccessful implements GenerateDeckSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck? deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(deck, pendingId);
   }
@@ -5958,12 +5359,9 @@ class _$GenerateDeckSuccessful implements GenerateDeckSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck? deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -6008,23 +5406,19 @@ class _$GenerateDeckSuccessful implements GenerateDeckSuccessful {
 }
 
 abstract class GenerateDeckSuccessful implements GenerateDeck, ActionDone {
-  const factory GenerateDeckSuccessful(
-      {final Deck? deck, final String pendingId}) = _$GenerateDeckSuccessful;
+  const factory GenerateDeckSuccessful({final Deck? deck, final String pendingId}) = _$GenerateDeckSuccessful;
 
   Deck? get deck;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GenerateDeckSuccessfulCopyWith<_$GenerateDeckSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GenerateDeckSuccessfulCopyWith<_$GenerateDeckSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GenerateDeckErrorCopyWith<$Res>
-    implements $GenerateDeckCopyWith<$Res> {
-  factory _$$GenerateDeckErrorCopyWith(
-          _$GenerateDeckError value, $Res Function(_$GenerateDeckError) then) =
+abstract class _$$GenerateDeckErrorCopyWith<$Res> implements $GenerateDeckCopyWith<$Res> {
+  factory _$$GenerateDeckErrorCopyWith(_$GenerateDeckError value, $Res Function(_$GenerateDeckError) then) =
       __$$GenerateDeckErrorCopyWithImpl<$Res>;
   @override
   @useResult
@@ -6032,11 +5426,9 @@ abstract class _$$GenerateDeckErrorCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GenerateDeckErrorCopyWithImpl<$Res>
-    extends _$GenerateDeckCopyWithImpl<$Res, _$GenerateDeckError>
+class __$$GenerateDeckErrorCopyWithImpl<$Res> extends _$GenerateDeckCopyWithImpl<$Res, _$GenerateDeckError>
     implements _$$GenerateDeckErrorCopyWith<$Res> {
-  __$$GenerateDeckErrorCopyWithImpl(
-      _$GenerateDeckError _value, $Res Function(_$GenerateDeckError) _then)
+  __$$GenerateDeckErrorCopyWithImpl(_$GenerateDeckError _value, $Res Function(_$GenerateDeckError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -6063,8 +5455,7 @@ class __$$GenerateDeckErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GenerateDeckError implements GenerateDeckError {
-  const _$GenerateDeckError(this.error, this.stackTrace,
-      [this.pendingId = _kGenerateDeckPendingId]);
+  const _$GenerateDeckError(this.error, this.stackTrace, [this.pendingId = _kGenerateDeckPendingId]);
 
   @override
   final Object error;
@@ -6085,15 +5476,12 @@ class _$GenerateDeckError implements GenerateDeckError {
         (other.runtimeType == runtimeType &&
             other is _$GenerateDeckError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace) &&
-            (identical(other.pendingId, pendingId) ||
-                other.pendingId == pendingId));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -6104,13 +5492,10 @@ class _$GenerateDeckError implements GenerateDeckError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)
+    required TResult Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)
         start,
     required TResult Function(Deck? deck, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -6118,12 +5503,9 @@ class _$GenerateDeckError implements GenerateDeckError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)?
-        start,
+    TResult? Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)? start,
     TResult? Function(Deck? deck, String pendingId)? successful,
-    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -6131,12 +5513,9 @@ class _$GenerateDeckError implements GenerateDeckError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String text, String name, int questionCount,
-            ActionResult onResult, String pendingId)?
-        start,
+    TResult Function(String text, String name, int questionCount, ActionResult onResult, String pendingId)? start,
     TResult Function(Deck? deck, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -6180,11 +5559,9 @@ class _$GenerateDeckError implements GenerateDeckError {
   }
 }
 
-abstract class GenerateDeckError
-    implements GenerateDeck, ActionDone, ErrorAction {
-  const factory GenerateDeckError(
-      final Object error, final StackTrace stackTrace,
-      [final String pendingId]) = _$GenerateDeckError;
+abstract class GenerateDeckError implements GenerateDeck, ActionDone, ErrorAction {
+  const factory GenerateDeckError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$GenerateDeckError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -6192,6 +5569,5 @@ abstract class GenerateDeckError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GenerateDeckErrorCopyWith<_$GenerateDeckError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GenerateDeckErrorCopyWith<_$GenerateDeckError> get copyWith => throw _privateConstructorUsedError;
 }

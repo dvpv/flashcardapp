@@ -7,41 +7,28 @@ part of 'index.dart';
 // **************************************************************************
 
 _$_AppState _$$_AppStateFromJson(Map<String, dynamic> json) => _$_AppState(
-      pending: (json['pending'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toSet() ??
-          const <String>{},
-      user: json['user'] == null
-          ? null
-          : AppUser.fromJson(json['user'] as Map<String, dynamic>),
+      pending: (json['pending'] as List<dynamic>?)?.map((e) => e as String).toSet() ?? const <String>{},
+      user: json['user'] == null ? null : AppUser.fromJson(json['user'] as Map<String, dynamic>),
       persistentState: json['persistentState'] == null
           ? null
-          : PersistentState.fromJson(
-              json['persistentState'] as Map<String, dynamic>),
-      decks: (json['decks'] as List<dynamic>?)
-              ?.map((e) => Deck.fromJson(e as Map<String, dynamic>))
-              .toList() ??
+          : PersistentState.fromJson(json['persistentState'] as Map<String, dynamic>),
+      decks: (json['decks'] as List<dynamic>?)?.map((e) => Deck.fromJson(e as Map<String, dynamic>)).toList() ??
           const <Deck>[],
     );
 
-Map<String, dynamic> _$$_AppStateToJson(_$_AppState instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_AppStateToJson(_$_AppState instance) => <String, dynamic>{
       'pending': instance.pending.toList(),
       'user': instance.user,
       'persistentState': instance.persistentState,
       'decks': instance.decks,
     };
 
-_$_PersistentState _$$_PersistentStateFromJson(Map<String, dynamic> json) =>
-    _$_PersistentState(
-      decks: (json['decks'] as List<dynamic>?)
-              ?.map((e) => Deck.fromJson(e as Map<String, dynamic>))
-              .toList() ??
+_$_PersistentState _$$_PersistentStateFromJson(Map<String, dynamic> json) => _$_PersistentState(
+      decks: (json['decks'] as List<dynamic>?)?.map((e) => Deck.fromJson(e as Map<String, dynamic>)).toList() ??
           const <Deck>[],
     );
 
-Map<String, dynamic> _$$_PersistentStateToJson(_$_PersistentState instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_PersistentStateToJson(_$_PersistentState instance) => <String, dynamic>{
       'decks': instance.decks,
     };
 
@@ -51,8 +38,7 @@ _$_AppUser _$$_AppUserFromJson(Map<String, dynamic> json) => _$_AppUser(
       username: json['username'] as String,
     );
 
-Map<String, dynamic> _$$_AppUserToJson(_$_AppUser instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_AppUserToJson(_$_AppUser instance) => <String, dynamic>{
       'uid': instance.uid,
       'email': instance.email,
       'username': instance.username,
@@ -65,8 +51,7 @@ _$_Flashcard _$$_FlashcardFromJson(Map<String, dynamic> json) => _$_Flashcard(
       completed: json['completed'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_FlashcardToJson(_$_Flashcard instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_FlashcardToJson(_$_Flashcard instance) => <String, dynamic>{
       'id': instance.id,
       'front': instance.front,
       'back': instance.back,
@@ -78,13 +63,10 @@ _$_Deck _$$_DeckFromJson(Map<String, dynamic> json) => _$_Deck(
       title: json['title'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
-      cards: (json['cards'] as List<dynamic>?)
-              ?.map((e) => Flashcard.fromJson(e as Map<String, dynamic>))
-              .toList() ??
+      cards: (json['cards'] as List<dynamic>?)?.map((e) => Flashcard.fromJson(e as Map<String, dynamic>)).toList() ??
           const <Flashcard>[],
-      completionTime: json['completionTime'] == null
-          ? Duration.zero
-          : Duration(microseconds: json['completionTime'] as int),
+      completionTime:
+          json['completionTime'] == null ? Duration.zero : Duration(microseconds: json['completionTime'] as int),
     );
 
 Map<String, dynamic> _$$_DeckToJson(_$_Deck instance) => <String, dynamic>{
